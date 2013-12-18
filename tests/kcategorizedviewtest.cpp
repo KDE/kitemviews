@@ -36,16 +36,16 @@ public:
     virtual QVariant data(const QModelIndex &index, int role) const
     {
         switch (role) {
-            case KCategorizedSortFilterProxyModel::CategoryDisplayRole: {
-                    return QString::number(index.row() / 10);
-                }
-            case KCategorizedSortFilterProxyModel::CategorySortRole: {
-                    return index.row() / 10;
-                }
-            case Qt::DecorationRole:
-		return QIcon::fromTheme(icons[index.row() % 4]).pixmap(QSize(48, 48));
-            default:
-                break;
+        case KCategorizedSortFilterProxyModel::CategoryDisplayRole: {
+            return QString::number(index.row() / 10);
+        }
+        case KCategorizedSortFilterProxyModel::CategorySortRole: {
+            return index.row() / 10;
+        }
+        case Qt::DecorationRole:
+            return QIcon::fromTheme(icons[index.row() % 4]).pixmap(QSize(48, 48));
+        default:
+            break;
         }
         return QStringListModel::data(index, role);
     }
@@ -68,8 +68,7 @@ int main(int argc, char **argv)
     MyModel *model = new MyModel();
 
     model->insertRows(0, 100);
-    for (int i = 0; i < 100; ++i)
-    {
+    for (int i = 0; i < 100; ++i) {
         model->setData(model->index(i, 0), QString::number(i), Qt::DisplayRole);
     }
 

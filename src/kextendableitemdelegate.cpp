@@ -26,8 +26,8 @@
 #include <QPainter>
 #include <QApplication>
 
-
-class KExtendableItemDelegate::Private {
+class KExtendableItemDelegate::Private
+{
 public:
     Private(KExtendableItemDelegate *parent) :
         q(parent),
@@ -67,21 +67,18 @@ public:
     int extenderHeight;
 };
 
-
-KExtendableItemDelegate::KExtendableItemDelegate(QAbstractItemView* parent)
- : QStyledItemDelegate(parent),
-   d(new Private(this))
+KExtendableItemDelegate::KExtendableItemDelegate(QAbstractItemView *parent)
+    : QStyledItemDelegate(parent),
+      d(new Private(this))
 {
     connect(parent->verticalScrollBar(), SIGNAL(valueChanged(int)),
             this, SLOT(_k_verticalScroll()));
 }
 
-
 KExtendableItemDelegate::~KExtendableItemDelegate()
 {
     delete d;
 }
-
 
 void KExtendableItemDelegate::extendItem(QWidget *ext, const QModelIndex &index)
 {
@@ -107,8 +104,7 @@ void KExtendableItemDelegate::extendItem(QWidget *ext, const QModelIndex &index)
     d->scheduleUpdateViewLayout();
 }
 
-
-void KExtendableItemDelegate::contractItem(const QModelIndex& index)
+void KExtendableItemDelegate::contractItem(const QModelIndex &index)
 {
     QWidget *extender = d->extenders.value(index);
     if (!extender) {
@@ -126,12 +122,10 @@ void KExtendableItemDelegate::contractItem(const QModelIndex& index)
     d->scheduleUpdateViewLayout();
 }
 
-
 void KExtendableItemDelegate::contractAll()
 {
     d->deleteExtenders();
 }
-
 
 //slot
 void KExtendableItemDelegate::Private::_k_extenderDestructionHandler(QObject *destroyed)
@@ -143,7 +137,7 @@ void KExtendableItemDelegate::Private::_k_extenderDestructionHandler(QObject *de
 
     QPersistentModelIndex persistentIndex = deletionQueue.take(extender);
     if (persistentIndex.isValid() &&
-        q->receivers(SIGNAL(extenderDestroyed(QWidget*,QModelIndex)))) {
+            q->receivers(SIGNAL(extenderDestroyed(QWidget*,QModelIndex)))) {
 
         QModelIndex index = persistentIndex;
         emit q->extenderDestroyed(extender, index);
@@ -151,7 +145,6 @@ void KExtendableItemDelegate::Private::_k_extenderDestructionHandler(QObject *de
 
     scheduleUpdateViewLayout();
 }
-
 
 //slot
 void KExtendableItemDelegate::Private::_k_verticalScroll()
@@ -168,12 +161,10 @@ void KExtendableItemDelegate::Private::_k_verticalScroll()
     }
 }
 
-
 bool KExtendableItemDelegate::isExtended(const QModelIndex &index) const
 {
     return d->extenders.value(index);
 }
-
 
 QSize KExtendableItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
@@ -186,14 +177,13 @@ QSize KExtendableItemDelegate::sizeHint(const QStyleOptionViewItem &option, cons
     }
 
     bool showExtensionIndicator = index.model() ?
-        index.model()->data(index, ShowExtensionIndicatorRole).toBool() : false;
+                                  index.model()->data(index, ShowExtensionIndicatorRole).toBool() : false;
     if (showExtensionIndicator) {
         ret.rwidth() += d->extendPixmap.width();
     }
 
     return ret;
 }
-
 
 void KExtendableItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
@@ -253,7 +243,7 @@ void KExtendableItemDelegate::paint(QPainter *painter, const QStyleOptionViewIte
 
     //indexOfExtendedColumnInSameRow() is very expensive, try to avoid calling it.
     if (row != d->cachedRow || d->cachedStateTick != d->stateTick
-        || d->cachedParentIndex != parentIndex) {
+            || d->cachedParentIndex != parentIndex) {
         d->extender = d->extenders.value(d->indexOfExtendedColumnInSameRow(index));
         d->cachedStateTick = d->stateTick;
         d->cachedRow = row;
@@ -296,7 +286,7 @@ void KExtendableItemDelegate::paint(QPainter *painter, const QStyleOptionViewIte
     if (showExtensionIndicator) {
         //indicatorOption's height changed, change this too
         indicatorY = indicatorOption.rect.top() + ((indicatorOption.rect.height() -
-                                                   d->extendPixmap.height()) >> 1);
+                     d->extendPixmap.height()) >> 1);
         painter->save();
         QApplication::style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &indicatorOption,
                                              painter);
@@ -309,7 +299,6 @@ void KExtendableItemDelegate::paint(QPainter *painter, const QStyleOptionViewIte
         }
     }
 }
-
 
 QRect KExtendableItemDelegate::extenderRect(QWidget *extender, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
@@ -341,7 +330,6 @@ QRect KExtendableItemDelegate::extenderRect(QWidget *extender, const QStyleOptio
     return rect;
 }
 
-
 QSize KExtendableItemDelegate::Private::maybeExtendedSize(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QWidget *extender = extenders.value(index);
@@ -372,7 +360,6 @@ QSize KExtendableItemDelegate::Private::maybeExtendedSize(const QStyleOptionView
     return size;
 }
 
-
 QModelIndex KExtendableItemDelegate::Private::indexOfExtendedColumnInSameRow(const QModelIndex &index) const
 {
     const QAbstractItemModel *const model = index.model();
@@ -391,14 +378,12 @@ QModelIndex KExtendableItemDelegate::Private::indexOfExtendedColumnInSameRow(con
     return QModelIndex();
 }
 
-
 void KExtendableItemDelegate::updateExtenderGeometry(QWidget *extender, const QStyleOptionViewItem &option,
-                                                     const QModelIndex &index) const
+        const QModelIndex &index) const
 {
     Q_UNUSED(index);
     extender->setGeometry(option.rect);
 }
-
 
 void KExtendableItemDelegate::Private::deleteExtenders()
 {
@@ -410,7 +395,6 @@ void KExtendableItemDelegate::Private::deleteExtenders()
     extenders.clear();
     extenderIndices.clear();
 }
-
 
 //make the view re-ask for sizeHint() and redisplay items with their new size
 //### starting from Qt 4.4 we could emit sizeHintChanged() instead
@@ -424,24 +408,20 @@ void KExtendableItemDelegate::Private::scheduleUpdateViewLayout()
     }
 }
 
-
 void KExtendableItemDelegate::setExtendPixmap(const QPixmap &pixmap)
 {
     d->extendPixmap = pixmap;
 }
-
 
 void KExtendableItemDelegate::setContractPixmap(const QPixmap &pixmap)
 {
     d->contractPixmap = pixmap;
 }
 
-
 QPixmap KExtendableItemDelegate::extendPixmap()
 {
     return d->extendPixmap;
 }
-
 
 QPixmap KExtendableItemDelegate::contractPixmap()
 {

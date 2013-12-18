@@ -54,8 +54,7 @@ bool KCategorizedSortFilterProxyModel::isCategorizedModel() const
 
 void KCategorizedSortFilterProxyModel::setCategorizedModel(bool categorizedModel)
 {
-    if (categorizedModel == d->categorizedModel)
-    {
+    if (categorizedModel == d->categorizedModel) {
         return;
     }
 
@@ -76,8 +75,7 @@ Qt::SortOrder KCategorizedSortFilterProxyModel::sortOrder() const
 
 void KCategorizedSortFilterProxyModel::setSortCategoriesByNaturalComparison(bool sortCategoriesByNaturalComparison)
 {
-    if (sortCategoriesByNaturalComparison == d->sortCategoriesByNaturalComparison)
-    {
+    if (sortCategoriesByNaturalComparison == d->sortCategoriesByNaturalComparison) {
         return;
     }
 
@@ -103,16 +101,12 @@ int KCategorizedSortFilterProxyModel::naturalCompare(const QString &a, const QSt
 
 bool KCategorizedSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    if (d->categorizedModel)
-    {
+    if (d->categorizedModel) {
         int compare = compareCategories(left, right);
 
-        if (compare > 0) // left is greater than right
-        {
+        if (compare > 0) { // left is greater than right
             return false;
-        }
-        else if (compare < 0) // left is less than right
-        {
+        } else if (compare < 0) { // left is less than right
             return true;
         }
     }
@@ -134,24 +128,18 @@ int KCategorizedSortFilterProxyModel::compareCategories(const QModelIndex &left,
     Q_ASSERT(r.isValid());
     Q_ASSERT(l.type() == r.type());
 
-    if (l.type() == QVariant::String)
-    {
+    if (l.type() == QVariant::String) {
         QString lstr = l.toString();
         QString rstr = r.toString();
 
-        if (d->sortCategoriesByNaturalComparison)
-        {
+        if (d->sortCategoriesByNaturalComparison) {
             return d->m_collator.compare(lstr, rstr);
-        }
-        else
-        {
-            if (lstr < rstr)
-            {
+        } else {
+            if (lstr < rstr) {
                 return -1;
             }
 
-            if (lstr > rstr)
-            {
+            if (lstr > rstr) {
                 return 1;
             }
 
@@ -162,13 +150,11 @@ int KCategorizedSortFilterProxyModel::compareCategories(const QModelIndex &left,
     qlonglong lint = l.toLongLong();
     qlonglong rint = r.toLongLong();
 
-    if (lint < rint)
-    {
+    if (lint < rint) {
         return -1;
     }
 
-    if (lint > rint)
-    {
+    if (lint > rint) {
         return 1;
     }
 

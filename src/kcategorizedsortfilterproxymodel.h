@@ -28,7 +28,6 @@
 
 class QItemSelection;
 
-
 /**
   * This class lets you categorize a view. It is meant to be used along with
   * KCategorizedView class.
@@ -52,11 +51,11 @@ public:
         CategoryDisplayRole = 0x17CE990A,  ///< This role is used for asking the category to a given index
 
         CategorySortRole    = 0x27857E60   ///< This role is used for sorting categories. You can return a
-                                           ///< string or a long long value. Strings will be sorted alphabetically
-                                           ///< while long long will be sorted by their value. Please note that this
-                                           ///< value won't be shown on the view, is only for sorting purposes. What will
-                                           ///< be shown as "Category" on the view will be asked with the role
-                                           ///< CategoryDisplayRole.
+                              ///< string or a long long value. Strings will be sorted alphabetically
+                              ///< while long long will be sorted by their value. Please note that this
+                              ///< value won't be shown on the view, is only for sorting purposes. What will
+                              ///< be shown as "Category" on the view will be asked with the role
+                              ///< CategoryDisplayRole.
     };
 
     KCategorizedSortFilterProxyModel(QObject *parent = 0);
@@ -180,6 +179,5 @@ private:
     class Private;
     Private *const d;
 };
-
 
 #endif // KCATEGORIZEDSORTFILTERPROXYMODEL_H

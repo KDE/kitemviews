@@ -171,9 +171,10 @@ private:
  * @deprecated Use KCategoryDrawer instead
  */
 
-class KCategoryDrawerV3 : public KCategoryDrawer {
+class KCategoryDrawerV3 : public KCategoryDrawer
+{
 public:
-      KITEMVIEWS_DEPRECATED KCategoryDrawerV3(KCategorizedView *view) : KCategoryDrawer(view) {}
+    KITEMVIEWS_DEPRECATED KCategoryDrawerV3(KCategorizedView *view) : KCategoryDrawer(view) {}
 };
 #endif
 

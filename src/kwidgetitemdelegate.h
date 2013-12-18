@@ -98,7 +98,7 @@ protected:
      * @return the list of newly created widgets which will be used to interact with an item.
      * @see updateItemWidgets()
      */
-    virtual QList<QWidget*> createItemWidgets(const QModelIndex &index) const = 0;
+    virtual QList<QWidget *> createItemWidgets(const QModelIndex &index) const = 0;
 
     /**
      * Updates a list of widgets for its use inside of the delegate (painting or
@@ -113,7 +113,7 @@ protected:
      * @param option the current set of style options for the view.
      * @param index the model index of the item currently manipulated.
      */
-    virtual void updateItemWidgets(const QList<QWidget*> widgets,
+    virtual void updateItemWidgets(const QList<QWidget *> widgets,
                                    const QStyleOptionViewItem &option,
                                    const QPersistentModelIndex &index) const = 0;
 
@@ -132,7 +132,7 @@ protected:
      */
 #ifndef KDE_NO_DEPRECATED
     KITEMVIEWS_DEPRECATED void paintWidgets(QPainter *painter, const QStyleOptionViewItem &option,
-                                     const QPersistentModelIndex &index) const;
+                                            const QPersistentModelIndex &index) const;
 #endif
 
     /**
@@ -160,13 +160,13 @@ private:
     friend class KWidgetItemDelegatePool;
     friend class KWidgetItemDelegateEventListener;
     KWidgetItemDelegatePrivate *const d;
-    Q_PRIVATE_SLOT(d, void _k_slotRowsInserted(const QModelIndex&,int,int))
-    Q_PRIVATE_SLOT(d, void _k_slotRowsAboutToBeRemoved(const QModelIndex&,int,int))
-    Q_PRIVATE_SLOT(d, void _k_slotRowsRemoved(const QModelIndex&,int,int))
-    Q_PRIVATE_SLOT(d, void _k_slotDataChanged(const QModelIndex&,const QModelIndex&))
+    Q_PRIVATE_SLOT(d, void _k_slotRowsInserted(const QModelIndex &, int, int))
+    Q_PRIVATE_SLOT(d, void _k_slotRowsAboutToBeRemoved(const QModelIndex &, int, int))
+    Q_PRIVATE_SLOT(d, void _k_slotRowsRemoved(const QModelIndex &, int, int))
+    Q_PRIVATE_SLOT(d, void _k_slotDataChanged(const QModelIndex &, const QModelIndex &))
     Q_PRIVATE_SLOT(d, void _k_slotLayoutChanged())
     Q_PRIVATE_SLOT(d, void _k_slotModelReset())
-    Q_PRIVATE_SLOT(d, void _k_slotSelectionChanged(const QItemSelection&,const QItemSelection&))
+    Q_PRIVATE_SLOT(d, void _k_slotSelectionChanged(const QItemSelection &, const QItemSelection &))
     //@endcond
 };
 

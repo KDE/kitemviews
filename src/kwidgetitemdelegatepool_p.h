@@ -31,7 +31,6 @@ class QStyleOptionViewItem;
 class KWidgetItemDelegate;
 class KWidgetItemDelegatePoolPrivate;
 
-
 /**
   * @internal
   */
@@ -63,13 +62,13 @@ public:
       * @return A QList of the pointers to the widgets found.
       * @internal
       */
-    QList<QWidget*> findWidgets(const QPersistentModelIndex &index, const QStyleOptionViewItem &option,
-                                UpdateWidgetsEnum updateWidgets = UpdateWidgets) const;
+    QList<QWidget *> findWidgets(const QPersistentModelIndex &index, const QStyleOptionViewItem &option,
+                                 UpdateWidgetsEnum updateWidgets = UpdateWidgets) const;
 
     /**
       * @internal
       */
-    QList<QWidget*> invalidIndexesWidgets() const;
+    QList<QWidget *> invalidIndexesWidgets() const;
 
     /**
       * @internal
@@ -96,9 +95,9 @@ public:
     KWidgetItemDelegate *delegate;
     KWidgetItemDelegateEventListener *eventListener;
 
-    QList<QList<QWidget*> > allocatedWidgets;
-    QHash<QPersistentModelIndex, QList<QWidget*> > usedWidgets;
-    QHash<QWidget*, QPersistentModelIndex> widgetInIndex;
+    QList<QList<QWidget *> > allocatedWidgets;
+    QHash<QPersistentModelIndex, QList<QWidget *> > usedWidgets;
+    QHash<QWidget *, QPersistentModelIndex> widgetInIndex;
 
     bool clearing;
 };

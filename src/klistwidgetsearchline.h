@@ -49,8 +49,8 @@ public:
      * If \a listWidget is null then the widget will be disabled until a listWidget
      * is set with setListWidget().
      */
-    explicit KListWidgetSearchLine( QWidget *parent = 0,
-                                    QListWidget *listWidget = 0 );
+    explicit KListWidgetSearchLine(QWidget *parent = 0,
+                                   QListWidget *listWidget = 0);
 
     /**
      * Destroys the KListWidgetSearchLine.
@@ -76,14 +76,14 @@ public Q_SLOTS:
      * Updates search to only make visible the items that match \a s.  If
      * \a s is null then the line edit's text will be used.
      */
-    virtual void updateSearch( const QString &s = QString() );
+    virtual void updateSearch(const QString &s = QString());
 
     /**
      * Make the search case sensitive or case insensitive.
      *
      * @see caseSenstive()
      */
-    void setCaseSensitivity( Qt::CaseSensitivity cs );
+    void setCaseSensitivity(Qt::CaseSensitivity cs);
 
     /**
      * Sets the QListWidget that is filtered by this search line.  If \a lv is null
@@ -91,8 +91,7 @@ public Q_SLOTS:
      *
      * @see listWidget()
      */
-    void setListWidget( QListWidget *lv );
-
+    void setListWidget(QListWidget *lv);
 
     /**
      * Clear line edit and empty hiddenItems, returning elements to listWidget.
@@ -105,8 +104,8 @@ protected:
      * based on the value of caseSensitive().  This can be overridden in
      * subclasses to implement more complicated matching schemes.
      */
-    virtual bool itemMatches( const QListWidgetItem *item,
-                              const QString &s ) const;
+    virtual bool itemMatches(const QListWidgetItem *item,
+                             const QString &s) const;
     /**
      * Re-implemented for internal reasons.  API not affected.
      */
@@ -114,14 +113,13 @@ protected:
 
 private:
     class KListWidgetSearchLinePrivate;
-    KListWidgetSearchLinePrivate * const d;
+    KListWidgetSearchLinePrivate *const d;
 
     Q_PRIVATE_SLOT(d, void _k_listWidgetDeleted())
-    Q_PRIVATE_SLOT(d, void _k_queueSearch(const QString&))
+    Q_PRIVATE_SLOT(d, void _k_queueSearch(const QString &))
     Q_PRIVATE_SLOT(d, void _k_activateSearch())
-    Q_PRIVATE_SLOT(d, void _k_rowsInserted(const QModelIndex&, int, int))
-    Q_PRIVATE_SLOT(d, void _k_dataChanged(const QModelIndex&, const QModelIndex&))
+    Q_PRIVATE_SLOT(d, void _k_rowsInserted(const QModelIndex &, int, int))
+    Q_PRIVATE_SLOT(d, void _k_dataChanged(const QModelIndex &, const QModelIndex &))
 };
-
 
 #endif /* KLISTWIDGETSEARCHLINE_H */

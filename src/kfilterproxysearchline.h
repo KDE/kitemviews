@@ -32,7 +32,7 @@ class QSortFilterProxyModel;
  *
  * Responsible for the quick search when you are using a QSortFilterProxyModel.
  * This will give you an widget which you can embed in your application, call
- * the setProxy() function to indicate on which QSortFilterProxyModel this 
+ * the setProxy() function to indicate on which QSortFilterProxyModel this
  * search line should operate.
  *
  * @author Tom Albers <tomalbers@kde.nl>
@@ -48,7 +48,7 @@ public:
     /**
      * Constructor
      */
-    explicit KFilterProxySearchLine( QWidget* parent = 0 );
+    explicit KFilterProxySearchLine(QWidget *parent = 0);
 
     /**
      * Destructor
@@ -59,24 +59,24 @@ public:
      * Associate a proxy
      * @param proxy The proxy to operate with.
      */
-    void setProxy( QSortFilterProxyModel* proxy );
+    void setProxy(QSortFilterProxyModel *proxy);
 
     /**
      * To set the search to a text.
      */
-    void setText( const QString& text );
+    void setText(const QString &text);
 
     /**
      * Returns the pointer of the lineedit..
      */
-    QLineEdit* lineEdit() const;
+    QLineEdit *lineEdit() const;
 
 private:
     class Private;
-    Private* const d;
-    Q_DISABLE_COPY( KFilterProxySearchLine )
-    Q_PRIVATE_SLOT( d, void slotSearchLineChange( const QString& newText ) )
-    Q_PRIVATE_SLOT( d, void slotSearchLineActivate() )
+    Private *const d;
+    Q_DISABLE_COPY(KFilterProxySearchLine)
+    Q_PRIVATE_SLOT(d, void slotSearchLineChange(const QString &newText))
+    Q_PRIVATE_SLOT(d, void slotSearchLineActivate())
 };
 
 #endif

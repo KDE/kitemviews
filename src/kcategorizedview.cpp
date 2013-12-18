@@ -41,8 +41,7 @@
 
 //BEGIN: Private part
 
-struct KCategorizedView::Private::Item
-{
+struct KCategorizedView::Private::Item {
     Item()
         : topLeft(QPoint())
         , size(QSize())
@@ -53,8 +52,7 @@ struct KCategorizedView::Private::Item
     QSize size;
 };
 
-struct KCategorizedView::Private::Block
-{
+struct KCategorizedView::Private::Block {
     Block()
         : topLeft(QPoint())
         , height(-1)
@@ -354,12 +352,14 @@ int KCategorizedView::Private::highestElementInLastRow(const Block &block) const
         return res;
     }
     Q_FOREVER {
-        const QRect tempRect = q->visualRect(prevIndex);
-        if (tempRect.topLeft().y() < prevRect.topLeft().y()) {
+    const QRect tempRect = q->visualRect(prevIndex);
+        if (tempRect.topLeft().y() < prevRect.topLeft().y())
+        {
             break;
         }
         res = qMax(res, tempRect.height());
-        if (prevIndex == block.firstIndex) {
+        if (prevIndex == block.firstIndex)
+        {
             break;
         }
         prevIndex = proxyModel->index(prevIndex.row() - 1, q->modelColumn(), q->rootIndex());
@@ -381,7 +381,7 @@ QString KCategorizedView::Private::categoryForIndex(const QModelIndex &index) co
 }
 
 void KCategorizedView::Private::leftToRightVisualRect(const QModelIndex &index, Item &item,
-                                                      const Block &block, const QPoint &blockPos) const
+        const Block &block, const QPoint &blockPos) const
 {
     const int firstIndexRow = block.firstIndex.row();
 
@@ -416,15 +416,18 @@ void KCategorizedView::Private::leftToRightVisualRect(const QModelIndex &index, 
                     // we have to check the whole previous row, and see which one was the
                     // highest.
                     Q_FOREVER {
-                        prevIndex = proxyModel->index(prevIndex.row() - 1, q->modelColumn(), q->rootIndex());
+                    prevIndex = proxyModel->index(prevIndex.row() - 1, q->modelColumn(), q->rootIndex());
                         const QRect tempRect = q->visualRect(prevIndex);
-                        if (tempRect.topLeft().y() < prevRect.topLeft().y()) {
+                        if (tempRect.topLeft().y() < prevRect.topLeft().y())
+                        {
                             break;
                         }
-                        if (tempRect.bottomRight().y() > prevRect.bottomRight().y()) {
+                        if (tempRect.bottomRight().y() > prevRect.bottomRight().y())
+                        {
                             prevRect = tempRect;
                         }
-                        if (prevIndex == block.firstIndex) {
+                        if (prevIndex == block.firstIndex)
+                        {
                             break;
                         }
                     }
@@ -456,7 +459,7 @@ void KCategorizedView::Private::leftToRightVisualRect(const QModelIndex &index, 
 }
 
 void KCategorizedView::Private::topToBottomVisualRect(const QModelIndex &index, Item &item,
-                                                      const Block &block, const QPoint &blockPos) const
+        const Block &block, const QPoint &blockPos) const
 {
     const int firstIndexRow = block.firstIndex.row();
 
@@ -518,7 +521,7 @@ void KCategorizedView::setModel(QAbstractItemModel *model)
         disconnect(d->proxyModel, SIGNAL(layoutChanged()), this, SLOT(slotLayoutChanged()));
     }
 
-    d->proxyModel = dynamic_cast<KCategorizedSortFilterProxyModel*>(model);
+    d->proxyModel = dynamic_cast<KCategorizedSortFilterProxyModel *>(model);
 
     if (d->proxyModel) {
         connect(d->proxyModel, SIGNAL(layoutChanged()), this, SLOT(slotLayoutChanged()));
@@ -573,7 +576,7 @@ QRect KCategorizedView::visualRect(const QModelIndex &index) const
     Private::Item &ritem = block.items[index.row() - firstIndexRow];
 
     if (ritem.topLeft.isNull() || (block.quarantineStart.isValid() &&
-                                  index.row() >= block.quarantineStart.row())) {
+                                   index.row() >= block.quarantineStart.row())) {
         if (flow() == LeftToRight) {
             d->leftToRightVisualRect(index, ritem, block, blockPos);
         } else {
@@ -744,7 +747,7 @@ QModelIndex KCategorizedView::indexAt(const QPoint &point) const
             directionCondition = point.x() < rect.bottomLeft().x();
         }
         if (point.y() > rect.bottomRight().y() ||
-            (point.y() > rect.topLeft().y() && point.y() < rect.bottomRight().y() && directionCondition)) {
+                (point.y() > rect.topLeft().y() && point.y() < rect.bottomRight().y() && directionCondition)) {
             bottom = middle + 1;
         } else {
             top = middle - 1;
@@ -780,9 +783,9 @@ void KCategorizedView::paintEvent(QPaintEvent *event)
         const QModelIndex categoryIndex = d->proxyModel->index(block.firstIndex.row(), d->proxyModel->sortColumn(), rootIndex());
         QStyleOptionViewItemV4 option(viewOptions());
         option.features |= d->alternatingBlockColors && block.alternate ? QStyleOptionViewItemV4::Alternate
-                                                                        : QStyleOptionViewItemV4::None;
+                           : QStyleOptionViewItemV4::None;
         option.state |= !d->collapsibleBlocks || !block.collapsed ? QStyle::State_Open
-                                                                  : QStyle::State_None;
+                        : QStyle::State_None;
         const int height = d->categoryDrawer->categoryHeight(categoryIndex, option);
         QPoint pos = d->blockPosition(it.key());
         pos.ry() -= height;
@@ -830,22 +833,22 @@ void KCategorizedView::paintEvent(QPaintEvent *event)
             option.rect = visualRect(index);
             option.widget = this;
             option.features |= wordWrap() ? QStyleOptionViewItemV2::WrapText
-                                          : QStyleOptionViewItemV2::None;
+                               : QStyleOptionViewItemV2::None;
             option.features |= alternatingRowColors() && alternateItem ? QStyleOptionViewItemV4::Alternate
-                                                                       : QStyleOptionViewItemV4::None;
+                               : QStyleOptionViewItemV4::None;
             if (flags & Qt::ItemIsSelectable) {
                 option.state |= selectionModel()->isSelected(index) ? QStyle::State_Selected
-                                                                    : QStyle::State_None;
+                                : QStyle::State_None;
             } else {
                 option.state &= ~QStyle::State_Selected;
             }
             option.state |= (index == currentIndex()) ? QStyle::State_HasFocus
-                                                      : QStyle::State_None;
+                            : QStyle::State_None;
             if (!(flags & Qt::ItemIsEnabled)) {
                 option.state &= ~QStyle::State_Enabled;
             } else {
                 option.state |= (index == d->hoveredIndex) ? QStyle::State_MouseOver
-                                                           : QStyle::State_None;
+                                : QStyle::State_None;
             }
 
             itemDelegate(index)->paint(&p, option, index);
@@ -926,7 +929,7 @@ void KCategorizedView::mouseMoveEvent(QMouseEvent *event)
     d->hoveredIndex = indexAt(event->pos());
     const SelectionMode itemViewSelectionMode = selectionMode();
     if (state() == DragSelectingState && isSelectionRectVisible() && itemViewSelectionMode != SingleSelection
-        && itemViewSelectionMode != NoSelection) {
+            && itemViewSelectionMode != NoSelection) {
         QRect rect(d->pressedPosition, event->pos() + QPoint(horizontalOffset(), verticalOffset()));
         rect = rect.normalized();
         update(rect.united(d->rubberBandRect));
@@ -1080,7 +1083,7 @@ void KCategorizedView::dropEvent(QDropEvent *event)
 //TODO: improve se we take into account collapsed blocks
 //TODO: take into account when there is no grid and no uniformItemSizes
 QModelIndex KCategorizedView::moveCursor(CursorAction cursorAction,
-                                         Qt::KeyboardModifiers modifiers)
+        Qt::KeyboardModifiers modifiers)
 {
     if (!d->isCategorized()) {
         return QListView::moveCursor(cursorAction, modifiers);
@@ -1097,108 +1100,108 @@ QModelIndex KCategorizedView::moveCursor(CursorAction cursorAction,
     }
 
     switch (cursorAction) {
-        case MoveLeft: {
-                if (!current.row()) {
-                    return QModelIndex();
-                }
-                const QModelIndex previous = d->proxyModel->index(current.row() - 1, modelColumn(), rootIndex());
-                const QRect previousRect = visualRect(previous);
-                if (previousRect.top() == currentRect.top()) {
-                    return previous;
-                }
+    case MoveLeft: {
+        if (!current.row()) {
+            return QModelIndex();
+        }
+        const QModelIndex previous = d->proxyModel->index(current.row() - 1, modelColumn(), rootIndex());
+        const QRect previousRect = visualRect(previous);
+        if (previousRect.top() == currentRect.top()) {
+            return previous;
+        }
 
+        return QModelIndex();
+    }
+    case MoveRight: {
+        if (current.row() == d->proxyModel->rowCount() - 1) {
+            return QModelIndex();
+        }
+        const QModelIndex next = d->proxyModel->index(current.row() + 1, modelColumn(), rootIndex());
+        const QRect nextRect = visualRect(next);
+        if (nextRect.top() == currentRect.top()) {
+            return next;
+        }
+
+        return QModelIndex();
+    }
+    case MoveDown: {
+        if (d->hasGrid() || uniformItemSizes()) {
+            const QModelIndex current = currentIndex();
+            const QSize itemSize = d->hasGrid() ? gridSize()
+                                   : sizeHintForIndex(current);
+            const Private::Block &block = d->blocks[d->categoryForIndex(current)];
+            const int maxItemsPerRow = qMax(d->viewportWidth() / itemSize.width(), 1);
+            const bool canMove = current.row() + maxItemsPerRow < block.firstIndex.row() +
+                                 block.items.count();
+
+            if (canMove) {
+                return d->proxyModel->index(current.row() + maxItemsPerRow, modelColumn(), rootIndex());
+            }
+
+            const int currentRelativePos = (current.row() - block.firstIndex.row()) % maxItemsPerRow;
+            const QModelIndex nextIndex = d->proxyModel->index(block.firstIndex.row() + block.items.count(), modelColumn(), rootIndex());
+
+            if (!nextIndex.isValid()) {
                 return QModelIndex();
             }
-        case MoveRight: {
-                if (current.row() == d->proxyModel->rowCount() - 1) {
-                    return QModelIndex();
-                }
-                const QModelIndex next = d->proxyModel->index(current.row() + 1, modelColumn(), rootIndex());
-                const QRect nextRect = visualRect(next);
-                if (nextRect.top() == currentRect.top()) {
-                    return next;
-                }
 
+            const Private::Block &nextBlock = d->blocks[d->categoryForIndex(nextIndex)];
+
+            if (nextBlock.items.count() <= currentRelativePos) {
                 return QModelIndex();
             }
-        case MoveDown: {
-                if (d->hasGrid() || uniformItemSizes()) {
-                    const QModelIndex current = currentIndex();
-                    const QSize itemSize = d->hasGrid() ? gridSize()
-                                                        : sizeHintForIndex(current);
-                    const Private::Block &block = d->blocks[d->categoryForIndex(current)];
-                    const int maxItemsPerRow = qMax(d->viewportWidth() / itemSize.width(), 1);
-                    const bool canMove = current.row() + maxItemsPerRow < block.firstIndex.row() +
-                                                                          block.items.count();
 
-                    if (canMove) {
-                        return d->proxyModel->index(current.row() + maxItemsPerRow, modelColumn(), rootIndex());
-                    }
-
-                    const int currentRelativePos = (current.row() - block.firstIndex.row()) % maxItemsPerRow;
-                    const QModelIndex nextIndex = d->proxyModel->index(block.firstIndex.row() + block.items.count(), modelColumn(), rootIndex());
-
-                    if (!nextIndex.isValid()) {
-                        return QModelIndex();
-                    }
-
-                    const Private::Block &nextBlock = d->blocks[d->categoryForIndex(nextIndex)];
-
-                    if (nextBlock.items.count() <= currentRelativePos) {
-                        return QModelIndex();
-                    }
-
-                    if (currentRelativePos < (block.items.count() % maxItemsPerRow)) {
-                        return d->proxyModel->index(nextBlock.firstIndex.row() + currentRelativePos, modelColumn(), rootIndex());
-                    }
-
-                    return QModelIndex();
-                }
+            if (currentRelativePos < (block.items.count() % maxItemsPerRow)) {
+                return d->proxyModel->index(nextBlock.firstIndex.row() + currentRelativePos, modelColumn(), rootIndex());
             }
-        case MoveUp: {
-                if (d->hasGrid() || uniformItemSizes()) {
-                    const QModelIndex current = currentIndex();
-                    const QSize itemSize = d->hasGrid() ? gridSize()
-                                                        : sizeHintForIndex(current);
-                    const Private::Block &block = d->blocks[d->categoryForIndex(current)];
-                    const int maxItemsPerRow = qMax(d->viewportWidth() / itemSize.width(), 1);
-                    const bool canMove = current.row() - maxItemsPerRow >= block.firstIndex.row();
 
-                    if (canMove) {
-                        return d->proxyModel->index(current.row() - maxItemsPerRow, modelColumn(), rootIndex());
-                    }
+            return QModelIndex();
+        }
+    }
+    case MoveUp: {
+        if (d->hasGrid() || uniformItemSizes()) {
+            const QModelIndex current = currentIndex();
+            const QSize itemSize = d->hasGrid() ? gridSize()
+                                   : sizeHintForIndex(current);
+            const Private::Block &block = d->blocks[d->categoryForIndex(current)];
+            const int maxItemsPerRow = qMax(d->viewportWidth() / itemSize.width(), 1);
+            const bool canMove = current.row() - maxItemsPerRow >= block.firstIndex.row();
 
-                    const int currentRelativePos = (current.row() - block.firstIndex.row()) % maxItemsPerRow;
-                    const QModelIndex prevIndex = d->proxyModel->index(block.firstIndex.row() - 1, modelColumn(), rootIndex());
-
-                    if (!prevIndex.isValid()) {
-                        return QModelIndex();
-                    }
-
-                    const Private::Block &prevBlock = d->blocks[d->categoryForIndex(prevIndex)];
-
-                    if (prevBlock.items.count() <= currentRelativePos) {
-                        return QModelIndex();
-                    }
-
-                    const int remainder = prevBlock.items.count() % maxItemsPerRow;
-                    if (currentRelativePos < remainder) {
-                        return d->proxyModel->index(prevBlock.firstIndex.row() + prevBlock.items.count() - remainder + currentRelativePos, modelColumn(), rootIndex());
-                    }
-
-                    return QModelIndex();
-                }
+            if (canMove) {
+                return d->proxyModel->index(current.row() - maxItemsPerRow, modelColumn(), rootIndex());
             }
-        default:
-            break;
+
+            const int currentRelativePos = (current.row() - block.firstIndex.row()) % maxItemsPerRow;
+            const QModelIndex prevIndex = d->proxyModel->index(block.firstIndex.row() - 1, modelColumn(), rootIndex());
+
+            if (!prevIndex.isValid()) {
+                return QModelIndex();
+            }
+
+            const Private::Block &prevBlock = d->blocks[d->categoryForIndex(prevIndex)];
+
+            if (prevBlock.items.count() <= currentRelativePos) {
+                return QModelIndex();
+            }
+
+            const int remainder = prevBlock.items.count() % maxItemsPerRow;
+            if (currentRelativePos < remainder) {
+                return d->proxyModel->index(prevBlock.firstIndex.row() + prevBlock.items.count() - remainder + currentRelativePos, modelColumn(), rootIndex());
+            }
+
+            return QModelIndex();
+        }
+    }
+    default:
+        break;
     }
 
     return QModelIndex();
 }
 
 void KCategorizedView::rowsAboutToBeRemoved(const QModelIndex &parent,
-                                            int start,
-                                            int end)
+        int start,
+        int end)
 {
     if (!d->isCategorized()) {
         QListView::rowsAboutToBeRemoved(parent, start, end);
@@ -1339,9 +1342,9 @@ void KCategorizedView::updateGeometries()
      */
     if (d->isCategorized()) { // important! - otherwise we'd pollute the setting if the view is initially not categorized
         setVerticalScrollBarPolicy((verticalP == Qt::ScrollBarAlwaysOn || verticalScrollBar()->isVisibleTo(this)) ?
-                                                                            Qt::ScrollBarAlwaysOn : Qt::ScrollBarAlwaysOff);
+                                   Qt::ScrollBarAlwaysOn : Qt::ScrollBarAlwaysOff);
         setHorizontalScrollBarPolicy((horizontalP == Qt::ScrollBarAlwaysOn || horizontalScrollBar()->isVisibleTo(this)) ?
-                                                                            Qt::ScrollBarAlwaysOn : Qt::ScrollBarAlwaysOff);
+                                     Qt::ScrollBarAlwaysOn : Qt::ScrollBarAlwaysOff);
     }
     //END bugs 213068, 287847 --------------------------------------------------------------
 
@@ -1401,11 +1404,13 @@ void KCategorizedView::updateGeometries()
     setHorizontalScrollBarPolicy(horizontalP);
     // ... and correct the visibility
     bool validRange = verticalScrollBar()->maximum() != verticalScrollBar()->minimum();
-    if (verticalP == Qt::ScrollBarAsNeeded && (verticalScrollBar()->isVisibleTo(this) != validRange))
+    if (verticalP == Qt::ScrollBarAsNeeded && (verticalScrollBar()->isVisibleTo(this) != validRange)) {
         verticalScrollBar()->setVisible(validRange);
+    }
     validRange = horizontalScrollBar()->maximum() > horizontalScrollBar()->minimum();
-    if (horizontalP == Qt::ScrollBarAsNeeded && (horizontalScrollBar()->isVisibleTo(this) != validRange))
+    if (horizontalP == Qt::ScrollBarAsNeeded && (horizontalScrollBar()->isVisibleTo(this) != validRange)) {
         horizontalScrollBar()->setVisible(validRange);
+    }
     //END bugs 213068, 287847 --------------------------------------------------------------
 }
 
@@ -1464,8 +1469,8 @@ void KCategorizedView::rowsInserted(const QModelIndex &parent,
 
 #ifndef KDE_NO_DEPRECATED
 void KCategorizedView::rowsInsertedArtifficial(const QModelIndex &parent,
-                                               int start,
-                                               int end)
+        int start,
+        int end)
 {
     Q_UNUSED(parent);
     Q_UNUSED(start);

@@ -18,7 +18,6 @@
     Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef KEXTENDABLEITEMDELEGATE_H
 #define KEXTENDABLEITEMDELEGATE_H
 
@@ -48,7 +47,8 @@
 
 class QAbstractItemView;
 
-class KITEMVIEWS_EXPORT KExtendableItemDelegate : public QStyledItemDelegate {
+class KITEMVIEWS_EXPORT KExtendableItemDelegate : public QStyledItemDelegate
+{
     Q_OBJECT
 
 public:
@@ -141,7 +141,6 @@ protected:
      * Return the pixmap that is displayed to contract an item.
      */
     QPixmap contractPixmap();
-
 
 private:
     class Private;

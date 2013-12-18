@@ -29,53 +29,55 @@
  * @internal
  */
 //@cond PRIVATE
-class KFilterProxySearchLine::Private {
+class KFilterProxySearchLine::Private
+{
 public:
-    Private( KFilterProxySearchLine* parent) :
-                                q(parent), proxy(0), searchLine(0)
+    Private(KFilterProxySearchLine *parent) :
+        q(parent), proxy(0), searchLine(0)
     {
-    timer = new QTimer( q );
-    timer->setSingleShot( true );
-    connect( timer, SIGNAL(timeout()), q, SLOT(slotSearchLineActivate()) );
+        timer = new QTimer(q);
+        timer->setSingleShot(true);
+        connect(timer, SIGNAL(timeout()), q, SLOT(slotSearchLineActivate()));
     }
-    QTimer* timer;
-    KFilterProxySearchLine* q;
-    QSortFilterProxyModel* proxy;
-    QLineEdit* searchLine;
+    QTimer *timer;
+    KFilterProxySearchLine *q;
+    QSortFilterProxyModel *proxy;
+    QLineEdit *searchLine;
 
-    void slotSearchLineChange( const QString& newText );
+    void slotSearchLineChange(const QString &newText);
     void slotSearchLineActivate();
 };
 
-void KFilterProxySearchLine::Private::slotSearchLineChange( const QString& )
+void KFilterProxySearchLine::Private::slotSearchLineChange(const QString &)
 {
-    timer->start( 300 );
+    timer->start(300);
 }
 
 void KFilterProxySearchLine::Private::slotSearchLineActivate()
 {
-    if ( !proxy )
+    if (!proxy) {
         return;
+    }
 
-    proxy->setFilterKeyColumn( -1 );
-    proxy->setFilterCaseSensitivity( Qt::CaseInsensitive );
-    proxy->setFilterFixedString( searchLine->text() );
+    proxy->setFilterKeyColumn(-1);
+    proxy->setFilterCaseSensitivity(Qt::CaseInsensitive);
+    proxy->setFilterFixedString(searchLine->text());
 }
 //@endcond
 
-KFilterProxySearchLine::KFilterProxySearchLine( QWidget* parent )
-        : QWidget( parent ), d( new Private( this ) )
+KFilterProxySearchLine::KFilterProxySearchLine(QWidget *parent)
+    : QWidget(parent), d(new Private(this))
 {
-    d->searchLine = new QLineEdit( this );
+    d->searchLine = new QLineEdit(this);
     d->searchLine->setClearButtonEnabled(true);
     d->searchLine->setPlaceholderText(tr("Search"));
 
-    QHBoxLayout* layout = new QHBoxLayout( this );
-    layout->setMargin( 0 );
-    layout->addWidget( d->searchLine );
+    QHBoxLayout *layout = new QHBoxLayout(this);
+    layout->setMargin(0);
+    layout->addWidget(d->searchLine);
 
-    connect( d->searchLine, SIGNAL(textChanged(QString)),
-             SLOT(slotSearchLineChange(QString)) );
+    connect(d->searchLine, SIGNAL(textChanged(QString)),
+            SLOT(slotSearchLineChange(QString)));
 }
 
 KFilterProxySearchLine::~KFilterProxySearchLine()
@@ -83,17 +85,17 @@ KFilterProxySearchLine::~KFilterProxySearchLine()
     delete d;
 }
 
-void KFilterProxySearchLine::setText( const QString& text )
+void KFilterProxySearchLine::setText(const QString &text)
 {
-    d->searchLine->setText( text );
+    d->searchLine->setText(text);
 }
 
-void KFilterProxySearchLine::setProxy( QSortFilterProxyModel* proxy ) 
+void KFilterProxySearchLine::setProxy(QSortFilterProxyModel *proxy)
 {
     d->proxy = proxy;
 }
 
-QLineEdit* KFilterProxySearchLine::lineEdit() const
+QLineEdit *KFilterProxySearchLine::lineEdit() const
 {
     return d->searchLine;
 }

@@ -42,9 +42,8 @@ public:
     KCategorizedView *view;
 };
 
-
 KCategoryDrawer::KCategoryDrawer(KCategorizedView *view)
-     : QObject(view)
+    : QObject(view)
     , d(new Private(view))
 {
 }
@@ -160,7 +159,7 @@ int KCategoryDrawer::categoryHeight(const QModelIndex &index, const QStyleOption
     QFontMetrics fontMetrics(font);
 
     const int height = fontMetrics.height() + 1 /* 1 pixel-width gradient */
-                                            + 11 /* top and bottom separation */;
+                       + 11 /* top and bottom separation */;
     return height;
 }
 
@@ -179,27 +178,27 @@ KCategorizedView *KCategoryDrawer::view() const
     return d->view;
 }
 
-void KCategoryDrawer::mouseButtonPressed(const QModelIndex&, const QRect&, QMouseEvent *event)
+void KCategoryDrawer::mouseButtonPressed(const QModelIndex &, const QRect &, QMouseEvent *event)
 {
     event->ignore();
 }
 
-void KCategoryDrawer::mouseButtonReleased(const QModelIndex&, const QRect&, QMouseEvent *event)
+void KCategoryDrawer::mouseButtonReleased(const QModelIndex &, const QRect &, QMouseEvent *event)
 {
     event->ignore();
 }
 
-void KCategoryDrawer::mouseMoved(const QModelIndex&, const QRect&, QMouseEvent *event)
+void KCategoryDrawer::mouseMoved(const QModelIndex &, const QRect &, QMouseEvent *event)
 {
     event->ignore();
 }
 
-void KCategoryDrawer::mouseButtonDoubleClicked(const QModelIndex&, const QRect&, QMouseEvent *event)
+void KCategoryDrawer::mouseButtonDoubleClicked(const QModelIndex &, const QRect &, QMouseEvent *event)
 {
     event->ignore();
 }
 
-void KCategoryDrawer::mouseLeft(const QModelIndex&, const QRect&)
+void KCategoryDrawer::mouseLeft(const QModelIndex &, const QRect &)
 {
 }
 

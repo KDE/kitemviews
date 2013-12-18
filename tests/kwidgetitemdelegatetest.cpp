@@ -66,19 +66,20 @@ public:
     }
 
 protected:
-    void paintEvent (QPaintEvent *event)
+    void paintEvent(QPaintEvent *event)
     {
         QPainter p(this);
 
         QRadialGradient radialGrad(QPointF(event->rect().width() / 2,
                                            event->rect().height() / 2),
-                                           qMin(event->rect().width() / 2,
-                                                event->rect().height() / 2));
+                                   qMin(event->rect().width() / 2,
+                                        event->rect().height() / 2));
 
-        if (underMouse())
+        if (underMouse()) {
             radialGrad.setColorAt(0, Qt::green);
-        else
+        } else {
             radialGrad.setColorAt(0, Qt::red);
+        }
 
         radialGrad.setColorAt(1, Qt::transparent);
 
@@ -94,19 +95,20 @@ protected:
     bool event(QEvent *event)
     {
         if (event->type() == QEvent::MouseButtonPress) {
-            QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+            QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
 
             if (mouseEvent->pos().x() > 15 &&
-                mouseEvent->pos().y() < 15)
+                    mouseEvent->pos().y() < 15) {
                 qDebug() << "First quarter";
-            else if (mouseEvent->pos().x() < 15 &&
-                     mouseEvent->pos().y() < 15)
+            } else if (mouseEvent->pos().x() < 15 &&
+                       mouseEvent->pos().y() < 15) {
                 qDebug() << "Second quarter";
-            else if (mouseEvent->pos().x() < 15 &&
-                     mouseEvent->pos().y() > 15)
+            } else if (mouseEvent->pos().x() < 15 &&
+                       mouseEvent->pos().y() > 15) {
                 qDebug() << "Third quarter";
-            else
+            } else {
                 qDebug() << "Forth quarter";
+            }
         }
 
         return QWidget::event(event);
@@ -122,8 +124,7 @@ public:
     MyDelegate(QAbstractItemView *itemView, QObject *parent = 0)
         : KWidgetItemDelegate(itemView, parent)
     {
-        for (int i = 0; i < 100; i++)
-        {
+        for (int i = 0; i < 100; i++) {
             installed[i] = i % 5;
         }
     }
@@ -154,15 +155,14 @@ public:
 
         itemView()->style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, 0);
 
-        if (option.state & QStyle::State_Selected)
-        {
+        if (option.state & QStyle::State_Selected) {
             painter->setPen(option.palette.highlightedText().color());
         }
 
         painter->restore();
     }
 
-    QList<QWidget*> createItemWidgets(const QModelIndex &index) const
+    QList<QWidget *> createItemWidgets(const QModelIndex &index) const
     {
         Q_UNUSED(index);
         QPushButton *button = new QPushButton();
@@ -178,45 +178,44 @@ public:
         connect(toolButton, SIGNAL(triggered(QAction*)), this, SLOT(mySlot2()));
         connect(toolButton, SIGNAL(clicked(bool)), this, SLOT(mySlot3()));
 
-        return QList<QWidget*>()
-            << button
-            << new TestWidget()
-            << new QLineEdit()
-            << toolButton;
+        return QList<QWidget *>()
+               << button
+               << new TestWidget()
+               << new QLineEdit()
+               << toolButton;
     }
 
-    void updateItemWidgets(const QList<QWidget*> widgets,
+    void updateItemWidgets(const QList<QWidget *> widgets,
                            const QStyleOptionViewItem &option,
                            const QPersistentModelIndex &index) const
     {
-        QPushButton *button = static_cast<QPushButton*>(widgets[0]);
+        QPushButton *button = static_cast<QPushButton *>(widgets[0]);
         button->setText("Test me");
         button->setIcon(QIcon::fromTheme("kde"));
         button->resize(button->sizeHint());
         button->move(HARDCODED_BORDER, sizeHint().height() / 2 - button->height() / 2);
 
-        TestWidget *testWidget = static_cast<TestWidget*>(widgets[1]);
+        TestWidget *testWidget = static_cast<TestWidget *>(widgets[1]);
 
         testWidget->resize(testWidget->sizeHint());
         testWidget->move(2 * HARDCODED_BORDER + button->sizeHint().width(),
                          sizeHint().height() / 2 - testWidget->size().height() / 2);
 
         // Hide the test widget when row can be divided by three
-        testWidget->setVisible( (index.row() % 3) != 0 );
+        testWidget->setVisible((index.row() % 3) != 0);
 
-        QLineEdit *lineEdit = static_cast<QLineEdit*>(widgets[2]);
+        QLineEdit *lineEdit = static_cast<QLineEdit *>(widgets[2]);
 
         lineEdit->setClearButtonEnabled(true);
         lineEdit->resize(lineEdit->sizeHint());
         lineEdit->move(3 * HARDCODED_BORDER
-                     + button->sizeHint().width()
-                     + testWidget->sizeHint().width(),
+                       + button->sizeHint().width()
+                       + testWidget->sizeHint().width(),
                        sizeHint().height() / 2 - lineEdit->size().height() / 2);
 
-        QToolButton *toolButton = static_cast<QToolButton*>(widgets[3]);
+        QToolButton *toolButton = static_cast<QToolButton *>(widgets[3]);
 
-        if (!toolButton->menu())
-        {
+        if (!toolButton->menu()) {
             QMenu *myMenu = new QMenu(toolButton);
             myMenu->addAction("Save");
             myMenu->addAction("Load");
@@ -228,12 +227,9 @@ public:
         toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         toolButton->setPopupMode(QToolButton::MenuButtonPopup);
 
-        if (installed[index.row()])
-        {
+        if (installed[index.row()]) {
             toolButton->setText("Uninstall");
-        }
-        else
-        {
+        } else {
             toolButton->setText("Install");
         }
 
@@ -281,7 +277,7 @@ private Q_SLOTS:
     {
         bool isInstalled = installed[focusedIndex().row()];
         installed[focusedIndex().row()] = !isInstalled;
-        const_cast<QAbstractItemModel*>(focusedIndex().model())->setData(focusedIndex(), QString("makemodelbeupdated"));
+        const_cast<QAbstractItemModel *>(focusedIndex().model())->setData(focusedIndex(), QString("makemodelbeupdated"));
     }
 
 private:
@@ -298,8 +294,7 @@ int main(int argc, char **argv)
     QStringListModel *model = new QStringListModel();
 
     model->insertRows(0, 100);
-    for (int i = 0; i < 100; ++i)
-    {
+    for (int i = 0; i < 100; ++i) {
         model->setData(model->index(i, 0), QString("Test " + QString::number(i)), Qt::DisplayRole);
     }
 

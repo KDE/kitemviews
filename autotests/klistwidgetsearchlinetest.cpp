@@ -50,7 +50,7 @@ void KListWidgetSearchLineTest::testAddItems()
     searchLine.setText("match");
 
     // The initial filtering is delayed; we have to wait
-    while(!listWidget.item(1)->isHidden()) {
+    while (!listWidget.item(1)->isHidden()) {
         QTest::qWait(50);
     }
 

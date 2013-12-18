@@ -132,8 +132,8 @@ void KWidgetItemDelegatePrivate::updateRowRange(const QModelIndex &parent, int s
     while (i <= end) {
         for (int j = 0; j < model->columnCount(parent); ++j) {
             const QModelIndex index = model->index(i, j, parent);
-            QList<QWidget*> widgetList = widgetPool->findWidgets(index, optionView(index), isRemoving ? KWidgetItemDelegatePool::NotUpdateWidgets
-                                                                                                      : KWidgetItemDelegatePool::UpdateWidgets);
+            QList<QWidget *> widgetList = widgetPool->findWidgets(index, optionView(index), isRemoving ? KWidgetItemDelegatePool::NotUpdateWidgets
+                                          : KWidgetItemDelegatePool::UpdateWidgets);
             if (isRemoving) {
                 widgetPool->d->allocatedWidgets.removeAll(widgetList);
                 foreach (QWidget *widget, widgetList) {
@@ -193,7 +193,7 @@ KWidgetItemDelegate::KWidgetItemDelegate(QAbstractItemView *itemView, QObject *p
     itemView->viewport()->installEventFilter(d); // mouse events
     itemView->installEventFilter(d);             // keyboard events
 
-    if(qobject_cast<QTreeView*>(itemView)) {
+    if (qobject_cast<QTreeView *>(itemView)) {
         connect(itemView,  SIGNAL(collapsed(QModelIndex)),
                 d, SLOT(initializeModel()));
         connect(itemView,  SIGNAL(expanded(QModelIndex)),
@@ -277,23 +277,23 @@ bool KWidgetItemDelegatePrivate::eventFilter(QObject *watched, QEvent *event)
     }
 
     switch (event->type()) {
-        case QEvent::Polish:
-        case QEvent::Resize:
-            if (!qobject_cast<QAbstractItemView*>(watched)) {
-                QTimer::singleShot(0, this, SLOT(initializeModel()));
-            }
-            break;
-        case QEvent::FocusIn:
-        case QEvent::FocusOut:
-            if (qobject_cast<QAbstractItemView*>(watched)) {
-                foreach (const QModelIndex &index, selectionModel->selectedIndexes()) {
-                    if (index.isValid()) {
-                        widgetPool->findWidgets(index, optionView(index));
-                    }
+    case QEvent::Polish:
+    case QEvent::Resize:
+        if (!qobject_cast<QAbstractItemView *>(watched)) {
+            QTimer::singleShot(0, this, SLOT(initializeModel()));
+        }
+        break;
+    case QEvent::FocusIn:
+    case QEvent::FocusOut:
+        if (qobject_cast<QAbstractItemView *>(watched)) {
+            foreach (const QModelIndex &index, selectionModel->selectedIndexes()) {
+                if (index.isValid()) {
+                    widgetPool->findWidgets(index, optionView(index));
                 }
             }
-        default:
-            break;
+        }
+    default:
+        break;
     }
 
     return QObject::eventFilter(watched, event);

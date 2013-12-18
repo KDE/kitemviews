@@ -10,18 +10,18 @@ class KTreeWidgetSearchLineTest : public QDialog
 public:
     KTreeWidgetSearchLineTest();
 
-    void create2ndLevel(class QTreeWidgetItem* item);
-    void create3rdLevel(QTreeWidgetItem* item);
+    void create2ndLevel(class QTreeWidgetItem *item);
+    void create3rdLevel(QTreeWidgetItem *item);
 
 public Q_SLOTS:
     void switchCaseSensitivity(bool cs);
 
 protected:
-    virtual void showEvent(QShowEvent* event);
+    virtual void showEvent(QShowEvent *event);
 
 private:
-    class KTreeWidgetSearchLine* m_searchLine;
-    class QTreeWidget* tw;
+    class KTreeWidgetSearchLine *m_searchLine;
+    class QTreeWidget *tw;
 };
 
 #endif
