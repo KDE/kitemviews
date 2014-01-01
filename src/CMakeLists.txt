@@ -7,6 +7,7 @@ set(kitemviews_SRCS
   kfilterproxysearchline.cpp
   klistwidgetsearchline.cpp
   ktreewidgetsearchline.cpp
+  ktreewidgetsearchlinewidget.cpp
   kwidgetitemdelegate.cpp
   kwidgetitemdelegatepool.cpp
 )
@@ -16,6 +17,8 @@ generate_export_header(KF5ItemViews BASE_NAME KItemViews)
 add_library(KF5::ItemViews ALIAS KF5ItemViews)
 
 
+target_include_directories(KF5ItemViews INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/kitemviews>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KItemViews>")
+
 target_link_libraries(KF5ItemViews PUBLIC Qt5::Widgets)
 
 set_target_properties(KF5ItemViews PROPERTIES VERSION   ${KITEMVIEWS_VERSION_STRING}
@@ -23,17 +26,25 @@ set_target_properties(KF5ItemViews PROPERTIES VERSION   ${KITEMVIEWS_VERSION_STR
                                               EXPORT_NAME ItemViews
 )
 
+ecm_generate_headers(
+  KCategorizedSortFilterProxyModel
+  KCategorizedView
+  KCategoryDrawer
+  KExtendableItemDelegate
+  KFilterProxySearchLine
+  KListWidgetSearchLine
+  KTreeWidgetSearchLine
+  KTreeWidgetSearchLineWidget
+  KWidgetItemDelegate
+
+  REQUIRED_HEADERS KItemViews_HEADERS
+)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KItemViews DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
+
 install(TARGETS KF5ItemViews EXPORT KF5ItemViewsTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
-  kcategorizedsortfilterproxymodel.h
-  kcategorizedview.h
-  kcategorydrawer.h
-  kextendableitemdelegate.h
-  kfilterproxysearchline.h
-  klistwidgetsearchline.h
-  ktreewidgetsearchline.h
-  kwidgetitemdelegate.h
   ${CMAKE_CURRENT_BINARY_DIR}/kitemviews_export.h
-  DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
+  ${KItemViews_HEADERS}
+  DESTINATION ${INCLUDE_INSTALL_DIR}/kitemviews COMPONENT Devel
 )

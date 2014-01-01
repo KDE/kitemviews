@@ -24,12 +24,9 @@
 #include <QtCore/QTimer>
 #include <QApplication>
 #include <QContextMenuEvent>
-#include <QHBoxLayout>
 #include <QHeaderView>
-#include <QLabel>
 #include <QLineEdit>
 #include <QMenu>
-#include <QToolButton>
 #include <QTreeWidget>
 
 class KTreeWidgetSearchLine::Private
@@ -583,68 +580,6 @@ void KTreeWidgetSearchLine::Private::_k_activateSearch()
     if (queuedSearches == 0) {
         q->updateSearch(search);
     }
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// KTreeWidgetSearchLineWidget
-////////////////////////////////////////////////////////////////////////////////
-
-class KTreeWidgetSearchLineWidget::Private
-{
-public:
-    Private()
-        : treeWidget(0),
-          searchLine(0)
-    {
-    }
-
-    QTreeWidget *treeWidget;
-    KTreeWidgetSearchLine *searchLine;
-};
-
-KTreeWidgetSearchLineWidget::KTreeWidgetSearchLineWidget(QWidget *parent, QTreeWidget *treeWidget)
-    : QWidget(parent), d(new Private)
-{
-    d->treeWidget = treeWidget;
-
-    // can't call createWidgets directly because it calls virtual functions
-    // that might not work if called directly from here due to how inheritance works
-    QMetaObject::invokeMethod(this, "createWidgets", Qt::QueuedConnection);
-}
-
-KTreeWidgetSearchLineWidget::~KTreeWidgetSearchLineWidget()
-{
-    delete d;
-}
-
-KTreeWidgetSearchLine *KTreeWidgetSearchLineWidget::createSearchLine(QTreeWidget *treeWidget) const
-{
-    return new KTreeWidgetSearchLine(const_cast<KTreeWidgetSearchLineWidget *>(this), treeWidget);
-}
-
-void KTreeWidgetSearchLineWidget::createWidgets()
-{
-    QLabel *label = new QLabel(tr("S&earch:"), this);
-
-    searchLine()->show();
-
-    label->setBuddy(d->searchLine);
-    label->show();
-
-    QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setMargin(0);
-    layout->addWidget(label);
-    layout->addWidget(d->searchLine);
-    setFocusProxy(searchLine());
-}
-
-KTreeWidgetSearchLine *KTreeWidgetSearchLineWidget::searchLine() const
-{
-    if (!d->searchLine) {
-        d->searchLine = createSearchLine(d->treeWidget);
-    }
-
-    return d->searchLine;
 }
 
 #include "moc_ktreewidgetsearchline.cpp"
