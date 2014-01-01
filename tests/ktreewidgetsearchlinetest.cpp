@@ -9,6 +9,7 @@
 #include <QString>
 
 #include <ktreewidgetsearchline.h>
+#include <ktreewidgetsearchlinewidget.h>
 
 KTreeWidgetSearchLineTest::KTreeWidgetSearchLineTest()
     : QDialog()
