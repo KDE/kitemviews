@@ -26,7 +26,8 @@ set_target_properties(KF5ItemViews PROPERTIES VERSION   ${KITEMVIEWS_VERSION_STR
                                               EXPORT_NAME ItemViews
 )
 
-ecm_generate_headers(
+ecm_generate_headers(KItemViews_HEADERS
+  HEADER_NAMES
   KCategorizedSortFilterProxyModel
   KCategorizedView
   KCategoryDrawer
@@ -39,7 +40,6 @@ ecm_generate_headers(
 
   REQUIRED_HEADERS KItemViews_HEADERS
 )
-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KItemViews DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
 
 install(TARGETS KF5ItemViews EXPORT KF5ItemViewsTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
