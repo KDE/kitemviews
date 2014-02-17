@@ -39,6 +39,9 @@ class QModelIndex;
 class KITEMVIEWS_EXPORT KListWidgetSearchLine : public QLineEdit
 {
     Q_OBJECT
+#ifndef KITEMVIEWS_NO_DEPRECATED
+    Q_PROPERTY(QString clickMessage READ clickMessage WRITE setClickMessage)
+#endif
 
 public:
 
@@ -70,6 +73,24 @@ public:
      * @see setListWidget()
      */
     QListWidget *listWidget() const;
+
+    /**
+     * @return the message set with setClickMessage
+     * @deprecated Use QLineEdit::placeholderText() instead.
+     **/
+#ifndef KITEMVIEWS_NO_DEPRECATED
+    KITEMVIEWS_DEPRECATED QString clickMessage() const { return placeholderText(); }
+#endif
+
+    /**
+     * This makes the line edit display a grayed-out hinting text as long as
+     * the user didn't enter any text. It is often used as indication about
+     * the purpose of the line edit.
+     * @deprecated Use QLineEdit::setPlaceholderText() instead.
+     */
+#ifndef KITEMVIEWS_NO_DEPRECATED
+    KITEMVIEWS_DEPRECATED void setClickMessage(const QString &msg) { setPlaceholderText(msg); }
+#endif
 
 public Q_SLOTS:
     /**
