@@ -111,7 +111,7 @@ public:
 
     /**
      * @return the message set with setClickMessage
-     * @deprecated Use QLineEdit::placeholderText() instead.
+     * @deprecated since 5.0, use QLineEdit::placeholderText() instead.
      **/
 #ifndef KITEMVIEWS_NO_DEPRECATED
     KITEMVIEWS_DEPRECATED QString clickMessage() const { return placeholderText(); }
@@ -121,7 +121,7 @@ public:
      * This makes the line edit display a grayed-out hinting text as long as
      * the user didn't enter any text. It is often used as indication about
      * the purpose of the line edit.
-     * @deprecated Use QLineEdit::setPlaceholderText() instead.
+     * @deprecated since 5.0, use QLineEdit::setPlaceholderText() instead.
      */
 #ifndef KITEMVIEWS_NO_DEPRECATED
     KITEMVIEWS_DEPRECATED void setClickMessage(const QString &msg) { setPlaceholderText(msg); }
