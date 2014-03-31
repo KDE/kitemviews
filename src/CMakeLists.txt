@@ -10,6 +10,7 @@ set(kitemviews_SRCS
   ktreewidgetsearchlinewidget.cpp
   kwidgetitemdelegate.cpp
   kwidgetitemdelegatepool.cpp
+  ${kitemviews_QM_LOADER}
 )
 
 add_library(KF5ItemViews ${kitemviews_SRCS})
