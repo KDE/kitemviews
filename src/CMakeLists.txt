@@ -1,5 +1,5 @@
 
-ecm_create_qm_loader(kitemviews_QM_LOADER kitemviews5)
+ecm_create_qm_loader(kitemviews_QM_LOADER kitemviews5_qt)
 
 set(kitemviews_SRCS
   kcategorizedsortfilterproxymodel.cpp
