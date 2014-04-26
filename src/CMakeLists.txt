@@ -20,7 +20,7 @@ generate_export_header(KF5ItemViews BASE_NAME KItemViews)
 add_library(KF5::ItemViews ALIAS KF5ItemViews)
 
 
-target_include_directories(KF5ItemViews INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KItemViews>")
+target_include_directories(KF5ItemViews INTERFACE "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KItemViews>")
 
 target_link_libraries(KF5ItemViews PUBLIC Qt5::Widgets)
 
@@ -44,12 +44,12 @@ ecm_generate_headers(KItemViews_HEADERS
   REQUIRED_HEADERS KItemViews_HEADERS
 )
 
-install(TARGETS KF5ItemViews EXPORT KF5ItemViewsTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5ItemViews EXPORT KF5ItemViewsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kitemviews_export.h
   ${KItemViews_HEADERS}
-  DESTINATION ${INCLUDE_INSTALL_DIR}/KItemViews COMPONENT Devel
+  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KItemViews COMPONENT Devel
 )
 
 include(ECMGeneratePriFile)
