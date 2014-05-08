@@ -3,17 +3,6 @@ remove_definitions(-DQT_NO_CAST_TO_ASCII)
 
 find_package(Qt5 5.2.0 CONFIG REQUIRED Test)
 
-include(ECMMarkAsTest)
+include(ECMAddTests)
 
-macro(kitemviews_tests)
-    foreach(_testname ${ARGN})
-        add_executable(${_testname} ${_testname}.cpp)
-        add_test(kitemviews-${_testname} ${_testname})
-        ecm_mark_as_test(${_testname})
-        target_link_libraries(${_testname} Qt5::Test KF5::ItemViews)
-    endforeach(_testname)
-endmacro()
-
-kitemviews_tests(
-  klistwidgetsearchlinetest
-)
+ecm_add_test(klistwidgetsearchlinetest.cpp TEST_NAME kitemviews-klistwidgetsearchlinetest LINK_LIBRARIES Qt5::Test KF5::ItemViews)
