@@ -21,6 +21,8 @@
 #ifndef KCATEGORIZEDVIEW_P_H
 #define KCATEGORIZEDVIEW_P_H
 
+#include "kcategorizedview.h"
+
 class KCategorizedSortFilterProxyModel;
 class KCategoryDrawer;
 class KCategoryDrawerV2;

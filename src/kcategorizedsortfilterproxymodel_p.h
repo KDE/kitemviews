@@ -24,7 +24,7 @@
 
 #include <QtCore/QCollator>
 
-class KCategorizedSortFilterProxyModel;
+#include "kcategorizedsortfilterproxymodel.h"
 
 class KCategorizedSortFilterProxyModel::Private
 {
