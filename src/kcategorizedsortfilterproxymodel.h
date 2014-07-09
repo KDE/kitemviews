@@ -110,7 +110,7 @@ public:
       * @deprecated
       * Use QCollator instead.
       */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KITEMVIEWS_NO_DEPRECATED
     KITEMVIEWS_DEPRECATED static int naturalCompare(const QString &a, const QString &b);
 #endif
 

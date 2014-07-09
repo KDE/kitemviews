@@ -312,7 +312,7 @@ protected Q_SLOTS:
       * @internal
       * @warning Deprecated since 4.4.
       */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KITEMVIEWS_NO_DEPRECATED
     virtual KITEMVIEWS_DEPRECATED void rowsInsertedArtifficial(const QModelIndex &parent,
             int start,
             int end);
@@ -322,7 +322,7 @@ protected Q_SLOTS:
       * @internal
       * @warning Deprecated since 4.4.
       */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KITEMVIEWS_NO_DEPRECATED
     virtual KITEMVIEWS_DEPRECATED void rowsRemoved(const QModelIndex &parent,
             int start,
             int end);

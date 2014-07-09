@@ -130,7 +130,7 @@ protected:
      *          widgets of a certain index to be updated your model has to emit dataChanged() on the
      *          indexes that want to be updated.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KITEMVIEWS_NO_DEPRECATED
     KITEMVIEWS_DEPRECATED void paintWidgets(QPainter *painter, const QStyleOptionViewItem &option,
                                             const QPersistentModelIndex &index) const;
 #endif

@@ -89,7 +89,7 @@ bool KCategorizedSortFilterProxyModel::sortCategoriesByNaturalComparison() const
     return d->sortCategoriesByNaturalComparison;
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KITEMVIEWS_NO_DEPRECATED
 int KCategorizedSortFilterProxyModel::naturalCompare(const QString &a, const QString &b)
 {
     QCollator c;

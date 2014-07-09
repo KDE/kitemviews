@@ -1467,7 +1467,7 @@ void KCategorizedView::rowsInserted(const QModelIndex &parent,
     d->rowsInserted(parent, start, end);
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KITEMVIEWS_NO_DEPRECATED
 void KCategorizedView::rowsInsertedArtifficial(const QModelIndex &parent,
         int start,
         int end)
@@ -1478,7 +1478,7 @@ void KCategorizedView::rowsInsertedArtifficial(const QModelIndex &parent,
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KITEMVIEWS_NO_DEPRECATED
 void KCategorizedView::rowsRemoved(const QModelIndex &parent,
                                    int start,
                                    int end)

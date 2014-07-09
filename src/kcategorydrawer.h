@@ -166,7 +166,7 @@ private:
     Private *const d;
 };
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KITEMVIEWS_NO_DEPRECATED
 /**
  * @deprecated Use KCategoryDrawer instead
  */
