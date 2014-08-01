@@ -1358,9 +1358,12 @@ void KCategorizedView::updateGeometries()
     if (!rowCount) {
         verticalScrollBar()->setRange(0, 0);
         // unconditional, see function end todo
+        //BEGIN bugs 213068, 287847 ------------------------------------------------------------
+        // restoring values from above ...
         horizontalScrollBar()->setRange(0, 0);
         setVerticalScrollBarPolicy(verticalP);
         setHorizontalScrollBarPolicy(horizontalP);
+        //END bugs 213068, 287847 --------------------------------------------------------------
         return;
     }
 
