@@ -1359,6 +1359,8 @@ void KCategorizedView::updateGeometries()
         verticalScrollBar()->setRange(0, 0);
         // unconditional, see function end todo
         horizontalScrollBar()->setRange(0, 0);
+        setVerticalScrollBarPolicy(verticalP);
+        setHorizontalScrollBarPolicy(horizontalP);
         return;
     }
 
