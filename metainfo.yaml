@@ -7,3 +7,7 @@ platforms:
 portingAid: false
 deprecated: false
 release: true
+libraries:
+ - qmake: KItemViews
+   cmake: "KF5::ItemViews"
+cmakename: KF5ItemViews
