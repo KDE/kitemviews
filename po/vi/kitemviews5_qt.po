@@ -1,0 +1,48 @@
+# Vietnamese translation for kdelibs.
+# Copyright © 2007 KDE i18n Project for Vietnamese.
+#
+# Clytie Siddall <clytie@riverland.net.au>, 2006-2007.
+# Hoàng Đức Hiếu <hieu.d.hoang@gmail.com>, 2008, 2011.
+# Lê Hoàng Phương <herophuong93@gmail.com>, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2012-09-23 18:43+0800\n"
+"Last-Translator: Lê Hoàng Phương <herophuong93@gmail.com>\n"
+"Language-Team: American English <kde-i18n-vi@kde.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: kfilterproxysearchline.cpp:73
+#, fuzzy
+#| msgid "Search"
+msgctxt "KFilterProxySearchLine|"
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: ktreewidgetsearchline.cpp:434
+#, fuzzy
+#| msgid "Search Columns"
+msgctxt "KTreeWidgetSearchLine|"
+msgid "Search Columns"
+msgstr "Cột tìm kiếm"
+
+#: ktreewidgetsearchline.cpp:436
+#, fuzzy
+#| msgid "All Visible Columns"
+msgctxt "KTreeWidgetSearchLine|"
+msgid "All Visible Columns"
+msgstr "Mọi cột hiển thị"
+
+#: ktreewidgetsearchlinewidget.cpp:63
+#, fuzzy
+#| msgid "S&earch:"
+msgctxt "KTreeWidgetSearchLineWidget|"
+msgid "S&earch:"
+msgstr "Tìm &kiếm:"

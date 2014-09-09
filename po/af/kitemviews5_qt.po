@@ -1,0 +1,43 @@
+# UTF-8 test:äëïöü
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4 stable\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2006-01-12 16:33+0200\n"
+"Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
+"Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kfilterproxysearchline.cpp:73
+#, fuzzy
+#| msgctxt "QAccel"
+#| msgid "Search"
+msgctxt "KFilterProxySearchLine|"
+msgid "Search"
+msgstr "Soek"
+
+#: ktreewidgetsearchline.cpp:434
+#, fuzzy
+#| msgid "Search Columns"
+msgctxt "KTreeWidgetSearchLine|"
+msgid "Search Columns"
+msgstr "Soek Kolomme"
+
+#: ktreewidgetsearchline.cpp:436
+#, fuzzy
+#| msgid "All Visible Columns"
+msgctxt "KTreeWidgetSearchLine|"
+msgid "All Visible Columns"
+msgstr "Alle Sigbare Kolomme"
+
+#: ktreewidgetsearchlinewidget.cpp:63
+#, fuzzy
+#| msgid "S&earch:"
+msgctxt "KTreeWidgetSearchLineWidget|"
+msgid "S&earch:"
+msgstr "Soek:"
