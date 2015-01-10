@@ -35,7 +35,7 @@ add_subdirectory(tests)
 
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5ItemViews")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5ItemViews")
 
 include(ECMPackageConfigHelpers)
 
@@ -56,7 +56,7 @@ install(EXPORT KF5ItemViewsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/kitemviews_version.h
-  DESTINATION ${KF5_INCLUDE_INSTALL_DIR} COMPONENT Devel
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5} COMPONENT Devel
 )
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
