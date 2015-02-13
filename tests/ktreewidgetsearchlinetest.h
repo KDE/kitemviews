@@ -17,7 +17,7 @@ public Q_SLOTS:
     void switchCaseSensitivity(bool cs);
 
 protected:
-    virtual void showEvent(QShowEvent *event);
+    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
 
 private:
     class KTreeWidgetSearchLine *m_searchLine;

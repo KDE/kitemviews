@@ -33,7 +33,7 @@ class MyModel
     : public QStringListModel
 {
 public:
-    virtual QVariant data(const QModelIndex &index, int role) const
+    QVariant data(const QModelIndex &index, int role) const Q_DECL_OVERRIDE
     {
         switch (role) {
         case KCategorizedSortFilterProxyModel::CategoryDisplayRole: {

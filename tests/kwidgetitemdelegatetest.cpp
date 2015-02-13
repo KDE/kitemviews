@@ -60,13 +60,13 @@ public:
     {
     }
 
-    QSize sizeHint() const
+    QSize sizeHint() const Q_DECL_OVERRIDE
     {
         return QSize(30, 30);
     }
 
 protected:
-    void paintEvent(QPaintEvent *event)
+    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE
     {
         QPainter p(this);
 
@@ -92,7 +92,7 @@ protected:
         p.end();
     }
 
-    bool event(QEvent *event)
+    bool event(QEvent *event) Q_DECL_OVERRIDE
     {
         if (event->type() == QEvent::MouseButtonPress) {
             QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
@@ -134,7 +134,7 @@ public:
     }
 
     QSize sizeHint(const QStyleOptionViewItem &option,
-                   const QModelIndex &index) const
+                   const QModelIndex &index) const Q_DECL_OVERRIDE
     {
         Q_UNUSED(option);
         Q_UNUSED(index);
@@ -148,7 +148,7 @@ public:
     }
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option,
-               const QModelIndex &index) const
+               const QModelIndex &index) const Q_DECL_OVERRIDE
     {
         Q_UNUSED(index);
         painter->save();
@@ -162,7 +162,7 @@ public:
         painter->restore();
     }
 
-    QList<QWidget *> createItemWidgets(const QModelIndex &index) const
+    QList<QWidget *> createItemWidgets(const QModelIndex &index) const Q_DECL_OVERRIDE
     {
         Q_UNUSED(index);
         QPushButton *button = new QPushButton();
@@ -187,7 +187,7 @@ public:
 
     void updateItemWidgets(const QList<QWidget *> widgets,
                            const QStyleOptionViewItem &option,
-                           const QPersistentModelIndex &index) const
+                           const QPersistentModelIndex &index) const Q_DECL_OVERRIDE
     {
         QPushButton *button = static_cast<QPushButton *>(widgets[0]);
         button->setText("Test me");

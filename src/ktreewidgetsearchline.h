@@ -229,7 +229,7 @@ protected:
     /**
     * Re-implemented for internal reasons.  API not affected.
     */
-    virtual void contextMenuEvent(QContextMenuEvent *);
+    void contextMenuEvent(QContextMenuEvent *) Q_DECL_OVERRIDE;
 
     /**
      * Updates search to only make visible appropriate items in \a treeWidget.  If
@@ -267,7 +267,7 @@ protected:
     /**
      * Re-implemented for internal reasons.  API not affected.
      */
-    virtual bool event(QEvent *event);
+    bool event(QEvent *event) Q_DECL_OVERRIDE;
 private:
     class Private;
     Private *const d;

@@ -56,7 +56,7 @@ public Q_SLOTS:
     void initializeModel(const QModelIndex &parent = QModelIndex());
 
 protected:
-    virtual bool eventFilter(QObject *watched, QEvent *event);
+    bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
 
 public:
     QAbstractItemView *itemView;
