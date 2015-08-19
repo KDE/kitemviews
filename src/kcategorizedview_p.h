@@ -31,7 +31,7 @@ class KCategoryDrawerV3;
 /**
   * @internal
   */
-class KCategorizedView::Private
+class Q_DECL_HIDDEN KCategorizedView::Private
 {
 public:
     struct Block;

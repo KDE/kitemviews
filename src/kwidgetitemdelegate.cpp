@@ -48,7 +48,7 @@
 Q_DECLARE_METATYPE(QList<QEvent::Type>)
 
 /**
-  Private class that helps to provide binary compatibility between releases.
+  KWidgetItemDelegatePrivate class that helps to provide binary compatibility between releases.
   @internal
 */
 //@cond PRIVATE

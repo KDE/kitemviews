@@ -249,7 +249,7 @@ void KListWidgetSearchLine::KListWidgetSearchLinePrivate::_k_activateSearch()
 }
 
 /******************************************************************************
- * Private Slots                                                              *
+ * KListWidgetSearchLinePrivate Slots                                                              *
  *****************************************************************************/
 void KListWidgetSearchLine::KListWidgetSearchLinePrivate::_k_listWidgetDeleted()
 {

@@ -25,6 +25,7 @@
 #include <QSortFilterProxyModel>
 
 #include <kitemviews_export.h>
+class KCategorizedSortFilterProxyModelPrivate;
 
 class QItemSelection;
 
@@ -176,8 +177,7 @@ protected:
     virtual int compareCategories(const QModelIndex &left, const QModelIndex &right) const;
 
 private:
-    class Private;
-    Private *const d;
+    KCategorizedSortFilterProxyModelPrivate *const d;
 };
 
 #endif // KCATEGORIZEDSORTFILTERPROXYMODEL_H

@@ -25,19 +25,19 @@
 #include <QSortFilterProxyModel>
 
 /**
- * Private class that helps to provide binary compatibility between releases.
+ * KFilterProxySearchLinePrivate class that helps to provide binary compatibility between releases.
  * @internal
  */
 //@cond PRIVATE
-class KFilterProxySearchLine::Private
+class KFilterProxySearchLinePrivate
 {
 public:
-    Private(KFilterProxySearchLine *parent) :
+    KFilterProxySearchLinePrivate(KFilterProxySearchLine *parent) :
         q(parent), proxy(0), searchLine(0)
     {
         timer = new QTimer(q);
         timer->setSingleShot(true);
-        connect(timer, SIGNAL(timeout()), q, SLOT(slotSearchLineActivate()));
+        QObject::connect(timer, SIGNAL(timeout()), q, SLOT(slotSearchLineActivate()));
     }
     QTimer *timer;
     KFilterProxySearchLine *q;
@@ -48,12 +48,12 @@ public:
     void slotSearchLineActivate();
 };
 
-void KFilterProxySearchLine::Private::slotSearchLineChange(const QString &)
+void KFilterProxySearchLinePrivate::slotSearchLineChange(const QString &)
 {
     timer->start(300);
 }
 
-void KFilterProxySearchLine::Private::slotSearchLineActivate()
+void KFilterProxySearchLinePrivate::slotSearchLineActivate()
 {
     if (!proxy) {
         return;
@@ -66,7 +66,7 @@ void KFilterProxySearchLine::Private::slotSearchLineActivate()
 //@endcond
 
 KFilterProxySearchLine::KFilterProxySearchLine(QWidget *parent)
-    : QWidget(parent), d(new Private(this))
+    : QWidget(parent), d(new KFilterProxySearchLinePrivate(this))
 {
     d->searchLine = new QLineEdit(this);
     d->searchLine->setClearButtonEnabled(true);

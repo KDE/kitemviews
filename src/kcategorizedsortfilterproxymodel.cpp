@@ -29,7 +29,7 @@
 
 KCategorizedSortFilterProxyModel::KCategorizedSortFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
-    , d(new Private())
+    , d(new KCategorizedSortFilterProxyModelPrivate())
 
 {
 }

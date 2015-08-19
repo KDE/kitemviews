@@ -29,7 +29,7 @@
 #include <QMenu>
 #include <QTreeWidget>
 
-class KTreeWidgetSearchLine::Private
+class Q_DECL_HIDDEN KTreeWidgetSearchLine::Private
 {
 public:
     Private(KTreeWidgetSearchLine *_q)

@@ -26,10 +26,10 @@
 
 #include "kcategorizedsortfilterproxymodel.h"
 
-class KCategorizedSortFilterProxyModel::Private
+class KCategorizedSortFilterProxyModelPrivate
 {
 public:
-    Private()
+    KCategorizedSortFilterProxyModelPrivate()
         : sortColumn(0)
         , sortOrder(Qt::AscendingOrder)
         , categorizedModel(false)
@@ -39,7 +39,7 @@ public:
         m_collator.setCaseSensitivity(Qt::CaseSensitive);
     }
 
-    ~Private()
+    ~KCategorizedSortFilterProxyModelPrivate()
     {
     }
 

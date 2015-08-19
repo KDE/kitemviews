@@ -27,15 +27,15 @@
 #include <kcategorizedview.h>
 #include <kcategorizedsortfilterproxymodel.h>
 
-class KCategoryDrawer::Private
+class KCategoryDrawerPrivate
 {
 public:
-    Private(KCategorizedView *view)
+    KCategoryDrawerPrivate(KCategorizedView *view)
         : view(view)
     {
     }
 
-    ~Private()
+    ~KCategoryDrawerPrivate()
     {
     }
 
@@ -44,7 +44,7 @@ public:
 
 KCategoryDrawer::KCategoryDrawer(KCategorizedView *view)
     : QObject(view)
-    , d(new Private(view))
+    , d(new KCategoryDrawerPrivate(view))
 {
 }
 

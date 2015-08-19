@@ -23,6 +23,7 @@
 #include <kitemviews_export.h>
 
 #include <QWidget>
+class KFilterProxySearchLinePrivate;
 
 class QLineEdit;
 class QSortFilterProxyModel;
@@ -72,8 +73,7 @@ public:
     QLineEdit *lineEdit() const;
 
 private:
-    class Private;
-    Private *const d;
+    KFilterProxySearchLinePrivate *const d;
     Q_DISABLE_COPY(KFilterProxySearchLine)
     Q_PRIVATE_SLOT(d, void slotSearchLineChange(const QString &newText))
     Q_PRIVATE_SLOT(d, void slotSearchLineActivate())

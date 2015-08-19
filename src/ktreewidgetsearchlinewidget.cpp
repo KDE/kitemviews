@@ -25,7 +25,7 @@
 #include <QLabel>
 #include <QTreeWidget>
 
-class KTreeWidgetSearchLineWidget::Private
+class Q_DECL_HIDDEN KTreeWidgetSearchLineWidget::Private
 {
 public:
     Private()

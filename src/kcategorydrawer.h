@@ -25,6 +25,7 @@
 
 #include <QtCore/QObject>
 #include <QMouseEvent>
+class KCategoryDrawerPrivate;
 
 class QPainter;
 class QModelIndex;
@@ -162,8 +163,7 @@ protected:
     virtual void mouseLeft(const QModelIndex &index, const QRect &blockRect);
 
 private:
-    class Private;
-    Private *const d;
+    KCategoryDrawerPrivate *const d;
 };
 
 #ifndef KITEMVIEWS_NO_DEPRECATED

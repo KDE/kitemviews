@@ -26,7 +26,7 @@
 #include <QPainter>
 #include <QApplication>
 
-class KExtendableItemDelegate::Private
+class Q_DECL_HIDDEN KExtendableItemDelegate::Private
 {
 public:
     Private(KExtendableItemDelegate *parent) :
