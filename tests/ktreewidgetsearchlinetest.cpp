@@ -15,24 +15,24 @@ KTreeWidgetSearchLineTest::KTreeWidgetSearchLineTest()
     : QDialog()
 {
     // to test KWhatsThisManager too:
-    setWhatsThis("This is a test dialog for KTreeWidgetSearchLineTest");
+    setWhatsThis(QStringLiteral("This is a test dialog for KTreeWidgetSearchLineTest"));
     tw = new QTreeWidget(this);
     tw->setColumnCount(4);
-    tw->setHeaderLabels(QStringList() << "Item" << "Price" << "HIDDEN COLUMN" << "Source");
+    tw->setHeaderLabels(QStringList() << QStringLiteral("Item") << QStringLiteral("Price") << QStringLiteral("HIDDEN COLUMN") << QStringLiteral("Source"));
     tw->hideColumn(2);
 
     KTreeWidgetSearchLineWidget *searchWidget = new KTreeWidgetSearchLineWidget(this, tw);
     m_searchLine = searchWidget->searchLine();
 
-    QTreeWidgetItem *red = new QTreeWidgetItem(tw, QStringList() << "Red");
-    red->setWhatsThis(0, "This item is red");
-    red->setWhatsThis(1, "This item is pricy");
+    QTreeWidgetItem *red = new QTreeWidgetItem(tw, QStringList() << QStringLiteral("Red"));
+    red->setWhatsThis(0, QStringLiteral("This item is red"));
+    red->setWhatsThis(1, QStringLiteral("This item is pricy"));
     tw->expandItem(red);
-    QTreeWidgetItem *blue = new QTreeWidgetItem(tw, QStringList() << "Blue");
+    QTreeWidgetItem *blue = new QTreeWidgetItem(tw, QStringList() << QStringLiteral("Blue"));
     tw->expandItem(blue);
-    QTreeWidgetItem *green = new QTreeWidgetItem(tw, QStringList() << "Green");
+    QTreeWidgetItem *green = new QTreeWidgetItem(tw, QStringList() << QStringLiteral("Green"));
     tw->expandItem(green);
-    QTreeWidgetItem *yellow = new QTreeWidgetItem(tw, QStringList() << "Yellow");
+    QTreeWidgetItem *yellow = new QTreeWidgetItem(tw, QStringList() << QStringLiteral("Yellow"));
     tw->expandItem(yellow);
 
     create2ndLevel(red);
@@ -44,12 +44,12 @@ KTreeWidgetSearchLineTest::KTreeWidgetSearchLineTest()
     setLayout(layout);
     QHBoxLayout *hbox = new QHBoxLayout();
 
-    QPushButton *caseSensitive = new QPushButton("&Case Sensitive", this);
+    QPushButton *caseSensitive = new QPushButton(QStringLiteral("&Case Sensitive"), this);
     hbox->addWidget(caseSensitive);
     caseSensitive->setCheckable(true);
     connect(caseSensitive, SIGNAL(toggled(bool)), SLOT(switchCaseSensitivity(bool)));
 
-    QPushButton *keepParentsVisible = new QPushButton("Keep &Parents Visible", this);
+    QPushButton *keepParentsVisible = new QPushButton(QStringLiteral("Keep &Parents Visible"), this);
     hbox->addWidget(keepParentsVisible);
     keepParentsVisible->setCheckable(true);
     keepParentsVisible->setChecked(true);
@@ -72,27 +72,27 @@ KTreeWidgetSearchLineTest::KTreeWidgetSearchLineTest()
 
 void KTreeWidgetSearchLineTest::create3rdLevel(QTreeWidgetItem *item)
 {
-    new QTreeWidgetItem(item, QStringList() << "Growing" << "$2.00" << "" << "Farmer");
-    new QTreeWidgetItem(item, QStringList() << "Ripe" << "$8.00" << "" << "Market");
-    new QTreeWidgetItem(item, QStringList() << "Decaying" << "$0.50" << "" << "Ground");
-    new QTreeWidgetItem(item, QStringList() << "Pickled"  << "$4.00" << "" << "Shop");
+    new QTreeWidgetItem(item, QStringList() << QStringLiteral("Growing") << QStringLiteral("$2.00") << QString("") << QStringLiteral("Farmer"));
+    new QTreeWidgetItem(item, QStringList() << QStringLiteral("Ripe") << QStringLiteral("$8.00") << QString("") << QStringLiteral("Market"));
+    new QTreeWidgetItem(item, QStringList() << QStringLiteral("Decaying") << QStringLiteral("$0.50") << QString("") << QStringLiteral("Ground"));
+    new QTreeWidgetItem(item, QStringList() << QStringLiteral("Pickled")  << QStringLiteral("$4.00") << QString("") << QStringLiteral("Shop"));
 }
 
 void KTreeWidgetSearchLineTest::create2ndLevel(QTreeWidgetItem *item)
 {
-    QTreeWidgetItem *beans = new QTreeWidgetItem(item, QStringList() << "Beans");
+    QTreeWidgetItem *beans = new QTreeWidgetItem(item, QStringList() << QStringLiteral("Beans"));
     tw->expandItem(beans);
     create3rdLevel(beans);
 
-    QTreeWidgetItem *grapes = new QTreeWidgetItem(item, QStringList() << "Grapes");
+    QTreeWidgetItem *grapes = new QTreeWidgetItem(item, QStringList() << QStringLiteral("Grapes"));
     tw->expandItem(grapes);
     create3rdLevel(grapes);
 
-    QTreeWidgetItem *plums = new QTreeWidgetItem(item, QStringList() << "Plums");
+    QTreeWidgetItem *plums = new QTreeWidgetItem(item, QStringList() << QStringLiteral("Plums"));
     tw->expandItem(plums);
     create3rdLevel(plums);
 
-    QTreeWidgetItem *bananas = new QTreeWidgetItem(item, QStringList() << "Bananas");
+    QTreeWidgetItem *bananas = new QTreeWidgetItem(item, QStringList() << QStringLiteral("Bananas"));
     tw->expandItem(bananas);
     create3rdLevel(bananas);
 }
@@ -114,7 +114,7 @@ void KTreeWidgetSearchLineTest::showEvent(QShowEvent *event)
 
 int main(int argc, char **argv)
 {
-    QApplication::setApplicationName("KTreeWidgetSearchLineTest");
+    QApplication::setApplicationName(QStringLiteral("KTreeWidgetSearchLineTest"));
     QApplication app(argc, argv);
     KTreeWidgetSearchLineTest dialog;
 

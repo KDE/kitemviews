@@ -1288,7 +1288,7 @@ void KCategorizedView::rowsAboutToBeRemoved(const QModelIndex &parent,
         block.items.removeAt(i - block.firstIndex.row() - alreadyRemoved);
         ++alreadyRemoved;
 
-        if (!block.items.count()) {
+        if (block.items.isEmpty()) {
             listOfCategoriesMarkedForRemoval << category;
         }
 
@@ -1302,7 +1302,7 @@ void KCategorizedView::rowsAboutToBeRemoved(const QModelIndex &parent,
         const QModelIndex lastIndex = d->proxyModel->index(end, modelColumn(), parent);
         const QString category = d->categoryForIndex(lastIndex);
         Private::Block &block = d->blocks[category];
-        if (block.items.count() && start <= block.firstIndex.row() && end >= block.firstIndex.row()) {
+        if (!block.items.isEmpty() && start <= block.firstIndex.row() && end >= block.firstIndex.row()) {
             block.firstIndex = d->proxyModel->index(end + 1, modelColumn(), parent);
         }
         block.quarantineStart = block.firstIndex;

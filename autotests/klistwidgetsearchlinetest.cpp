@@ -43,11 +43,11 @@ private Q_SLOTS:
 void KListWidgetSearchLineTest::testAddItems()
 {
     QListWidget listWidget;
-    listWidget.addItem("Matching test item");
-    listWidget.addItem("Another test item");
+    listWidget.addItem(QStringLiteral("Matching test item"));
+    listWidget.addItem(QStringLiteral("Another test item"));
 
     KListWidgetSearchLine searchLine(0, &listWidget);
-    searchLine.setText("match");
+    searchLine.setText(QStringLiteral("match"));
 
     // The initial filtering is delayed; we have to wait
     while (!listWidget.item(1)->isHidden()) {
@@ -58,8 +58,8 @@ void KListWidgetSearchLineTest::testAddItems()
     QVERIFY(listWidget.item(1)->isHidden());
 
     // Add two items
-    listWidget.addItem("Another item that matches the search pattern");
-    listWidget.addItem("This item should be hidden");
+    listWidget.addItem(QStringLiteral("Another item that matches the search pattern"));
+    listWidget.addItem(QStringLiteral("This item should be hidden"));
 
     QVERIFY(!listWidget.item(0)->isHidden());
     QVERIFY(listWidget.item(1)->isHidden());
@@ -67,7 +67,7 @@ void KListWidgetSearchLineTest::testAddItems()
     QVERIFY(listWidget.item(3)->isHidden());
 
     // Modify an item
-    listWidget.item(3)->setText("Now this item matches");
+    listWidget.item(3)->setText(QStringLiteral("Now this item matches"));
 
     QVERIFY(!listWidget.item(0)->isHidden());
     QVERIFY(listWidget.item(1)->isHidden());

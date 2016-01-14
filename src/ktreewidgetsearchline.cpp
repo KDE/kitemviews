@@ -436,7 +436,7 @@ void KTreeWidgetSearchLine::contextMenuEvent(QContextMenuEvent *event)
         QAction *allVisibleColumnsAction = subMenu->addAction(tr("All Visible Columns"),
                                            this, SLOT(_k_slotAllVisibleColumns()));
         allVisibleColumnsAction->setCheckable(true);
-        allVisibleColumnsAction->setChecked(!d->searchColumns.count());
+        allVisibleColumnsAction->setChecked(d->searchColumns.isEmpty());
         subMenu->addSeparator();
 
         bool allColumnsAreSearchColumns = true;

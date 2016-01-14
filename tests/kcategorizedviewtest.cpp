@@ -53,10 +53,10 @@ public:
 
 int main(int argc, char **argv)
 {
-    icons << "konqueror";
-    icons << "okular";
-    icons << "plasma";
-    icons << "system-file-manager";
+    icons << QStringLiteral("konqueror");
+    icons << QStringLiteral("okular");
+    icons << QStringLiteral("plasma");
+    icons << QStringLiteral("system-file-manager");
 
     QApplication app(argc, argv);
 

@@ -190,8 +190,8 @@ public:
                            const QPersistentModelIndex &index) const Q_DECL_OVERRIDE
     {
         QPushButton *button = static_cast<QPushButton *>(widgets[0]);
-        button->setText("Test me");
-        button->setIcon(QIcon::fromTheme("kde"));
+        button->setText(QStringLiteral("Test me"));
+        button->setIcon(QIcon::fromTheme(QStringLiteral("kde")));
         button->resize(button->sizeHint());
         button->move(HARDCODED_BORDER, sizeHint().height() / 2 - button->height() / 2);
 
@@ -217,10 +217,10 @@ public:
 
         if (!toolButton->menu()) {
             QMenu *myMenu = new QMenu(toolButton);
-            myMenu->addAction("Save");
-            myMenu->addAction("Load");
+            myMenu->addAction(QStringLiteral("Save"));
+            myMenu->addAction(QStringLiteral("Load"));
             myMenu->addSeparator();
-            myMenu->addAction("Close");
+            myMenu->addAction(QStringLiteral("Close"));
             toolButton->setMenu(myMenu);
         }
 
@@ -228,9 +228,9 @@ public:
         toolButton->setPopupMode(QToolButton::MenuButtonPopup);
 
         if (installed[index.row()]) {
-            toolButton->setText("Uninstall");
+            toolButton->setText(QStringLiteral("Uninstall"));
         } else {
-            toolButton->setText("Install");
+            toolButton->setText(QStringLiteral("Install"));
         }
 
         toolButton->resize(toolButton->sizeHint());
@@ -242,9 +242,9 @@ public:
         toolButtonOpt.toolButtonStyle = Qt::ToolButtonTextBesideIcon;
 
         toolButtonOpt.text = "Install";
-        int widthInstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.width("Install") + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
+        int widthInstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.width(QStringLiteral("Install")) + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
         toolButtonOpt.text = "Uninstall";
-        int widthUninstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.width("Uninstall") + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
+        int widthUninstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.width(QStringLiteral("Uninstall")) + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
 
         QSize size = toolButton->sizeHint();
         size.setWidth(qMax(widthInstall, widthUninstall));
@@ -265,19 +265,19 @@ public:
 private Q_SLOTS:
     void mySlot()
     {
-        QMessageBox::information(0, "Button clicked", QString("The button in row %1 was clicked").arg(focusedIndex().row()));
+        QMessageBox::information(0, QStringLiteral("Button clicked"), QStringLiteral("The button in row %1 was clicked").arg(focusedIndex().row()));
     }
 
     void mySlot2()
     {
-        QMessageBox::information(0, "Toolbutton menu item clicked", QString("A menu item was triggered in row %1").arg(focusedIndex().row()));
+        QMessageBox::information(0, QStringLiteral("Toolbutton menu item clicked"), QStringLiteral("A menu item was triggered in row %1").arg(focusedIndex().row()));
     }
 
     void mySlot3()
     {
         bool isInstalled = installed[focusedIndex().row()];
         installed[focusedIndex().row()] = !isInstalled;
-        const_cast<QAbstractItemModel *>(focusedIndex().model())->setData(focusedIndex(), QString("makemodelbeupdated"));
+        const_cast<QAbstractItemModel *>(focusedIndex().model())->setData(focusedIndex(), QStringLiteral("makemodelbeupdated"));
     }
 
 private:
