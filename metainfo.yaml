@@ -11,3 +11,7 @@ libraries:
  - qmake: KItemViews
    cmake: "KF5::ItemViews"
 cmakename: KF5ItemViews
+
+public_lib: true
+group: Frameworks
+subgroup: Tier 1
