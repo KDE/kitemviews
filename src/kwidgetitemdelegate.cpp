@@ -148,9 +148,9 @@ void KWidgetItemDelegatePrivate::updateRowRange(const QModelIndex &parent, int s
     }
 }
 
-inline QStyleOptionViewItemV4 KWidgetItemDelegatePrivate::optionView(const QModelIndex &index)
+inline QStyleOptionViewItem KWidgetItemDelegatePrivate::optionView(const QModelIndex &index)
 {
-    QStyleOptionViewItemV4 optionView;
+    QStyleOptionViewItem optionView;
     optionView.initFrom(itemView->viewport());
     optionView.rect = itemView->visualRect(index);
     optionView.decorationSize = itemView->iconSize();

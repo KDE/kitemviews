@@ -48,7 +48,7 @@ public:
     /**
       * @return the block rect for the representative @p representative.
       */
-    QStyleOptionViewItemV4 blockRect(const QModelIndex &representative);
+    QStyleOptionViewItem blockRect(const QModelIndex &representative);
 
     /**
       * Returns the first and last element that intersects with rect.
