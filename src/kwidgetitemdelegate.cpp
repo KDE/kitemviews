@@ -22,25 +22,14 @@
 #include "kwidgetitemdelegate.h"
 #include "kwidgetitemdelegate_p.h"
 
-#include <QIcon>
-#include <QSize>
-#include <QStyle>
 #include <QEvent>
 #include <QHoverEvent>
-#include <QFocusEvent>
 #include <QCursor>
 #include <QTimer>
-#include <QBitmap>
-#include <QLayout>
 #include <QPainter>
-#include <QScrollBar>
-#include <QKeyEvent>
 #include <QApplication>
 #include <QStyleOption>
-#include <QPaintEngine>
-#include <QCoreApplication>
 #include <QAbstractItemView>
-#include <QAbstractProxyModel>
 #include <QTreeView>
 
 #include "kwidgetitemdelegatepool_p.h"
