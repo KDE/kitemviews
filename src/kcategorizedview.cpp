@@ -1102,7 +1102,7 @@ void KCategorizedView::dropEvent(QDropEvent *event)
 QModelIndex KCategorizedView::moveCursor(CursorAction cursorAction,
         Qt::KeyboardModifiers modifiers)
 {
-    if (!d->isCategorized()) {
+    if (!d->isCategorized() || viewMode() == QListView::ListMode) {
         return QListView::moveCursor(cursorAction, modifiers);
     }
 
