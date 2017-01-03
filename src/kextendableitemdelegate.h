@@ -65,12 +65,12 @@ public:
     /**
      * Re-implemented for internal reasons. API not affected.
      */
-    virtual QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
 
     /**
      * Re-implemented for internal reasons. API not affected.
      */
-    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
 
     /**
      * Insert the @p extender for item at @p index into the view.
