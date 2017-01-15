@@ -44,6 +44,29 @@ ecm_generate_headers(KItemViews_HEADERS
   REQUIRED_HEADERS KItemViews_HEADERS
 )
 
+find_package(PythonModuleGeneration)
+
+if (PythonModuleGeneration_FOUND)
+  ecm_generate_python_binding(
+    TARGET KF5::ItemViews
+    PYTHONNAMESPACE PyKF5
+    MODULENAME KItemViews
+    INSTALL_DIR_SUFFIX ${KDE_INSTALL_PYTHONBINDINGSDIR}
+    SIP_DEPENDS
+      QtWidgets/QtWidgetsmod.sip
+    HEADERS
+      kcategorizedsortfilterproxymodel.h
+      kcategorizedview.h
+      kcategorydrawer.h
+      kextendableitemdelegate.h
+      kfilterproxysearchline.h
+      klistwidgetsearchline.h
+      ktreewidgetsearchline.h
+      ktreewidgetsearchlinewidget.h
+      kwidgetitemdelegate.h
+  )
+endif()
+
 install(TARGETS KF5ItemViews EXPORT KF5ItemViewsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
