@@ -88,6 +88,7 @@ KFilterProxySearchLine::~KFilterProxySearchLine()
 void KFilterProxySearchLine::setText(const QString &text)
 {
     d->searchLine->setText(text);
+    d->slotSearchLineActivate();
 }
 
 void KFilterProxySearchLine::setProxy(QSortFilterProxyModel *proxy)
