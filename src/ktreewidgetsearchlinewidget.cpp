@@ -29,8 +29,8 @@ class Q_DECL_HIDDEN KTreeWidgetSearchLineWidget::Private
 {
 public:
     Private()
-        : treeWidget(0),
-          searchLine(0)
+        : treeWidget(nullptr),
+          searchLine(nullptr)
     {
     }
 

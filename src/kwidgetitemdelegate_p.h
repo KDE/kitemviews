@@ -38,7 +38,7 @@ class KWidgetItemDelegatePrivate
     Q_OBJECT
 
 public:
-    explicit KWidgetItemDelegatePrivate(KWidgetItemDelegate *q, QObject *parent = 0);
+    explicit KWidgetItemDelegatePrivate(KWidgetItemDelegate *q, QObject *parent = nullptr);
     ~KWidgetItemDelegatePrivate();
 
     void _k_slotRowsInserted(const QModelIndex &parent, int start, int end);

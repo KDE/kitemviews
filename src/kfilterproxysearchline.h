@@ -49,7 +49,7 @@ public:
     /**
      * Constructor
      */
-    explicit KFilterProxySearchLine(QWidget *parent = 0);
+    explicit KFilterProxySearchLine(QWidget *parent = nullptr);
 
     /**
      * Destructor

@@ -34,7 +34,7 @@ public:
         stateTick(0),
         cachedStateTick(-1),
         cachedRow(-20), //Qt uses -1 for invalid indices
-        extender(0),
+        extender(nullptr),
         extenderHeight(0)
 
     {}

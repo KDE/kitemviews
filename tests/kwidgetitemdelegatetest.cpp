@@ -49,7 +49,7 @@ class TestWidget
     Q_OBJECT
 
 public:
-    TestWidget(QWidget *parent = 0)
+    TestWidget(QWidget *parent = nullptr)
         : QWidget(parent)
     {
         setMouseTracking(true);
@@ -121,7 +121,7 @@ class MyDelegate
     Q_OBJECT
 
 public:
-    MyDelegate(QAbstractItemView *itemView, QObject *parent = 0)
+    MyDelegate(QAbstractItemView *itemView, QObject *parent = nullptr)
         : KWidgetItemDelegate(itemView, parent)
     {
         for (int i = 0; i < 100; i++) {
@@ -153,7 +153,7 @@ public:
         Q_UNUSED(index);
         painter->save();
 
-        itemView()->style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, 0);
+        itemView()->style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, nullptr);
 
         if (option.state & QStyle::State_Selected) {
             painter->setPen(option.palette.highlightedText().color());
@@ -265,12 +265,12 @@ public:
 private Q_SLOTS:
     void mySlot()
     {
-        QMessageBox::information(0, QStringLiteral("Button clicked"), QStringLiteral("The button in row %1 was clicked").arg(focusedIndex().row()));
+        QMessageBox::information(nullptr, QStringLiteral("Button clicked"), QStringLiteral("The button in row %1 was clicked").arg(focusedIndex().row()));
     }
 
     void mySlot2()
     {
-        QMessageBox::information(0, QStringLiteral("Toolbutton menu item clicked"), QStringLiteral("A menu item was triggered in row %1").arg(focusedIndex().row()));
+        QMessageBox::information(nullptr, QStringLiteral("Toolbutton menu item clicked"), QStringLiteral("A menu item was triggered in row %1").arg(focusedIndex().row()));
     }
 
     void mySlot3()

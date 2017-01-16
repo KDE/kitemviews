@@ -57,7 +57,7 @@ public:
      * @param itemView the item view the new delegate will monitor
      * @param parent the parent of this delegate
      */
-    explicit KWidgetItemDelegate(QAbstractItemView *itemView, QObject *parent = 0);
+    explicit KWidgetItemDelegate(QAbstractItemView *itemView, QObject *parent = nullptr);
 
     /**
      * Destroys an ItemDelegate.

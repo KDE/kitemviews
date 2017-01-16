@@ -84,7 +84,7 @@ class KITEMVIEWS_EXPORT KCategorizedView
     Q_PROPERTY(bool collapsibleBlocks READ collapsibleBlocks WRITE setCollapsibleBlocks)
 
 public:
-    KCategorizedView(QWidget *parent = 0);
+    KCategorizedView(QWidget *parent = nullptr);
 
     ~KCategorizedView();
 

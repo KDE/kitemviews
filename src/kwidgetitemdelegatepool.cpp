@@ -49,7 +49,7 @@ class KWidgetItemDelegateEventListener
     : public QObject
 {
 public:
-    KWidgetItemDelegateEventListener(KWidgetItemDelegatePoolPrivate *poolPrivate, QObject *parent = 0)
+    KWidgetItemDelegateEventListener(KWidgetItemDelegatePoolPrivate *poolPrivate, QObject *parent = nullptr)
         : QObject(parent)
         , poolPrivate(poolPrivate)
     {

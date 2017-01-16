@@ -41,7 +41,7 @@ public:
      * Creates a KTreeWidgetSearchLineWidget for \a treeWidget with \a parent as the
      * parent.
      */
-    explicit KTreeWidgetSearchLineWidget(QWidget *parent = 0, QTreeWidget *treeWidget = 0);
+    explicit KTreeWidgetSearchLineWidget(QWidget *parent = nullptr, QTreeWidget *treeWidget = nullptr);
 
     /**
      * Destroys the KTreeWidgetSearchLineWidget

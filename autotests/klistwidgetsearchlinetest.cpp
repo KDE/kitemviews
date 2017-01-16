@@ -46,7 +46,7 @@ void KListWidgetSearchLineTest::testAddItems()
     listWidget.addItem(QStringLiteral("Matching test item"));
     listWidget.addItem(QStringLiteral("Another test item"));
 
-    KListWidgetSearchLine searchLine(0, &listWidget);
+    KListWidgetSearchLine searchLine(nullptr, &listWidget);
     searchLine.setText(QStringLiteral("match"));
 
     // The initial filtering is delayed; we have to wait

@@ -43,10 +43,10 @@ Q_DECLARE_METATYPE(QList<QEvent::Type>)
 //@cond PRIVATE
 KWidgetItemDelegatePrivate::KWidgetItemDelegatePrivate(KWidgetItemDelegate *q, QObject *parent)
     : QObject(parent)
-    , itemView(0)
+    , itemView(nullptr)
     , widgetPool(new KWidgetItemDelegatePool(q))
-    , model(0)
-    , selectionModel(0)
+    , model(nullptr)
+    , selectionModel(nullptr)
     , viewDestroyed(false)
     , q(q)
 {

@@ -54,7 +54,7 @@ public:
      * If \a treeWidget is null then the widget will be disabled until listviews
      * are set with setTreeWidget(), setTreeWidgets() or added with addTreeWidget().
      */
-    explicit KTreeWidgetSearchLine(QWidget *parent = 0, QTreeWidget *treeWidget = 0);
+    explicit KTreeWidgetSearchLine(QWidget *parent = nullptr, QTreeWidget *treeWidget = nullptr);
 
     /**
      * Constructs a KTreeWidgetSearchLine with \a treeWidgets being the list of

@@ -33,7 +33,7 @@ class KFilterProxySearchLinePrivate
 {
 public:
     KFilterProxySearchLinePrivate(KFilterProxySearchLine *parent) :
-        q(parent), proxy(0), searchLine(0)
+        q(parent), proxy(nullptr), searchLine(nullptr)
     {
         timer = new QTimer(q);
         timer->setSingleShot(true);

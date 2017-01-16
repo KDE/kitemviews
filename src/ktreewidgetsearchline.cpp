@@ -83,7 +83,7 @@ void KTreeWidgetSearchLine::Private::_k_rowsInserted(const QModelIndex &parentIn
         return;
     }
 
-    QTreeWidget *widget = 0L;
+    QTreeWidget *widget = nullptr;
     foreach (QTreeWidget *tree, treeWidgets)
         if (tree->model() == model) {
             widget = tree;
@@ -270,7 +270,7 @@ QTreeWidget *KTreeWidgetSearchLine::treeWidget() const
     if (d->treeWidgets.count() == 1) {
         return d->treeWidgets.first();
     } else {
-        return 0;
+        return nullptr;
     }
 }
 
