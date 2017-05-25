@@ -29,6 +29,8 @@ class QTreeWidget;
 class QTreeWidgetItem;
 
 /**
+ * @class KTreeWidgetSearchLine ktreewidgetsearchline.h KTreeWidgetSearchLine
+ *
  * This class makes it easy to add a search line for filtering the items in
  * listviews based on a simple text search.
  *

@@ -29,7 +29,7 @@ class QLineEdit;
 class QSortFilterProxyModel;
 
 /**
- * @class KFilterProxySearchLine
+ * @class KFilterProxySearchLine kfilterproxysearchline.h KFilterProxySearchLine
  *
  * Responsible for the quick search when you are using a QSortFilterProxyModel.
  * This will give you an widget which you can embed in your application, call

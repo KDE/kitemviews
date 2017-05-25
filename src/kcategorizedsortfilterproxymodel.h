@@ -30,6 +30,8 @@ class KCategorizedSortFilterProxyModelPrivate;
 class QItemSelection;
 
 /**
+  * @class KCategorizedSortFilterProxyModel kcategorizedsortfilterproxymodel.h KCategorizedSortFilterProxyModel
+  *
   * This class lets you categorize a view. It is meant to be used along with
   * KCategorizedView class.
   *

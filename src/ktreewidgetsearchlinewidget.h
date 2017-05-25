@@ -29,6 +29,8 @@ class QTreeWidget;
 class KTreeWidgetSearchLine;
 
 /**
+ * @class KTreeWidgetSearchLineWidget ktreewidgetsearchlinewidget.h KTreeWidgetSearchLineWidget
+ *
  * Creates a widget featuring a KTreeWidgetSearchLine, a label with the text
  * "Search" and a button to clear the search.
  */

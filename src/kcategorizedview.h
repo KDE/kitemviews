@@ -28,6 +28,8 @@
 class KCategoryDrawer;
 
 /**
+  * @class KCategorizedView kcategorizedview.h KCategorizedView
+  *
   * @short Item view for listing items in a categorized fashion optionally
   *
   * KCategorizedView basically has the same functionality as QListView, only that it also lets you

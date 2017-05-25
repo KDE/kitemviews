@@ -40,6 +40,8 @@ class KWidgetItemDelegatePrivate;
 class KWidgetItemDelegatePool;
 
 /**
+ * @class KWidgetItemDelegate kwidgetitemdelegate.h KWidgetItemDelegate
+ *
  * This class allows to create item delegates embedding simple widgets to interact
  * with items. For instance you can add push buttons, line edits, etc. to your delegate
  * and use them to modify the state of your model.

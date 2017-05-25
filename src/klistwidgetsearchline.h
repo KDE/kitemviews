@@ -30,6 +30,8 @@ class QListWidgetItem;
 class QModelIndex;
 
 /**
+ * @class KListWidgetSearchLine klistwidgetsearchline.h KListWidgetSearchLine
+ *
  * This class makes it easy to add a search line for filtering the items in a
  * listwidget based on a simple text search.
  *

@@ -34,6 +34,8 @@ class QStyleOption;
 class KCategorizedView;
 
 /**
+  * @class KCategoryDrawer kcategorydrawer.h KCategoryDrawer
+  *
   * The category drawing is performed by this class. It also gives information about the category
   * height and margins.
   *
@@ -168,6 +170,8 @@ private:
 
 #ifndef KITEMVIEWS_NO_DEPRECATED
 /**
+ * @class KCategoryDrawerV3 kcategorydrawer.h KCategoryDrawer
+ *
  * @deprecated Use KCategoryDrawer instead
  */
 
