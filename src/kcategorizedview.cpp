@@ -1172,8 +1172,8 @@ QModelIndex KCategorizedView::moveCursor(CursorAction cursorAction,
                 return d->proxyModel->index(nextBlock.firstIndex.row() + currentRelativePos, modelColumn(), rootIndex());
             }
 
-            return QModelIndex();
         }
+        return QModelIndex();
     }
     case MoveUp: {
         if (d->hasGrid() || uniformItemSizes()) {
