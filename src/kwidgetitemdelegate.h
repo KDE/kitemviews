@@ -90,7 +90,7 @@ protected:
      * @note If you want to connect some widget signals to any slot, you should
      *       do it here.
      *
-     * @arg index the index to create widgets for.
+     * @param index the index to create widgets for
      *
      * @return the list of newly created widgets which will be used to interact with an item.
      * @see updateItemWidgets()
