@@ -85,7 +85,7 @@ if(BUILD_QCH)
         SOURCES # using only public headers, to cover only public API
             ${KItemViews_HEADERS}
         MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
-        LINK_QCH
+        LINK_QCHS
             Qt5Widgets_QCH
             Qt5Gui_QCH
             Qt5Core_QCH
