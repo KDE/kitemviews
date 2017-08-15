@@ -26,7 +26,7 @@
 #include <QtCore/QEvent>
 #include <QtCore/QTimer>
 
-class KListWidgetSearchLine::KListWidgetSearchLinePrivate
+class Q_DECL_HIDDEN KListWidgetSearchLine::KListWidgetSearchLinePrivate
 {
 public:
     KListWidgetSearchLinePrivate(KListWidgetSearchLine *parent) :
