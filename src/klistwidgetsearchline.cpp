@@ -23,8 +23,8 @@
 #include <QListWidget>
 #include <QApplication>
 #include <QKeyEvent>
-#include <QtCore/QEvent>
-#include <QtCore/QTimer>
+#include <QEvent>
+#include <QTimer>
 
 class Q_DECL_HIDDEN KListWidgetSearchLine::KListWidgetSearchLinePrivate
 {

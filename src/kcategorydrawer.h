@@ -23,7 +23,7 @@
 
 #include <kitemviews_export.h>
 
-#include <QtCore/QObject>
+#include <QObject>
 #include <QMouseEvent>
 class KCategoryDrawerPrivate;
 

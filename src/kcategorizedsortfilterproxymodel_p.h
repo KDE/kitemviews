@@ -22,7 +22,7 @@
 #ifndef KCATEGORIZEDSORTFILTERPROXYMODEL_P_H
 #define KCATEGORIZEDSORTFILTERPROXYMODEL_P_H
 
-#include <QtCore/QCollator>
+#include <QCollator>
 
 #include "kcategorizedsortfilterproxymodel.h"
 

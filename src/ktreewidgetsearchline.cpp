@@ -20,8 +20,8 @@
 
 #include "ktreewidgetsearchline.h"
 
-#include <QtCore/QList>
-#include <QtCore/QTimer>
+#include <QList>
+#include <QTimer>
 #include <QApplication>
 #include <QContextMenuEvent>
 #include <QHeaderView>

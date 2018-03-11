@@ -30,7 +30,7 @@
 #include <QPainter>
 #include <QRadialGradient>
 #include <QPaintEvent>
-#include <QtCore/QDebug>
+#include <QDebug>
 #include <QToolButton>
 #include <QMenu>
 

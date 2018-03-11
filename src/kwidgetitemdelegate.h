@@ -22,9 +22,9 @@
 #ifndef KWIDGETITEMDELEGATE_H
 #define KWIDGETITEMDELEGATE_H
 
-#include <QtCore/QEvent>
-#include <QtCore/QList>
-#include <QtCore/QPersistentModelIndex>
+#include <QEvent>
+#include <QList>
+#include <QPersistentModelIndex>
 #include <QAbstractItemDelegate>
 
 #include <kitemviews_export.h>

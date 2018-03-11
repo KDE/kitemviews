@@ -22,9 +22,9 @@
 #ifndef KWIDGETITEMDELEGATEPOOL_P_H
 #define KWIDGETITEMDELEGATEPOOL_P_H
 
-#include <QtCore/QModelIndex>
-#include <QtCore/QHash>
-#include <QtCore/QList>
+#include <QModelIndex>
+#include <QHash>
+#include <QList>
 
 class QWidget;
 class QStyleOptionViewItem;

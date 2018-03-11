@@ -21,13 +21,13 @@
 
 #include "kwidgetitemdelegatepool_p.h"
 
-#include <QtCore/qobjectdefs.h>
-#include <QtCore/QMetaObject>
-#include <QtCore/QMetaMethod>
-#include <QtCore/QMetaProperty>
-#include <QtCore/QPair>
-#include <QtCore/QHash>
-#include <QtCore/QList>
+#include <qobjectdefs.h>
+#include <QMetaObject>
+#include <QMetaMethod>
+#include <QMetaProperty>
+#include <QPair>
+#include <QHash>
+#include <QList>
 #include <QWidget>
 #include <QAbstractItemView>
 #include <QApplication>
