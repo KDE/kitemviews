@@ -1208,6 +1208,7 @@ QModelIndex KCategorizedView::moveCursor(CursorAction cursorAction,
 
             return QModelIndex();
         }
+        break;
     }
     default:
         break;

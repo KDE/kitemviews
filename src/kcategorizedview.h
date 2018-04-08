@@ -88,12 +88,12 @@ class KITEMVIEWS_EXPORT KCategorizedView
 public:
     KCategorizedView(QWidget *parent = nullptr);
 
-    ~KCategorizedView();
+    ~KCategorizedView() override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
-    void setModel(QAbstractItemModel *model) Q_DECL_OVERRIDE;
+    void setModel(QAbstractItemModel *model) override;
 
     /**
       * Calls to setGridSizeOwn().
@@ -131,7 +131,7 @@ public:
     /**
       * Reimplemented from QAbstractItemView.
       */
-    QRect visualRect(const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QRect visualRect(const QModelIndex &index) const override;
 
     /**
       * Returns the current category drawer.
@@ -202,112 +202,112 @@ public:
     /**
       * Reimplemented from QAbstractItemView.
       */
-    QModelIndex indexAt(const QPoint &point) const Q_DECL_OVERRIDE;
+    QModelIndex indexAt(const QPoint &point) const override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
-    void reset() Q_DECL_OVERRIDE;
+    void reset() override;
 
 protected:
     /**
       * Reimplemented from QWidget.
       */
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event) override;
 
     /**
       * Reimplemented from QWidget.
       */
-    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *event) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
     virtual void setSelection(const QRect &rect,
-                              QItemSelectionModel::SelectionFlags flags) Q_DECL_OVERRIDE;
+                              QItemSelectionModel::SelectionFlags flags) override;
 
     /**
       * Reimplemented from QWidget.
       */
-    void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void mouseMoveEvent(QMouseEvent *event) override;
 
     /**
       * Reimplemented from QWidget.
       */
-    void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *event) override;
 
     /**
       * Reimplemented from QWidget.
       */
-    void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
     /**
       * Reimplemented from QWidget.
       */
-    void leaveEvent(QEvent *event) Q_DECL_OVERRIDE;
+    void leaveEvent(QEvent *event) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
-    void startDrag(Qt::DropActions supportedActions) Q_DECL_OVERRIDE;
+    void startDrag(Qt::DropActions supportedActions) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
-    void dragMoveEvent(QDragMoveEvent *event) Q_DECL_OVERRIDE;
+    void dragMoveEvent(QDragMoveEvent *event) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
-    void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
+    void dragEnterEvent(QDragEnterEvent *event) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
-    void dragLeaveEvent(QDragLeaveEvent *event) Q_DECL_OVERRIDE;
+    void dragLeaveEvent(QDragLeaveEvent *event) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
-    void dropEvent(QDropEvent *event) Q_DECL_OVERRIDE;
+    void dropEvent(QDropEvent *event) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
     virtual QModelIndex moveCursor(CursorAction cursorAction,
-                                   Qt::KeyboardModifiers modifiers) Q_DECL_OVERRIDE;
+                                   Qt::KeyboardModifiers modifiers) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
     virtual void rowsAboutToBeRemoved(const QModelIndex &parent,
                                       int start,
-                                      int end) Q_DECL_OVERRIDE;
+                                      int end) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
-    void updateGeometries() Q_DECL_OVERRIDE;
+    void updateGeometries() override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
     virtual void currentChanged(const QModelIndex &current,
-                                const QModelIndex &previous) Q_DECL_OVERRIDE;
+                                const QModelIndex &previous) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
     virtual void dataChanged(const QModelIndex &topLeft,
                              const QModelIndex &bottomRight,
-                             const QVector<int> &roles = QVector<int>()) Q_DECL_OVERRIDE;
+                             const QVector<int> &roles = QVector<int>()) override;
 
     /**
       * Reimplemented from QAbstractItemView.
       */
     virtual void rowsInserted(const QModelIndex &parent,
                               int start,
-                              int end) Q_DECL_OVERRIDE;
+                              int end) override;
 
 protected Q_SLOTS:
     /**

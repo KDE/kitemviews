@@ -508,27 +508,27 @@ bool KTreeWidgetSearchLine::canChooseColumnsCheck()
 
     const QTreeWidget *first = d->treeWidgets.first();
 
-    const unsigned int numcols = first->columnCount();
+    const int numcols = first->columnCount();
     // the listviews have only one column,
     if (numcols < 2) {
         return false;
     }
 
     QStringList headers;
-    for (unsigned int i = 0; i < numcols; ++i) {
+    for (int i = 0; i < numcols; ++i) {
         headers.append(first->headerItem()->text(i));
     }
 
     QList<QTreeWidget *>::ConstIterator it = d->treeWidgets.constBegin();
     for (++it /* skip the first one */; it != d->treeWidgets.constEnd(); ++it) {
         // the listviews have different numbers of columns,
-        if ((unsigned int)(*it)->columnCount() != numcols) {
+        if ((*it)->columnCount() != numcols) {
             return false;
         }
 
         // the listviews differ in column labels.
         QStringList::ConstIterator jt;
-        unsigned int i;
+        int i;
         for (i = 0, jt = headers.constBegin(); i < numcols; ++i, ++jt) {
             Q_ASSERT(jt != headers.constEnd());
 

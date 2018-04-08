@@ -281,6 +281,7 @@ bool KWidgetItemDelegatePrivate::eventFilter(QObject *watched, QEvent *event)
                 }
             }
         }
+        break;
     default:
         break;
     }

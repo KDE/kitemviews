@@ -61,17 +61,17 @@ public:
      * instance of af QAbstractItemView subclass.
      */
     KExtendableItemDelegate(QAbstractItemView *parent);
-    virtual ~KExtendableItemDelegate();
+    ~KExtendableItemDelegate() override;
 
     /**
      * Re-implemented for internal reasons. API not affected.
      */
-    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
     /**
      * Re-implemented for internal reasons. API not affected.
      */
-    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
     /**
      * Insert the @p extender for item at @p index into the view.

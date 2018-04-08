@@ -132,7 +132,7 @@ protected:
     /**
      * Re-implemented for internal reasons.  API not affected.
      */
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event) override;
 
 private:
     class KListWidgetSearchLinePrivate;

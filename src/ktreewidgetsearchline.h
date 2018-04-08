@@ -70,7 +70,7 @@ public:
     /**
      * Destroys the KTreeWidgetSearchLine.
      */
-    virtual ~KTreeWidgetSearchLine();
+    ~KTreeWidgetSearchLine() override;
 
     /**
      * Returns true if the search is case sensitive.  This defaults to false.
@@ -231,7 +231,7 @@ protected:
     /**
     * Re-implemented for internal reasons.  API not affected.
     */
-    void contextMenuEvent(QContextMenuEvent *) Q_DECL_OVERRIDE;
+    void contextMenuEvent(QContextMenuEvent *) override;
 
     /**
      * Updates search to only make visible appropriate items in \a treeWidget.  If
@@ -269,7 +269,7 @@ protected:
     /**
      * Re-implemented for internal reasons.  API not affected.
      */
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event) override;
 private:
     class Private;
     Private *const d;
