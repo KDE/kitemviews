@@ -22,6 +22,8 @@
 
 #include <kitemviews_export.h>
 
+#ifndef KITEMVIEWS_NO_DEPRECATED
+
 #include <QWidget>
 class KFilterProxySearchLinePrivate;
 
@@ -38,9 +40,12 @@ class QSortFilterProxyModel;
  *
  * @author Tom Albers <tomalbers@kde.nl>
  * @since 4.2
+ * @deprecated since 5.50, use QLineEdit directly. If filtering is expensive,
+ * consider a short timer to not act on every keypress, and if results are large,
+ * consider not reacting until 3 letters.
  */
 
-class KITEMVIEWS_EXPORT KFilterProxySearchLine
+class KITEMVIEWS_EXPORT KITEMVIEWS_DEPRECATED KFilterProxySearchLine
     : public QWidget
 {
     Q_OBJECT
@@ -78,5 +83,7 @@ private:
     Q_PRIVATE_SLOT(d, void slotSearchLineChange(const QString &newText))
     Q_PRIVATE_SLOT(d, void slotSearchLineActivate())
 };
+
+#endif
 
 #endif
