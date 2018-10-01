@@ -51,7 +51,6 @@ if (PythonModuleGeneration_FOUND)
     TARGET KF5::ItemViews
     PYTHONNAMESPACE PyKF5
     MODULENAME KItemViews
-    INSTALL_DIR_SUFFIX ${KDE_INSTALL_PYTHONBINDINGSDIR}
     SIP_DEPENDS
       QtWidgets/QtWidgetsmod.sip
     HEADERS
