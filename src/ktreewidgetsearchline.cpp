@@ -515,6 +515,7 @@ bool KTreeWidgetSearchLine::canChooseColumnsCheck()
     }
 
     QStringList headers;
+    headers.reserve(numcols);
     for (int i = 0; i < numcols; ++i) {
         headers.append(first->headerItem()->text(i));
     }
