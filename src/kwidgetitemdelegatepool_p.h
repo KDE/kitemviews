@@ -55,6 +55,9 @@ public:
       */
     ~KWidgetItemDelegatePool();
 
+    KWidgetItemDelegatePool(const KWidgetItemDelegatePool &) = delete;
+    KWidgetItemDelegatePool &operator=(const KWidgetItemDelegatePool &) = delete;
+
     /**
       * @brief Returns the widget associated to @p index and @p widget
       * @param index The index to search into.
