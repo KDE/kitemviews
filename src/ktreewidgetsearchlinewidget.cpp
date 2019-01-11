@@ -22,7 +22,6 @@
 #include "ktreewidgetsearchline.h"
 
 #include <QHBoxLayout>
-#include <QLabel>
 #include <QTreeWidget>
 
 class Q_DECL_HIDDEN KTreeWidgetSearchLineWidget::Private
@@ -60,16 +59,10 @@ KTreeWidgetSearchLine *KTreeWidgetSearchLineWidget::createSearchLine(QTreeWidget
 
 void KTreeWidgetSearchLineWidget::createWidgets()
 {
-    QLabel *label = new QLabel(tr("S&earch:"), this);
-
     searchLine()->show();
-
-    label->setBuddy(d->searchLine);
-    label->show();
 
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setMargin(0);
-    layout->addWidget(label);
     layout->addWidget(d->searchLine);
     setFocusProxy(searchLine());
 }

@@ -223,6 +223,7 @@ KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q, QTreeWidget *treeWidget
             this, SLOT(_k_queueSearch(QString)));
 
     setClearButtonEnabled(true);
+    setPlaceholderText(tr("Search..."));
     setTreeWidget(treeWidget);
 
     if (!treeWidget) {
