@@ -62,7 +62,7 @@ void KTreeWidgetSearchLineWidget::createWidgets()
     searchLine()->show();
 
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(d->searchLine);
     setFocusProxy(searchLine());
 }

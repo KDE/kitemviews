@@ -73,7 +73,7 @@ KFilterProxySearchLine::KFilterProxySearchLine(QWidget *parent)
     d->searchLine->setPlaceholderText(tr("Search"));
 
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(d->searchLine);
 
     connect(d->searchLine, SIGNAL(textChanged(QString)),
