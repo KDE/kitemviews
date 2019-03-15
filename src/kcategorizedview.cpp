@@ -308,9 +308,9 @@ void KCategorizedView::Private::rowsInserted(const QModelIndex &parent, int star
         const QModelIndex firstAffectedCategory = blocks[category].firstIndex;
         //BEGIN: order for marking as alternate those blocks that are alternate
         QList<Block> blockList = blocks.values();
-        qSort(blockList.begin(), blockList.end(), Block::lessThan);
+        std::sort(blockList.begin(), blockList.end(), Block::lessThan);
         QList<int> firstIndexesRows;
-        foreach (const Block &block, blockList) {
+        for (const Block &block : qAsConst(blockList)) {
             firstIndexesRows << block.firstIndex.row();
         }
         //END: order for marking as alternate those blocks that are alternate
@@ -1310,7 +1310,7 @@ void KCategorizedView::rowsAboutToBeRemoved(const QModelIndex &parent,
     }
     //END: update the items that are in quarantine in affected categories
 
-    Q_FOREACH (const QString &category, listOfCategoriesMarkedForRemoval) {
+    for (const QString &category : qAsConst(listOfCategoriesMarkedForRemoval)) {
         d->blocks.remove(category);
     }
 
@@ -1318,9 +1318,9 @@ void KCategorizedView::rowsAboutToBeRemoved(const QModelIndex &parent,
     {
         //BEGIN: order for marking as alternate those blocks that are alternate
         QList<Private::Block> blockList = d->blocks.values();
-        qSort(blockList.begin(), blockList.end(), Private::Block::lessThan);
+        std::sort(blockList.begin(), blockList.end(), Private::Block::lessThan);
         QList<int> firstIndexesRows;
-        foreach (const Private::Block &block, blockList) {
+        for (const Private::Block &block : qAsConst(blockList)) {
             firstIndexesRows << block.firstIndex.row();
         }
         //END: order for marking as alternate those blocks that are alternate

@@ -106,7 +106,7 @@ QList<QWidget *> KWidgetItemDelegatePool::findWidgets(const QPersistentModelInde
         result = d->delegate->createItemWidgets(index);
         d->allocatedWidgets << result;
         d->usedWidgets[index] = result;
-        foreach (QWidget *widget, result) {
+        for (QWidget *widget : qAsConst(result)) {
             d->widgetInIndex[widget] = index;
             widget->setParent(d->delegate->d->itemView->viewport());
             widget->installEventFilter(d->eventListener);
@@ -115,13 +115,13 @@ QList<QWidget *> KWidgetItemDelegatePool::findWidgets(const QPersistentModelInde
     }
 
     if (updateWidgets == UpdateWidgets) {
-        foreach (QWidget *widget, result) {
+        for (QWidget *widget : qAsConst(result)) {
             widget->setVisible(true);
         }
 
         d->delegate->updateItemWidgets(result, option, idx);
 
-        foreach (QWidget *widget, result) {
+        for (QWidget *widget : qAsConst(result)) {
             widget->move(widget->x() + option.rect.left(), widget->y() + option.rect.top());
         }
     }
@@ -132,16 +132,18 @@ QList<QWidget *> KWidgetItemDelegatePool::findWidgets(const QPersistentModelInde
 QList<QWidget *> KWidgetItemDelegatePool::invalidIndexesWidgets() const
 {
     QList<QWidget *> result;
-    foreach (QWidget *widget, d->widgetInIndex.keys()) {
+    QHashIterator<QWidget *, QPersistentModelIndex> i(d->widgetInIndex);
+    while (i.hasNext()) {
+        i.next();
         const QAbstractProxyModel *proxyModel = qobject_cast<const QAbstractProxyModel *>(d->delegate->d->model);
         QModelIndex index;
         if (proxyModel) {
-            index = proxyModel->mapFromSource(d->widgetInIndex[widget]);
+            index = proxyModel->mapFromSource(i.value());
         } else {
-            index = d->widgetInIndex[widget];
+            index = i.value();
         }
         if (!index.isValid()) {
-            result << widget;
+            result << i.key();
         }
     }
     return result;

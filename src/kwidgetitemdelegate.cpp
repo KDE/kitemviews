@@ -93,7 +93,8 @@ void KWidgetItemDelegatePrivate::_k_slotDataChanged(const QModelIndex &topLeft, 
 
 void KWidgetItemDelegatePrivate::_k_slotLayoutChanged()
 {
-    foreach (QWidget *widget, widgetPool->invalidIndexesWidgets()) {
+    const auto lst = widgetPool->invalidIndexesWidgets();
+    for (QWidget *widget : lst) {
         widget->setVisible(false);
     }
     QTimer::singleShot(0, this, SLOT(initializeModel()));
@@ -107,10 +108,12 @@ void KWidgetItemDelegatePrivate::_k_slotModelReset()
 
 void KWidgetItemDelegatePrivate::_k_slotSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
 {
-    foreach (const QModelIndex &index, selected.indexes()) {
+    const auto lstSelected = selected.indexes();
+    for (const QModelIndex &index : lstSelected) {
         widgetPool->findWidgets(index, optionView(index));
     }
-    foreach (const QModelIndex &index, deselected.indexes()) {
+    const auto lstDeselected = deselected.indexes();
+    for (const QModelIndex &index : lstDeselected) {
         widgetPool->findWidgets(index, optionView(index));
     }
 }
@@ -121,11 +124,11 @@ void KWidgetItemDelegatePrivate::updateRowRange(const QModelIndex &parent, int s
     while (i <= end) {
         for (int j = 0; j < model->columnCount(parent); ++j) {
             const QModelIndex index = model->index(i, j, parent);
-            QList<QWidget *> widgetList = widgetPool->findWidgets(index, optionView(index), isRemoving ? KWidgetItemDelegatePool::NotUpdateWidgets
+            const QList<QWidget *> widgetList = widgetPool->findWidgets(index, optionView(index), isRemoving ? KWidgetItemDelegatePool::NotUpdateWidgets
                                           : KWidgetItemDelegatePool::UpdateWidgets);
             if (isRemoving) {
                 widgetPool->d->allocatedWidgets.removeAll(widgetList);
-                foreach (QWidget *widget, widgetList) {
+                for (QWidget *widget : widgetList) {
                     const QModelIndex idx = widgetPool->d->widgetInIndex[widget];
                     widgetPool->d->usedWidgets.remove(idx);
                     widgetPool->d->widgetInIndex.remove(widget);
@@ -275,7 +278,8 @@ bool KWidgetItemDelegatePrivate::eventFilter(QObject *watched, QEvent *event)
     case QEvent::FocusIn:
     case QEvent::FocusOut:
         if (qobject_cast<QAbstractItemView *>(watched)) {
-            foreach (const QModelIndex &index, selectionModel->selectedIndexes()) {
+            const auto lst = selectionModel->selectedIndexes();
+            for (const QModelIndex &index : lst) {
                 if (index.isValid()) {
                     widgetPool->findWidgets(index, optionView(index));
                 }
