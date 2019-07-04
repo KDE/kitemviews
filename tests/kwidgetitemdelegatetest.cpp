@@ -242,17 +242,9 @@ public:
         toolButtonOpt.toolButtonStyle = Qt::ToolButtonTextBesideIcon;
 
         toolButtonOpt.text = "Install";
-#if QT_VERSION < QT_VERSION_CHECK(5, 11, 0)
-        int widthInstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.width(QStringLiteral("Install")) + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
-#else
         int widthInstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.boundingRect(QStringLiteral("Install")).width() + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
-#endif
         toolButtonOpt.text = "Uninstall";
-#if QT_VERSION < QT_VERSION_CHECK(5, 11, 0)
-        int widthUninstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.width(QStringLiteral("Uninstall")) + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
-#else
         int widthUninstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.boundingRect(QStringLiteral("Uninstall")).width() + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
-#endif
 
         QSize size = toolButton->sizeHint();
         size.setWidth(qMax(widthInstall, widthUninstall));
