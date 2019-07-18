@@ -23,7 +23,6 @@
 #include "kwidgetitemdelegate_p.h"
 
 #include <QEvent>
-#include <QHoverEvent>
 #include <QCursor>
 #include <QTimer>
 #include <QPainter>

@@ -22,7 +22,6 @@
 #ifndef KWIDGETITEMDELEGATEPOOL_P_H
 #define KWIDGETITEMDELEGATEPOOL_P_H
 
-#include <QModelIndex>
 #include <QHash>
 #include <QList>
 

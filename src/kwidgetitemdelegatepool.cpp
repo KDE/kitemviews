@@ -22,10 +22,7 @@
 #include "kwidgetitemdelegatepool_p.h"
 
 #include <qobjectdefs.h>
-#include <QMetaObject>
 #include <QMetaMethod>
-#include <QMetaProperty>
-#include <QPair>
 #include <QHash>
 #include <QList>
 #include <QWidget>
@@ -33,7 +30,7 @@
 #include <QApplication>
 #include <QInputEvent>
 #include <QAbstractProxyModel>
-#include <QtDebug>
+#include <QDebug>
 
 #include "kwidgetitemdelegate.h"
 #include "kwidgetitemdelegate_p.h"

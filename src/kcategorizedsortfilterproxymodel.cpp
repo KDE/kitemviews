@@ -22,9 +22,6 @@
 #include "kcategorizedsortfilterproxymodel.h"
 #include "kcategorizedsortfilterproxymodel_p.h"
 
-#include <QItemSelection>
-#include <QStringList>
-#include <QSize>
 #include <QCollator>
 
 KCategorizedSortFilterProxyModel::KCategorizedSortFilterProxyModel(QObject *parent)
