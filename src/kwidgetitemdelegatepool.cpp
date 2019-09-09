@@ -184,7 +184,7 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
         case QEvent::Wheel: {
             QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
             QWheelEvent evt(viewport->mapFromGlobal(wheelEvent->globalPos()),
-                            wheelEvent->delta(), wheelEvent->buttons(), wheelEvent->modifiers(),
+                            wheelEvent->angleDelta().y(), wheelEvent->buttons(), wheelEvent->modifiers(),
                             wheelEvent->orientation());
             QApplication::sendEvent(viewport, &evt);
         }
