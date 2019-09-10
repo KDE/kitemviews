@@ -183,9 +183,13 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
         break;
         case QEvent::Wheel: {
             QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
-            QWheelEvent evt(viewport->mapFromGlobal(wheelEvent->globalPos()),
-                            wheelEvent->angleDelta().y(), wheelEvent->buttons(), wheelEvent->modifiers(),
-                            wheelEvent->orientation());
+            QWheelEvent evt(viewport->mapFromGlobal(wheelEvent->position().toPoint()),
+                            viewport->mapFromGlobal(wheelEvent->globalPosition().toPoint()),
+                            wheelEvent->pixelDelta(), wheelEvent->angleDelta(),
+                            wheelEvent->buttons(), wheelEvent->modifiers(),
+                            wheelEvent->phase(),
+                            wheelEvent->inverted(),
+                            wheelEvent->source());
             QApplication::sendEvent(viewport, &evt);
         }
         break;

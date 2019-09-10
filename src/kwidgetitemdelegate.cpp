@@ -295,7 +295,7 @@ bool KWidgetItemDelegatePrivate::eventFilter(QObject *watched, QEvent *event)
 
 void KWidgetItemDelegate::setBlockedEventTypes(QWidget *widget, QList<QEvent::Type> types) const
 {
-    widget->setProperty("goya:blockedEventTypes", qVariantFromValue(types));
+    widget->setProperty("goya:blockedEventTypes", QVariant::fromValue(types));
 }
 
 QList<QEvent::Type> KWidgetItemDelegate::blockedEventTypes(QWidget *widget) const
