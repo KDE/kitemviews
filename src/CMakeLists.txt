@@ -92,6 +92,8 @@ if(BUILD_QCH)
             Qt5Widgets_QCH
             Qt5Gui_QCH
             Qt5Core_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
             KITEMVIEWS_EXPORT
             KITEMVIEWS_DEPRECATED
