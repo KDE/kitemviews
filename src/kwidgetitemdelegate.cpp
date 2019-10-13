@@ -213,7 +213,7 @@ QPersistentModelIndex KWidgetItemDelegate::focusedIndex() const
     return d->itemView->indexAt(pos);
 }
 
-#ifndef KITEMVIEWS_NO_DEPRECATED
+#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 2)
 void KWidgetItemDelegate::paintWidgets(QPainter *painter, const QStyleOptionViewItem &option,
                                        const QPersistentModelIndex &index) const
 {

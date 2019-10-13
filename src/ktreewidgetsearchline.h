@@ -44,7 +44,7 @@ class KITEMVIEWS_EXPORT KTreeWidgetSearchLine : public QLineEdit
 
     Q_PROPERTY(Qt::CaseSensitivity caseSensitity READ caseSensitivity WRITE setCaseSensitivity)
     Q_PROPERTY(bool keepParentsVisible READ keepParentsVisible WRITE setKeepParentsVisible)
-#ifndef KITEMVIEWS_NO_DEPRECATED
+#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(5, 0)
     Q_PROPERTY(QString clickMessage READ clickMessage WRITE setClickMessage)
 #endif
 
@@ -111,22 +111,24 @@ public:
      */
     QList<QTreeWidget *> treeWidgets() const;
 
+#if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(5, 0)
     /**
      * @return the message set with setClickMessage
      * @deprecated since 5.0, use QLineEdit::placeholderText() instead.
      **/
-#ifndef KITEMVIEWS_NO_DEPRECATED
-    KITEMVIEWS_DEPRECATED QString clickMessage() const { return placeholderText(); }
+    KITEMVIEWS_DEPRECATED_VERSION(5, 0, "Use QLineEdit::placeholderText()")
+    QString clickMessage() const { return placeholderText(); }
 #endif
 
+#if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(5, 0)
     /**
      * This makes the line edit display a grayed-out hinting text as long as
      * the user didn't enter any text. It is often used as indication about
      * the purpose of the line edit.
      * @deprecated since 5.0, use QLineEdit::setPlaceholderText() instead.
      */
-#ifndef KITEMVIEWS_NO_DEPRECATED
-    KITEMVIEWS_DEPRECATED void setClickMessage(const QString &msg) { setPlaceholderText(msg); }
+    KITEMVIEWS_DEPRECATED_VERSION(5, 0, "Use QLineEdit::setPlaceholderText(const QString&))")
+    void setClickMessage(const QString &msg) { setPlaceholderText(msg); }
 #endif
 
 Q_SIGNALS:

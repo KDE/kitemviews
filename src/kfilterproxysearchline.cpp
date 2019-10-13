@@ -24,6 +24,8 @@
 #include <QTimer>
 #include <QSortFilterProxyModel>
 
+#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(5, 50)
+
 /**
  * KFilterProxySearchLinePrivate class that helps to provide binary compatibility between releases.
  * @internal
@@ -102,3 +104,5 @@ QLineEdit *KFilterProxySearchLine::lineEdit() const
 }
 
 #include "moc_kfilterproxysearchline.cpp"
+
+#endif

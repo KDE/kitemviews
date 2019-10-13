@@ -310,22 +310,24 @@ protected:
                               int end) override;
 
 protected Q_SLOTS:
+#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 4)
     /**
       * @internal
-      * @warning Deprecated since 4.4.
+      * @deprecated Since 4.4.
       */
-#ifndef KITEMVIEWS_NO_DEPRECATED
-    virtual KITEMVIEWS_DEPRECATED void rowsInsertedArtifficial(const QModelIndex &parent,
+    KITEMVIEWS_DEPRECATED_VERSION(4, 4, "No longer use")
+    virtual void rowsInsertedArtifficial(const QModelIndex &parent,
             int start,
             int end);
 #endif
 
+#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 4)
     /**
       * @internal
-      * @warning Deprecated since 4.4.
+      * @deprecated Since 4.4.
       */
-#ifndef KITEMVIEWS_NO_DEPRECATED
-    virtual KITEMVIEWS_DEPRECATED void rowsRemoved(const QModelIndex &parent,
+    KITEMVIEWS_DEPRECATED_VERSION(4, 4, "No longer use")
+    virtual void rowsRemoved(const QModelIndex &parent,
             int start,
             int end);
 #endif

@@ -22,7 +22,7 @@
 
 #include <kitemviews_export.h>
 
-#ifndef KITEMVIEWS_NO_DEPRECATED
+#if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(5, 50)
 
 #include <QWidget>
 class KFilterProxySearchLinePrivate;
@@ -45,7 +45,7 @@ class QSortFilterProxyModel;
  * consider not reacting until 3 letters.
  */
 
-class KITEMVIEWS_EXPORT KITEMVIEWS_DEPRECATED KFilterProxySearchLine
+class KITEMVIEWS_EXPORT KFilterProxySearchLine
     : public QWidget
 {
     Q_OBJECT
@@ -54,6 +54,7 @@ public:
     /**
      * Constructor
      */
+    KITEMVIEWS_DEPRECATED_VERSION(5, 50, "See class API docs")
     explicit KFilterProxySearchLine(QWidget *parent = nullptr);
 
     /**

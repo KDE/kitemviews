@@ -114,6 +114,7 @@ protected:
                                    const QStyleOptionViewItem &option,
                                    const QPersistentModelIndex &index) const = 0;
 
+#if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(4, 2)
     /**
      * Paint the widgets of the item. This method is meant to be used in the paint()
      * method of your item delegate implementation.
@@ -122,14 +123,14 @@ protected:
      * @param option the current set of style options for the view.
      * @param index the model index of the item currently painted.
      *
-     * @warning since 4.2 this method is not longer needed to be called. All widgets will kept
+     * @deprecated Since 4.2 this method is not longer needed to be called. All widgets will kept
      *          updated without the need of calling paintWidgets() in your paint() event. For the
      *          widgets of a certain index to be updated your model has to emit dataChanged() on the
      *          indexes that want to be updated.
      */
-#ifndef KITEMVIEWS_NO_DEPRECATED
-    KITEMVIEWS_DEPRECATED void paintWidgets(QPainter *painter, const QStyleOptionViewItem &option,
-                                            const QPersistentModelIndex &index) const;
+    KITEMVIEWS_DEPRECATED_VERSION(4, 2, "Use emit QAbstractItemModel::dataChanged(...)")
+    void paintWidgets(QPainter *painter, const QStyleOptionViewItem &option,
+                      const QPersistentModelIndex &index) const;
 #endif
 
     /**

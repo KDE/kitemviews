@@ -16,8 +16,15 @@ set(kitemviews_SRCS
 )
 
 add_library(KF5ItemViews ${kitemviews_SRCS})
-generate_export_header(KF5ItemViews BASE_NAME KItemViews)
 add_library(KF5::ItemViews ALIAS KF5ItemViews)
+ecm_generate_export_header(KF5ItemViews
+    BASE_NAME KItemViews
+    # GROUP_BASE_NAME KF <- enable once all of KF modules use ecm_generate_export_header
+    VERSION ${KF5_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    DEPRECATION_VERSIONS 4.2 4.4 5.0 5.50
+    EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
+)
 
 
 target_include_directories(KF5ItemViews INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KItemViews>")
