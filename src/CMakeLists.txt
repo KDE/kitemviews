@@ -19,7 +19,7 @@ add_library(KF5ItemViews ${kitemviews_SRCS})
 add_library(KF5::ItemViews ALIAS KF5ItemViews)
 ecm_generate_export_header(KF5ItemViews
     BASE_NAME KItemViews
-    # GROUP_BASE_NAME KF <- enable once all of KF modules use ecm_generate_export_header
+    GROUP_BASE_NAME KF
     VERSION ${KF5_VERSION}
     DEPRECATED_BASE_VERSION 0
     DEPRECATION_VERSIONS 4.2 4.4 5.0 5.50
