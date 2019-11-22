@@ -24,6 +24,7 @@
 
 #include <QHash>
 #include <QList>
+#include <QPersistentModelIndex>
 
 class QWidget;
 class QStyleOptionViewItem;
