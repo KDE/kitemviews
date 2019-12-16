@@ -63,7 +63,6 @@ void KCategoryDrawer::drawCategory(const QModelIndex &index,
     painter->setRenderHint(QPainter::Antialiasing);
 
     const QString category = index.model()->data(index, KCategorizedSortFilterProxyModel::CategoryDisplayRole).toString();
-    const QRect optRect = option.rect;
     QFont font(QApplication::font());
     // Match Heading with level 3
     font.setPointSizeF(font.pointSize() * 1.20);
