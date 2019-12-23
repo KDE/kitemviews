@@ -56,7 +56,7 @@ public:
     //this will trigger a lot of auto-casting QModelIndex <-> QPersistentModelIndex
     QHash<QPersistentModelIndex, QWidget *> extenders;
     QHash<QWidget *, QPersistentModelIndex> extenderIndices;
-    QHash<QWidget *, QPersistentModelIndex> deletionQueue;
+    QMultiHash<QWidget *, QPersistentModelIndex> deletionQueue;
     QPixmap extendPixmap;
     QPixmap contractPixmap;
     int stateTick;
@@ -391,7 +391,11 @@ void KExtendableItemDelegate::Private::deleteExtenders()
         ext->hide();
         ext->deleteLater();
     }
+#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
+    deletionQueue += extenderIndices;
+#else
     deletionQueue.unite(extenderIndices);
+#endif
     extenders.clear();
     extenderIndices.clear();
 }
