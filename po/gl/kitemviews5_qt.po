@@ -1,0 +1,46 @@
+# translation of kdelibs4.po to galician
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2008, 2009.
+# marce villarino <mvillarino@users.sourceforge.net>, 2009.
+# marce villarino <mvillarino@gmail.com>, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2009, 2010, 2011, 2012.
+# Xosé <xosecalvo@gmail.com>, 2010.
+# Marce Villarino <mvillarino@kde-espana.es>, 2011, 2012, 2013, 2014.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2019-01-15 19:39+0100\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Qt-Contexts: true\n"
+
+#: kfilterproxysearchline.cpp:75
+msgctxt "KFilterProxySearchLine|"
+msgid "Search"
+msgstr "Buscar"
+
+#: ktreewidgetsearchline.cpp:226
+msgctxt "KTreeWidgetSearchLine|"
+msgid "Search..."
+msgstr "Buscar…"
+
+#: ktreewidgetsearchline.cpp:435
+msgctxt "KTreeWidgetSearchLine|"
+msgid "Search Columns"
+msgstr "Buscar nas columnas"
+
+#: ktreewidgetsearchline.cpp:437
+msgctxt "KTreeWidgetSearchLine|"
+msgid "All Visible Columns"
+msgstr "Todas as columnas visíbeis"
