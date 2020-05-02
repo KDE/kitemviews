@@ -1,0 +1,46 @@
+# translation of kdelibs4.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2008, 2009, 2010, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2012-06-27 10:04+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Language: km-KH\n"
+"X-Qt-Contexts: true\n"
+
+#: kfilterproxysearchline.cpp:62
+#, fuzzy
+#| msgid "Search"
+msgctxt "KFilterProxySearchLine|"
+msgid "Search"
+msgstr "ស្វែង​រក"
+
+#: ktreewidgetsearchline.cpp:215
+#, fuzzy
+#| msgid "Search"
+msgctxt "KTreeWidgetSearchLine|"
+msgid "Search..."
+msgstr "ស្វែង​រក"
+
+#: ktreewidgetsearchline.cpp:424
+#, fuzzy
+#| msgid "Search Columns"
+msgctxt "KTreeWidgetSearchLine|"
+msgid "Search Columns"
+msgstr "ស្វែងរក​ជួរឈរ"
+
+#: ktreewidgetsearchline.cpp:426
+#, fuzzy
+#| msgid "All Visible Columns"
+msgctxt "KTreeWidgetSearchLine|"
+msgid "All Visible Columns"
+msgstr "ជួរឈរ​ដែល​មើល​ឃើញ​ទាំងអស់"
