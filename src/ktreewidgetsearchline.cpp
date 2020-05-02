@@ -212,7 +212,7 @@ KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q, QTreeWidget *treeWidget
             this, SLOT(_k_queueSearch(QString)));
 
     setClearButtonEnabled(true);
-    setPlaceholderText(tr("Search..."));
+    setPlaceholderText(tr("Search...", "@info:placeholder"));
     setTreeWidget(treeWidget);
 
     if (!treeWidget) {
@@ -421,9 +421,9 @@ void KTreeWidgetSearchLine::contextMenuEvent(QContextMenuEvent *event)
 
     if (d->canChooseColumns) {
         popup->addSeparator();
-        QMenu *subMenu = popup->addMenu(tr("Search Columns"));
+        QMenu *subMenu = popup->addMenu(tr("Search Columns", "@title:menu"));
 
-        QAction *allVisibleColumnsAction = subMenu->addAction(tr("All Visible Columns"),
+        QAction *allVisibleColumnsAction = subMenu->addAction(tr("All Visible Columns", "@optipn:check"),
                                            this, SLOT(_k_slotAllVisibleColumns()));
         allVisibleColumnsAction->setCheckable(true);
         allVisibleColumnsAction->setChecked(d->searchColumns.isEmpty());

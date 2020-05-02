@@ -59,7 +59,7 @@ KFilterProxySearchLine::KFilterProxySearchLine(QWidget *parent)
 {
     d->searchLine = new QLineEdit(this);
     d->searchLine->setClearButtonEnabled(true);
-    d->searchLine->setPlaceholderText(tr("Search"));
+    d->searchLine->setPlaceholderText(tr("Search...", "@info:placeholder"));
 
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
