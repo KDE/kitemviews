@@ -1,0 +1,46 @@
+# Xəyyam <xxmn77@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"PO-Revision-Date: 2020-04-16 00:19+0400\n"
+"Last-Translator: Xəyyam <xxmn77@gmail.com>\n"
+"Language-Team: Azerbaijani\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Qt-Contexts: true\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 19.12.3\n"
+
+#: kfilterproxysearchline.cpp:62
+#, fuzzy
+#| msgctxt "KTreeWidgetSearchLine|"
+#| msgid "Search..."
+msgctxt "KFilterProxySearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "Axtar..."
+
+#: ktreewidgetsearchline.cpp:215
+#, fuzzy
+#| msgctxt "KTreeWidgetSearchLine|"
+#| msgid "Search..."
+msgctxt "KTreeWidgetSearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "Axtar..."
+
+#: ktreewidgetsearchline.cpp:424
+#, fuzzy
+#| msgctxt "KTreeWidgetSearchLine|"
+#| msgid "Search Columns"
+msgctxt "KTreeWidgetSearchLine|@title:menu"
+msgid "Search Columns"
+msgstr "Sütunları Axtar"
+
+#: ktreewidgetsearchline.cpp:426
+#, fuzzy
+#| msgctxt "KTreeWidgetSearchLine|"
+#| msgid "All Visible Columns"
+msgctxt "KTreeWidgetSearchLine|@optipn:check"
+msgid "All Visible Columns"
+msgstr "Bütün Görünən Sütunlar"
