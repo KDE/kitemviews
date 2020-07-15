@@ -16,10 +16,10 @@ include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 
-
 include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
+include(ECMQtDeclareLoggingCategory)
 include(ECMAddQch)
 
 include(ECMPoQmTools)

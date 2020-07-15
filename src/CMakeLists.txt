@@ -15,6 +15,14 @@ set(kitemviews_SRCS
   ${kitemviews_QM_LOADER}
 )
 
+ecm_qt_declare_logging_category(kitemviews_SRCS
+    HEADER kitemviews_debug.h
+    IDENTIFIER KITEMVIEWS_LOG
+    CATEGORY_NAME kf.itemviews
+    DESCRIPTION "KItemViews"
+    EXPORT KITEMVIEWS
+)
+
 add_library(KF5ItemViews ${kitemviews_SRCS})
 add_library(KF5::ItemViews ALIAS KF5ItemViews)
 ecm_generate_export_header(KF5ItemViews
@@ -115,3 +123,9 @@ endif()
 include(ECMGeneratePriFile)
 ecm_generate_pri_file(BASE_NAME KItemViews LIB_NAME KF5ItemViews DEPS "widgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KItemViews)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+
+ecm_qt_install_logging_categories(
+    EXPORT KITEMVIEWS
+    FILE kitemviews.categories
+    DESTINATION "${KDE_INSTALL_LOGGINGCATEGORIESDIR}"
+)

@@ -17,8 +17,8 @@
 #include <QApplication>
 #include <QInputEvent>
 #include <QAbstractProxyModel>
-#include <QDebug>
 
+#include <kitemviews_debug.h>
 #include "kwidgetitemdelegate.h"
 #include "kwidgetitemdelegate_p.h"
 
@@ -148,7 +148,7 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
     QWidget *widget = static_cast<QWidget *>(watched);
 
     if (event->type() == QEvent::Destroy && !poolPrivate->clearing) {
-        qWarning() << "User of KWidgetItemDelegate should not delete widgets created by createItemWidgets!";
+        qCWarning(KITEMVIEWS_LOG) << "User of KWidgetItemDelegate should not delete widgets created by createItemWidgets!";
         // assume the application has kept a list of widgets and tries to delete them manually
         // they have been reparented to the view in any case, so no leaking occurs
         poolPrivate->widgetInIndex.remove(widget);
