@@ -126,14 +126,14 @@ public:
       */
     void _k_slotCollapseOrExpandClicked(QModelIndex);
 
-    KCategorizedView *q;
-    KCategorizedSortFilterProxyModel *proxyModel;
-    KCategoryDrawer *categoryDrawer;
-    int categorySpacing;
-    bool alternatingBlockColors;
-    bool collapsibleBlocks;
+    KCategorizedView *const q;
+    KCategorizedSortFilterProxyModel *proxyModel = nullptr;
+    KCategoryDrawer *categoryDrawer = nullptr;
+    int categorySpacing = 0;
+    bool alternatingBlockColors = false;
+    bool collapsibleBlocks= false;
 
-    Block *hoveredBlock;
+    Block *const hoveredBlock;
     QString hoveredCategory;
     QModelIndex hoveredIndex;
 

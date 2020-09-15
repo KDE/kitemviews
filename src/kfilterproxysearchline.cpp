@@ -22,16 +22,16 @@ class KFilterProxySearchLinePrivate
 {
 public:
     KFilterProxySearchLinePrivate(KFilterProxySearchLine *parent) :
-        q(parent), proxy(nullptr), searchLine(nullptr)
+        q(parent)
     {
         timer = new QTimer(q);
         timer->setSingleShot(true);
         QObject::connect(timer, SIGNAL(timeout()), q, SLOT(slotSearchLineActivate()));
     }
     QTimer *timer;
-    KFilterProxySearchLine *q;
-    QSortFilterProxyModel *proxy;
-    QLineEdit *searchLine;
+    KFilterProxySearchLine *const q;
+    QSortFilterProxyModel *proxy = nullptr;
+    QLineEdit *searchLine = nullptr;
 
     void slotSearchLineChange(const QString &newText);
     void slotSearchLineActivate();

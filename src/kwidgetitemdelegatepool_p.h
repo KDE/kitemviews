@@ -89,7 +89,7 @@ public:
     QHash<QPersistentModelIndex, QList<QWidget *> > usedWidgets;
     QHash<QWidget *, QPersistentModelIndex> widgetInIndex;
 
-    bool clearing;
+    bool clearing = false;
 };
 
 #endif

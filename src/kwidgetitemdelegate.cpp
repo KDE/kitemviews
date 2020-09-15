@@ -29,11 +29,7 @@ Q_DECLARE_METATYPE(QList<QEvent::Type>)
 //@cond PRIVATE
 KWidgetItemDelegatePrivate::KWidgetItemDelegatePrivate(KWidgetItemDelegate *q, QObject *parent)
     : QObject(parent)
-    , itemView(nullptr)
     , widgetPool(new KWidgetItemDelegatePool(q))
-    , model(nullptr)
-    , selectionModel(nullptr)
-    , viewDestroyed(false)
     , q(q)
 {
 }

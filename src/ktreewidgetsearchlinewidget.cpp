@@ -16,14 +16,8 @@
 class Q_DECL_HIDDEN KTreeWidgetSearchLineWidget::Private
 {
 public:
-    Private()
-        : treeWidget(nullptr),
-          searchLine(nullptr)
-    {
-    }
-
-    QTreeWidget *treeWidget;
-    KTreeWidgetSearchLine *searchLine;
+    QTreeWidget *treeWidget = nullptr;
+    KTreeWidgetSearchLine *searchLine = nullptr;
 };
 
 KTreeWidgetSearchLineWidget::KTreeWidgetSearchLineWidget(QWidget *parent, QTreeWidget *treeWidget)

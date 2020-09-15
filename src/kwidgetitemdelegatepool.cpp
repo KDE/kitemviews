@@ -42,13 +42,12 @@ public:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
-    KWidgetItemDelegatePoolPrivate *poolPrivate;
+    KWidgetItemDelegatePoolPrivate *const poolPrivate;
 };
 
 KWidgetItemDelegatePoolPrivate::KWidgetItemDelegatePoolPrivate(KWidgetItemDelegate *d)
     : delegate(d)
     , eventListener(new KWidgetItemDelegateEventListener(this))
-    , clearing(false)
 {
 }
 

@@ -19,11 +19,7 @@ class Q_DECL_HIDDEN KListWidgetSearchLine::KListWidgetSearchLinePrivate
 {
 public:
     KListWidgetSearchLinePrivate(KListWidgetSearchLine *parent) :
-        q(parent),
-        listWidget(nullptr),
-        caseSensitivity(Qt::CaseInsensitive),
-        activeSearch(false),
-        queuedSearches(0)
+        q(parent)
     {}
 
     void _k_listWidgetDeleted();
@@ -35,12 +31,12 @@ public:
     void init(QListWidget *listWidget = nullptr);
     void updateHiddenState(int start, int end);
 
-    KListWidgetSearchLine *q;
-    QListWidget *listWidget;
-    Qt::CaseSensitivity caseSensitivity;
-    bool activeSearch;
+    KListWidgetSearchLine *const q;
+    QListWidget *listWidget = nullptr;
+    Qt::CaseSensitivity caseSensitivity = Qt::CaseInsensitive;
+    bool activeSearch = false;
     QString search;
-    int queuedSearches;
+    int queuedSearches = 0;
 };
 
 /******************************************************************************

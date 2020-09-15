@@ -27,7 +27,7 @@ public:
     {
     }
 
-    KCategorizedView *view;
+    KCategorizedView *const view;
 };
 
 KCategoryDrawer::KCategoryDrawer(KCategorizedView *view)

@@ -22,7 +22,6 @@ public:
         stateTick(0),
         cachedStateTick(-1),
         cachedRow(-20), //Qt uses -1 for invalid indices
-        extender(nullptr),
         extenderHeight(0)
 
     {}
@@ -34,7 +33,7 @@ public:
     QModelIndex indexOfExtendedColumnInSameRow(const QModelIndex &index) const;
     void scheduleUpdateViewLayout();
 
-    KExtendableItemDelegate *q;
+    KExtendableItemDelegate *const q;
 
     /**
      * Delete all active extenders
@@ -51,7 +50,7 @@ public:
     int cachedStateTick;
     int cachedRow;
     QModelIndex cachedParentIndex;
-    QWidget *extender;
+    QWidget *extender = nullptr;
     int extenderHeight;
 };
 

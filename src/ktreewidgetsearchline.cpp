@@ -22,21 +22,17 @@ class Q_DECL_HIDDEN KTreeWidgetSearchLine::Private
 {
 public:
     Private(KTreeWidgetSearchLine *_q)
-        : q(_q),
-          caseSensitive(Qt::CaseInsensitive),
-          keepParentsVisible(true),
-          canChooseColumns(true),
-          queuedSearches(0)
+        : q(_q)
     {
     }
 
-    KTreeWidgetSearchLine *q;
+    KTreeWidgetSearchLine *const q;
     QList<QTreeWidget *> treeWidgets;
-    Qt::CaseSensitivity caseSensitive;
-    bool keepParentsVisible;
-    bool canChooseColumns;
+    Qt::CaseSensitivity caseSensitive = Qt::CaseInsensitive;
+    bool keepParentsVisible = true;
+    bool canChooseColumns = true;
     QString search;
-    int queuedSearches;
+    int queuedSearches = 0;
     QList<int> searchColumns;
 
     void _k_rowsInserted(const QModelIndex &parent, int start, int end) const;

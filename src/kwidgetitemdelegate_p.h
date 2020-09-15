@@ -46,13 +46,13 @@ protected:
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 public:
-    QAbstractItemView *itemView;
-    KWidgetItemDelegatePool *widgetPool;
-    QAbstractItemModel *model;
-    QItemSelectionModel *selectionModel;
-    bool viewDestroyed;
+    QAbstractItemView *itemView = nullptr;
+    KWidgetItemDelegatePool *const widgetPool;
+    QAbstractItemModel *model = nullptr;
+    QItemSelectionModel *selectionModel = nullptr;
+    bool viewDestroyed = false;
 
-    KWidgetItemDelegate *q;
+    KWidgetItemDelegate *const q;
 };
 
 #endif
