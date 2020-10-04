@@ -1,0 +1,48 @@
+# translation of kdelibs4.po to Qırımtatarca (Qırım Türkçesi)
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdelibs package.
+#
+# Reşat SABIQ <tilde.birlik@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2009-02-12 23:29-0600\n"
+"Last-Translator: Reşat SABIQ <tilde.birlik@gmail.com>\n"
+"Language-Team: Qırımtatarca (Qırım Türkçesi)\n"
+"Language: crh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Qt-Contexts: true\n"
+
+#: kfilterproxysearchline.cpp:62
+#, fuzzy
+#| msgid "&Search"
+msgctxt "KFilterProxySearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "&Qıdır"
+
+#: ktreewidgetsearchline.cpp:211
+#, fuzzy
+#| msgid "&Search"
+msgctxt "KTreeWidgetSearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "&Qıdır"
+
+#: ktreewidgetsearchline.cpp:420
+#, fuzzy
+#| msgid "Search Columns"
+msgctxt "KTreeWidgetSearchLine|@title:menu"
+msgid "Search Columns"
+msgstr "Sutunlarnı Qıdır"
+
+#: ktreewidgetsearchline.cpp:422
+#, fuzzy
+#| msgid "All Visible Columns"
+msgctxt "KTreeWidgetSearchLine|@optipn:check"
+msgid "All Visible Columns"
+msgstr "Körüngen Sutunlarnıñ Episi"
