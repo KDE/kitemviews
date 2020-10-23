@@ -9,7 +9,6 @@
 #include "kwidgetitemdelegate.h"
 #include "kwidgetitemdelegate_p.h"
 
-#include <QEvent>
 #include <QCursor>
 #include <QTimer>
 #include <QPainter>

@@ -14,7 +14,6 @@
 #include <QApplication>
 #include <QContextMenuEvent>
 #include <QHeaderView>
-#include <QLineEdit>
 #include <QMenu>
 #include <QTreeWidget>
 

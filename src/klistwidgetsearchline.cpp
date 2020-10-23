@@ -8,7 +8,6 @@
 
 #include "klistwidgetsearchline.h"
 
-#include <QLineEdit>
 #include <QListWidget>
 #include <QApplication>
 #include <QKeyEvent>
