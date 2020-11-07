@@ -1,0 +1,48 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amitakhya Phukan <aphukan@fedoraproject.org>, 2008.
+# Amitakhya Phukan <অমিতাক্ষ ফুকন>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4_as\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2008-12-26 15:19+0530\n"
+"Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
+"Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
+"Language: as\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.2\n"
+"X-Qt-Contexts: true\n"
+
+#: kfilterproxysearchline.cpp:62
+#, fuzzy
+#| msgid "&Search"
+msgctxt "KFilterProxySearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "অনুসন্ধান (&S)"
+
+#: ktreewidgetsearchline.cpp:210
+#, fuzzy
+#| msgid "&Search"
+msgctxt "KTreeWidgetSearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "অনুসন্ধান (&S)"
+
+#: ktreewidgetsearchline.cpp:419
+#, fuzzy
+#| msgid "Search Columns"
+msgctxt "KTreeWidgetSearchLine|@title:menu"
+msgid "Search Columns"
+msgstr "স্তম্ভ অনুসন্ধান"
+
+#: ktreewidgetsearchline.cpp:421
+#, fuzzy
+#| msgid "All Visible Columns"
+msgctxt "KTreeWidgetSearchLine|@optipn:check"
+msgid "All Visible Columns"
+msgstr "সকল দৃশ্যমান স্তম্ভ"
