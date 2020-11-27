@@ -378,11 +378,7 @@ void KExtendableItemDelegate::Private::deleteExtenders()
         ext->hide();
         ext->deleteLater();
     }
-#if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
-    deletionQueue += extenderIndices;
-#else
     deletionQueue.unite(extenderIndices);
-#endif
     extenders.clear();
     extenderIndices.clear();
 }
