@@ -40,8 +40,8 @@ KTreeWidgetSearchLineTest::KTreeWidgetSearchLineTest()
     create2ndLevel(green);
     create2ndLevel(yellow);
 
-    QVBoxLayout *layout = new QVBoxLayout;
-    setLayout(layout);
+    QVBoxLayout *layout = new QVBoxLayout(this);
+
     QHBoxLayout *hbox = new QHBoxLayout();
 
     QPushButton *caseSensitive = new QPushButton(QStringLiteral("&Case Sensitive"), this);
