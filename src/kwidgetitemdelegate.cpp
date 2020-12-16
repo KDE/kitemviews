@@ -135,6 +135,7 @@ void KWidgetItemDelegatePrivate::initializeModel(const QModelIndex &parent)
     if (!model) {
         return;
     }
+
     for (int i = 0; i < model->rowCount(parent); ++i) {
         for (int j = 0; j < model->columnCount(parent); ++j) {
             const QModelIndex index = model->index(i, j, parent);
@@ -283,6 +284,11 @@ void KWidgetItemDelegate::setBlockedEventTypes(QWidget *widget, QList<QEvent::Ty
 QList<QEvent::Type> KWidgetItemDelegate::blockedEventTypes(QWidget *widget) const
 {
     return widget->property("goya:blockedEventTypes").value<QList<QEvent::Type> >();
+}
+
+void KWidgetItemDelegate::resetModel()
+{
+   d->_k_slotModelReset();
 }
 
 #include "moc_kwidgetitemdelegate.cpp"

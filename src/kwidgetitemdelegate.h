@@ -67,6 +67,11 @@ public:
      */
     QPersistentModelIndex focusedIndex() const;
 
+    /**
+     * trigger a modelReset
+     */
+    void resetModel();
+
 protected:
     /**
      * Creates the list of widgets needed for an item.
