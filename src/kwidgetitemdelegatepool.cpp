@@ -169,7 +169,6 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
         break;
         case QEvent::Wheel: {
             QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
             QWheelEvent evt(viewport->mapFromGlobal(wheelEvent->position().toPoint()),
                             viewport->mapFromGlobal(wheelEvent->globalPosition().toPoint()),
                             wheelEvent->pixelDelta(), wheelEvent->angleDelta(),
@@ -177,11 +176,6 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
                             wheelEvent->phase(),
                             wheelEvent->inverted(),
                             wheelEvent->source());
-#else
-            QWheelEvent evt(viewport->mapFromGlobal(wheelEvent->globalPos()),
-                            wheelEvent->angleDelta().y(), wheelEvent->buttons(), wheelEvent->modifiers(),
-                            wheelEvent->orientation());
-#endif
             QApplication::sendEvent(viewport, &evt);
         }
         break;
