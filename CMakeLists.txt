@@ -10,7 +10,7 @@ feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKA
 
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
-set(REQUIRED_QT_VERSION 5.13.0)
+set(REQUIRED_QT_VERSION 5.14.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
 include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
@@ -41,7 +41,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KITEMVIEWS
 if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
     ecm_install_po_files_as_qm(po)
 endif()
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050d00)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050e00)
 add_definitions(-DQT_NO_FOREACH)
 add_subdirectory(src)
 if (BUILD_TESTING)
