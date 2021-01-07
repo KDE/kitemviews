@@ -12,6 +12,8 @@
 #if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(5, 50)
 
 #include <QWidget>
+#include <memory>
+
 class KFilterProxySearchLinePrivate;
 
 class QLineEdit;
@@ -66,7 +68,8 @@ public:
     QLineEdit *lineEdit() const;
 
 private:
-    KFilterProxySearchLinePrivate *const d;
+    std::unique_ptr<class KFilterProxySearchLinePrivate> const d;
+
     Q_DISABLE_COPY(KFilterProxySearchLine)
     Q_PRIVATE_SLOT(d, void slotSearchLineChange(const QString &newText))
     Q_PRIVATE_SLOT(d, void slotSearchLineActivate())

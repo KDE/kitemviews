@@ -69,10 +69,7 @@ KFilterProxySearchLine::KFilterProxySearchLine(QWidget *parent)
             SLOT(slotSearchLineChange(QString)));
 }
 
-KFilterProxySearchLine::~KFilterProxySearchLine()
-{
-    delete d;
-}
+KFilterProxySearchLine::~KFilterProxySearchLine() = default;
 
 void KFilterProxySearchLine::setText(const QString &text)
 {

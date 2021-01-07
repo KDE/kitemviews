@@ -9,6 +9,7 @@
 #define KCATEGORIZEDVIEW_H
 
 #include <QListView>
+#include <memory>
 
 #include <kitemviews_export.h>
 
@@ -326,8 +327,8 @@ protected Q_SLOTS:
     virtual void slotLayoutChanged();
 
 private:
-    class Private;
-    Private *const d;
+    friend class KCategorizedViewPrivate;
+    std::unique_ptr<class KCategorizedViewPrivate> const d;
 
     Q_PRIVATE_SLOT(d, void _k_slotCollapseOrExpandClicked(QModelIndex))
 };

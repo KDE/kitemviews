@@ -14,10 +14,10 @@
 #include <QPainter>
 #include <QApplication>
 
-class Q_DECL_HIDDEN KExtendableItemDelegate::Private
+class KExtendableItemDelegatePrivate
 {
 public:
-    Private(KExtendableItemDelegate *parent) :
+    KExtendableItemDelegatePrivate(KExtendableItemDelegate *parent) :
         q(parent),
         stateTick(0),
         cachedStateTick(-1),
@@ -56,16 +56,13 @@ public:
 
 KExtendableItemDelegate::KExtendableItemDelegate(QAbstractItemView *parent)
     : QStyledItemDelegate(parent),
-      d(new Private(this))
+      d(new KExtendableItemDelegatePrivate(this))
 {
     connect(parent->verticalScrollBar(), SIGNAL(valueChanged(int)),
             this, SLOT(_k_verticalScroll()));
 }
 
-KExtendableItemDelegate::~KExtendableItemDelegate()
-{
-    delete d;
-}
+KExtendableItemDelegate::~KExtendableItemDelegate() = default;
 
 void KExtendableItemDelegate::extendItem(QWidget *ext, const QModelIndex &index)
 {
@@ -115,7 +112,7 @@ void KExtendableItemDelegate::contractAll()
 }
 
 //slot
-void KExtendableItemDelegate::Private::_k_extenderDestructionHandler(QObject *destroyed)
+void KExtendableItemDelegatePrivate::_k_extenderDestructionHandler(QObject *destroyed)
 {
     // qDebug() << "Removing extender at " << destroyed;
 
@@ -134,7 +131,7 @@ void KExtendableItemDelegate::Private::_k_extenderDestructionHandler(QObject *de
 }
 
 //slot
-void KExtendableItemDelegate::Private::_k_verticalScroll()
+void KExtendableItemDelegatePrivate::_k_verticalScroll()
 {
     for (QWidget *extender : qAsConst(extenders)) {
         // Fast scrolling can lead to artifacts where extenders stay in the viewport
@@ -317,7 +314,7 @@ QRect KExtendableItemDelegate::extenderRect(QWidget *extender, const QStyleOptio
     return rect;
 }
 
-QSize KExtendableItemDelegate::Private::maybeExtendedSize(const QStyleOptionViewItem &option, const QModelIndex &index) const
+QSize KExtendableItemDelegatePrivate::maybeExtendedSize(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QWidget *extender = extenders.value(index);
     QSize size(q->QStyledItemDelegate::sizeHint(option, index));
@@ -347,7 +344,7 @@ QSize KExtendableItemDelegate::Private::maybeExtendedSize(const QStyleOptionView
     return size;
 }
 
-QModelIndex KExtendableItemDelegate::Private::indexOfExtendedColumnInSameRow(const QModelIndex &index) const
+QModelIndex KExtendableItemDelegatePrivate::indexOfExtendedColumnInSameRow(const QModelIndex &index) const
 {
     const QAbstractItemModel *const model = index.model();
     const QModelIndex parentIndex(index.parent());
@@ -372,7 +369,7 @@ void KExtendableItemDelegate::updateExtenderGeometry(QWidget *extender, const QS
     extender->setGeometry(option.rect);
 }
 
-void KExtendableItemDelegate::Private::deleteExtenders()
+void KExtendableItemDelegatePrivate::deleteExtenders()
 {
     for (QWidget *ext : qAsConst(extenders)) {
         ext->hide();
@@ -385,7 +382,7 @@ void KExtendableItemDelegate::Private::deleteExtenders()
 
 //make the view re-ask for sizeHint() and redisplay items with their new size
 //### starting from Qt 4.4 we could emit sizeHintChanged() instead
-void KExtendableItemDelegate::Private::scheduleUpdateViewLayout()
+void KExtendableItemDelegatePrivate::scheduleUpdateViewLayout()
 {
     QAbstractItemView *aiv = qobject_cast<QAbstractItemView *>(q->parent());
     //prevent crashes during destruction of the view

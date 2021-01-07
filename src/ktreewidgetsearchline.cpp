@@ -17,10 +17,10 @@
 #include <QMenu>
 #include <QTreeWidget>
 
-class Q_DECL_HIDDEN KTreeWidgetSearchLine::Private
+class KTreeWidgetSearchLinePrivate
 {
 public:
-    Private(KTreeWidgetSearchLine *_q)
+    KTreeWidgetSearchLinePrivate(KTreeWidgetSearchLine *_q)
         : q(_q)
     {
     }
@@ -60,7 +60,7 @@ public:
     }
 };
 
-void KTreeWidgetSearchLine::Private::_k_rowsInserted(const QModelIndex &parentIndex, int start, int end) const
+void KTreeWidgetSearchLinePrivate::_k_rowsInserted(const QModelIndex &parentIndex, int start, int end) const
 {
     QAbstractItemModel *model = qobject_cast<QAbstractItemModel *>(q->sender());
     if (!model) {
@@ -90,13 +90,13 @@ void KTreeWidgetSearchLine::Private::_k_rowsInserted(const QModelIndex &parentIn
     }
 }
 
-void KTreeWidgetSearchLine::Private::_k_treeWidgetDeleted(QObject *object)
+void KTreeWidgetSearchLinePrivate::_k_treeWidgetDeleted(QObject *object)
 {
     treeWidgets.removeAll(static_cast<QTreeWidget *>(object));
     q->setEnabled(treeWidgets.isEmpty());
 }
 
-void KTreeWidgetSearchLine::Private::_k_slotColumnActivated(QAction *action)
+void KTreeWidgetSearchLinePrivate::_k_slotColumnActivated(QAction *action)
 {
     if (!action) {
         return;
@@ -140,7 +140,7 @@ void KTreeWidgetSearchLine::Private::_k_slotColumnActivated(QAction *action)
     q->updateSearch();
 }
 
-void KTreeWidgetSearchLine::Private::_k_slotAllVisibleColumns()
+void KTreeWidgetSearchLinePrivate::_k_slotAllVisibleColumns()
 {
     if (searchColumns.isEmpty()) {
         searchColumns.append(0);
@@ -155,12 +155,12 @@ void KTreeWidgetSearchLine::Private::_k_slotAllVisibleColumns()
 // private methods
 ////////////////////////////////////////////////////////////////////////////////
 
-void KTreeWidgetSearchLine::Private::checkColumns()
+void KTreeWidgetSearchLinePrivate::checkColumns()
 {
     canChooseColumns = q->canChooseColumnsCheck();
 }
 
-void KTreeWidgetSearchLine::Private::checkItemParentsNotVisible(QTreeWidget *treeWidget)
+void KTreeWidgetSearchLinePrivate::checkItemParentsNotVisible(QTreeWidget *treeWidget)
 {
     for (QTreeWidgetItemIterator it(treeWidget); *it; ++it) {
         QTreeWidgetItem *item = *it;
@@ -179,7 +179,7 @@ void KTreeWidgetSearchLine::Private::checkItemParentsNotVisible(QTreeWidget *tre
  *  \return \c true if an item which should be visible is found, \c false if all items found should be hidden. If this function
  *             returns true and \p highestHiddenParent was not 0, highestHiddenParent will have been shown.
  */
-bool KTreeWidgetSearchLine::Private::checkItemParentsVisible(QTreeWidgetItem *item)
+bool KTreeWidgetSearchLinePrivate::checkItemParentsVisible(QTreeWidgetItem *item)
 {
     bool childMatch = false;
     for (int i = 0; i < item->childCount(); ++i) {
@@ -201,7 +201,8 @@ bool KTreeWidgetSearchLine::Private::checkItemParentsVisible(QTreeWidgetItem *it
 ////////////////////////////////////////////////////////////////////////////////
 
 KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q, QTreeWidget *treeWidget)
-    : QLineEdit(q), d(new Private(this))
+    : QLineEdit(q)
+    , d(new KTreeWidgetSearchLinePrivate(this))
 {
     connect(this, SIGNAL(textChanged(QString)),
             this, SLOT(_k_queueSearch(QString)));
@@ -217,7 +218,8 @@ KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q, QTreeWidget *treeWidget
 
 KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q,
         const QList<QTreeWidget *> &treeWidgets)
-    : QLineEdit(q), d(new Private(this))
+    : QLineEdit(q)
+    , d(new KTreeWidgetSearchLinePrivate(this))
 {
     connect(this, SIGNAL(textChanged(QString)),
             this, SLOT(_k_queueSearch(QString)));
@@ -226,10 +228,7 @@ KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q,
     setTreeWidgets(treeWidgets);
 }
 
-KTreeWidgetSearchLine::~KTreeWidgetSearchLine()
-{
-    delete d;
-}
+KTreeWidgetSearchLine::~KTreeWidgetSearchLine() = default;
 
 Qt::CaseSensitivity KTreeWidgetSearchLine::caseSensitivity() const
 {
@@ -551,7 +550,7 @@ bool KTreeWidgetSearchLine::event(QEvent *event)
 // protected slots
 ////////////////////////////////////////////////////////////////////////////////
 
-void KTreeWidgetSearchLine::Private::_k_queueSearch(const QString &_search)
+void KTreeWidgetSearchLinePrivate::_k_queueSearch(const QString &_search)
 {
     queuedSearches++;
     search = _search;
@@ -559,7 +558,7 @@ void KTreeWidgetSearchLine::Private::_k_queueSearch(const QString &_search)
     QTimer::singleShot(200, q, SLOT(_k_activateSearch()));
 }
 
-void KTreeWidgetSearchLine::Private::_k_activateSearch()
+void KTreeWidgetSearchLinePrivate::_k_activateSearch()
 {
     --queuedSearches;
 

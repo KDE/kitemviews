@@ -14,7 +14,7 @@
 #include <QEvent>
 #include <QTimer>
 
-class Q_DECL_HIDDEN KListWidgetSearchLine::KListWidgetSearchLinePrivate
+class KListWidgetSearchLinePrivate
 {
 public:
     KListWidgetSearchLinePrivate(KListWidgetSearchLine *parent) :
@@ -52,7 +52,6 @@ KListWidgetSearchLine::KListWidgetSearchLine(QWidget *parent, QListWidget *listW
 KListWidgetSearchLine::~KListWidgetSearchLine()
 {
     clear(); // returning items back to listWidget
-    delete d;
 }
 
 Qt::CaseSensitivity KListWidgetSearchLine::caseSensitive() const
@@ -136,20 +135,20 @@ bool KListWidgetSearchLine::itemMatches(const QListWidgetItem *item,
                                  caseSensitive() ? Qt::CaseSensitive : Qt::CaseInsensitive) >= 0);
 }
 
-void KListWidgetSearchLine::KListWidgetSearchLinePrivate::init(QListWidget *_listWidget)
+void KListWidgetSearchLinePrivate::init(QListWidget *_listWidget)
 {
     listWidget = _listWidget;
 
-    connect(q, SIGNAL(textChanged(QString)),
-            q, SLOT(_k_queueSearch(QString)));
+    QObject::connect(q, SIGNAL(textChanged(QString)),
+                     q, SLOT(_k_queueSearch(QString)));
 
     if (listWidget != nullptr) {
-        connect(listWidget, SIGNAL(destroyed()),
-                q, SLOT(_k_listWidgetDeleted()));
-        connect(listWidget->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
-                q, SLOT(_k_rowsInserted(QModelIndex,int,int)));
-        connect(listWidget->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-                q, SLOT(_k_dataChanged(QModelIndex,QModelIndex)));
+        QObject::connect(listWidget, SIGNAL(destroyed()),
+                         q, SLOT(_k_listWidgetDeleted()));
+        QObject::connect(listWidget->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
+                         q, SLOT(_k_rowsInserted(QModelIndex,int,int)));
+        QObject::connect(listWidget->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
+                         q, SLOT(_k_dataChanged(QModelIndex,QModelIndex)));
         q->setEnabled(true);
     } else {
         q->setEnabled(false);
@@ -157,7 +156,7 @@ void KListWidgetSearchLine::KListWidgetSearchLinePrivate::init(QListWidget *_lis
     q->setClearButtonEnabled(true);
 }
 
-void KListWidgetSearchLine::KListWidgetSearchLinePrivate::updateHiddenState(int start, int end)
+void KListWidgetSearchLinePrivate::updateHiddenState(int start, int end)
 {
     if (!listWidget) {
         return;
@@ -215,14 +214,14 @@ bool KListWidgetSearchLine::event(QEvent *event)
 /******************************************************************************
  * Protected Slots                                                            *
  *****************************************************************************/
-void KListWidgetSearchLine::KListWidgetSearchLinePrivate::_k_queueSearch(const QString &s)
+void KListWidgetSearchLinePrivate::_k_queueSearch(const QString &s)
 {
     queuedSearches++;
     search = s;
     QTimer::singleShot(200, q, SLOT(_k_activateSearch()));
 }
 
-void KListWidgetSearchLine::KListWidgetSearchLinePrivate::_k_activateSearch()
+void KListWidgetSearchLinePrivate::_k_activateSearch()
 {
     queuedSearches--;
 
@@ -235,13 +234,13 @@ void KListWidgetSearchLine::KListWidgetSearchLinePrivate::_k_activateSearch()
 /******************************************************************************
  * KListWidgetSearchLinePrivate Slots                                                              *
  *****************************************************************************/
-void KListWidgetSearchLine::KListWidgetSearchLinePrivate::_k_listWidgetDeleted()
+void KListWidgetSearchLinePrivate::_k_listWidgetDeleted()
 {
     listWidget = nullptr;
     q->setEnabled(false);
 }
 
-void KListWidgetSearchLine::KListWidgetSearchLinePrivate::_k_rowsInserted(const QModelIndex &parent, int start, int end)
+void KListWidgetSearchLinePrivate::_k_rowsInserted(const QModelIndex &parent, int start, int end)
 {
     if (parent.isValid()) {
         return;
@@ -250,7 +249,7 @@ void KListWidgetSearchLine::KListWidgetSearchLinePrivate::_k_rowsInserted(const 
     updateHiddenState(start, end);
 }
 
-void KListWidgetSearchLine::KListWidgetSearchLinePrivate::_k_dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
+void KListWidgetSearchLinePrivate::_k_dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
 {
     if (topLeft.parent().isValid()) {
         return;

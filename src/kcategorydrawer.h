@@ -12,6 +12,8 @@
 
 #include <QObject>
 #include <QMouseEvent>
+#include <memory>
+
 class KCategoryDrawerPrivate;
 
 class QPainter;
@@ -152,7 +154,7 @@ protected:
     virtual void mouseLeft(const QModelIndex &index, const QRect &blockRect);
 
 private:
-    KCategoryDrawerPrivate *const d;
+    std::unique_ptr<KCategoryDrawerPrivate> const d;
 };
 
 #if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(5, 0)

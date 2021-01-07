@@ -13,6 +13,7 @@
 #include <QList>
 #include <QPersistentModelIndex>
 #include <QAbstractItemDelegate>
+#include <memory>
 
 #include <kitemviews_export.h>
 
@@ -149,7 +150,8 @@ private:
     //@cond PRIVATE
     friend class KWidgetItemDelegatePool;
     friend class KWidgetItemDelegateEventListener;
-    KWidgetItemDelegatePrivate *const d;
+    std::unique_ptr<class KWidgetItemDelegatePrivate> const d;
+
     Q_PRIVATE_SLOT(d, void _k_slotRowsInserted(const QModelIndex &, int, int))
     Q_PRIVATE_SLOT(d, void _k_slotRowsAboutToBeRemoved(const QModelIndex &, int, int))
     Q_PRIVATE_SLOT(d, void _k_slotRowsRemoved(const QModelIndex &, int, int))

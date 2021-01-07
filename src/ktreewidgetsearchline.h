@@ -11,6 +11,7 @@
 #define KTREEWIDGETSEARCHLINE_H
 
 #include <QLineEdit>
+#include <memory>
 #include <kitemviews_export.h>
 
 class QModelIndex;
@@ -261,9 +262,10 @@ protected:
      * Re-implemented for internal reasons.  API not affected.
      */
     bool event(QEvent *event) override;
+
 private:
-    class Private;
-    Private *const d;
+    friend class KTreeWidgetSearchLinePrivate;
+    std::unique_ptr<class KTreeWidgetSearchLinePrivate> const d;
 
     Q_PRIVATE_SLOT(d, void _k_rowsInserted(const QModelIndex &, int, int) const)
     Q_PRIVATE_SLOT(d, void _k_treeWidgetDeleted(QObject *))

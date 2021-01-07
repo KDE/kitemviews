@@ -164,21 +164,18 @@ KWidgetItemDelegate::KWidgetItemDelegate(QAbstractItemView *itemView, QObject *p
 
     d->itemView = itemView;
 
-    itemView->viewport()->installEventFilter(d); // mouse events
-    itemView->installEventFilter(d);             // keyboard events
+    itemView->viewport()->installEventFilter(d.get()); // mouse events
+    itemView->installEventFilter(d.get());             // keyboard events
 
     if (qobject_cast<QTreeView *>(itemView)) {
         connect(itemView,  SIGNAL(collapsed(QModelIndex)),
-                d, SLOT(initializeModel()));
+                d.get(), SLOT(initializeModel()));
         connect(itemView,  SIGNAL(expanded(QModelIndex)),
-                d, SLOT(initializeModel()));
+                d.get(), SLOT(initializeModel()));
     }
 }
 
-KWidgetItemDelegate::~KWidgetItemDelegate()
-{
-    delete d;
-}
+KWidgetItemDelegate::~KWidgetItemDelegate() = default;
 
 QAbstractItemView *KWidgetItemDelegate::itemView() const
 {

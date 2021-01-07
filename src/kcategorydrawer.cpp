@@ -36,10 +36,7 @@ KCategoryDrawer::KCategoryDrawer(KCategorizedView *view)
 {
 }
 
-KCategoryDrawer::~KCategoryDrawer()
-{
-    delete d;
-}
+KCategoryDrawer::~KCategoryDrawer() = default;
 
 void KCategoryDrawer::drawCategory(const QModelIndex &index,
                                    int /*sortRole*/,

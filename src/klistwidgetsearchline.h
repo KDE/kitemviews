@@ -10,6 +10,7 @@
 #define KLISTWIDGETSEARCHLINE_H
 
 #include <QLineEdit>
+#include <memory>
 
 #include <kitemviews_export.h>
 
@@ -125,8 +126,8 @@ protected:
     bool event(QEvent *event) override;
 
 private:
-    class KListWidgetSearchLinePrivate;
-    KListWidgetSearchLinePrivate *const d;
+    friend class KListWidgetSearchLinePrivate;
+    std::unique_ptr<class KListWidgetSearchLinePrivate> const d;
 
     Q_PRIVATE_SLOT(d, void _k_listWidgetDeleted())
     Q_PRIVATE_SLOT(d, void _k_queueSearch(const QString &))

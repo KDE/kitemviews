@@ -10,6 +10,7 @@
 #define KCATEGORIZEDSORTFILTERPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
+#include <memory>
 
 #include <kitemviews_export.h>
 class KCategorizedSortFilterProxyModelPrivate;
@@ -166,7 +167,7 @@ protected:
     virtual int compareCategories(const QModelIndex &left, const QModelIndex &right) const;
 
 private:
-    KCategorizedSortFilterProxyModelPrivate *const d;
+    std::unique_ptr<KCategorizedSortFilterProxyModelPrivate> const d;
 };
 
 #endif // KCATEGORIZEDSORTFILTERPROXYMODEL_H

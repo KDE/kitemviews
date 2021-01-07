@@ -13,7 +13,7 @@
 #include <QHBoxLayout>
 #include <QTreeWidget>
 
-class Q_DECL_HIDDEN KTreeWidgetSearchLineWidget::Private
+class KTreeWidgetSearchLineWidgetPrivate
 {
 public:
     QTreeWidget *treeWidget = nullptr;
@@ -21,7 +21,8 @@ public:
 };
 
 KTreeWidgetSearchLineWidget::KTreeWidgetSearchLineWidget(QWidget *parent, QTreeWidget *treeWidget)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent)
+    , d(new KTreeWidgetSearchLineWidgetPrivate)
 {
     d->treeWidget = treeWidget;
 
@@ -30,10 +31,7 @@ KTreeWidgetSearchLineWidget::KTreeWidgetSearchLineWidget(QWidget *parent, QTreeW
     QMetaObject::invokeMethod(this, "createWidgets", Qt::QueuedConnection);
 }
 
-KTreeWidgetSearchLineWidget::~KTreeWidgetSearchLineWidget()
-{
-    delete d;
-}
+KTreeWidgetSearchLineWidget::~KTreeWidgetSearchLineWidget() = default;
 
 KTreeWidgetSearchLine *KTreeWidgetSearchLineWidget::createSearchLine(QTreeWidget *treeWidget) const
 {

@@ -18,14 +18,14 @@ class KCategoryDrawerV3;
 /**
   * @internal
   */
-class Q_DECL_HIDDEN KCategorizedView::Private
+class KCategorizedViewPrivate
 {
 public:
     struct Block;
     struct Item;
 
-    Private(KCategorizedView *q);
-    ~Private();
+    explicit KCategorizedViewPrivate(KCategorizedView *q);
+    ~KCategorizedViewPrivate();
 
     /**
       * @return whether this view has all required elements to be categorized.

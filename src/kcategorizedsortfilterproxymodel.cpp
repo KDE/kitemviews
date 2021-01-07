@@ -18,10 +18,7 @@ KCategorizedSortFilterProxyModel::KCategorizedSortFilterProxyModel(QObject *pare
 {
 }
 
-KCategorizedSortFilterProxyModel::~KCategorizedSortFilterProxyModel()
-{
-    delete d;
-}
+KCategorizedSortFilterProxyModel::~KCategorizedSortFilterProxyModel() = default;
 
 void KCategorizedSortFilterProxyModel::sort(int column, Qt::SortOrder order)
 {

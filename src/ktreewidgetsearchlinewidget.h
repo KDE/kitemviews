@@ -11,6 +11,7 @@
 #define KTREEWIDGETSEARCHLINEWIDGET_H
 
 #include <QWidget>
+#include <memory>
 #include <kitemviews_export.h>
 
 class QModelIndex;
@@ -64,8 +65,7 @@ protected:
     virtual KTreeWidgetSearchLine *createSearchLine(QTreeWidget *treeWidget) const;
 
 private:
-    class Private;
-    Private *const d;
+    std::unique_ptr<class KTreeWidgetSearchLineWidgetPrivate> const d;
 };
 
 #endif

@@ -10,6 +10,7 @@
 #define KEXTENDABLEITEMDELEGATE_H
 
 #include <QStyledItemDelegate>
+#include <memory>
 
 #include <kitemviews_export.h>
 
@@ -132,8 +133,8 @@ protected:
     QPixmap contractPixmap();
 
 private:
-    class Private;
-    Private *const d;
+    friend class KExtendableItemDelegatePrivate;
+    std::unique_ptr<class KExtendableItemDelegatePrivate> const d;
 
     Q_PRIVATE_SLOT(d, void _k_extenderDestructionHandler(QObject *destroyed))
     Q_PRIVATE_SLOT(d, void _k_verticalScroll())
