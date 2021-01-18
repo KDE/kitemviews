@@ -120,7 +120,7 @@ protected:
      *          widgets of a certain index to be updated your model has to emit dataChanged() on the
      *          indexes that want to be updated.
      */
-    KITEMVIEWS_DEPRECATED_VERSION(4, 2, "Use emit QAbstractItemModel::dataChanged(...)")
+    KITEMVIEWS_DEPRECATED_VERSION(4, 2, "Emit QAbstractItemModel::dataChanged(...) signal instead")
     void paintWidgets(QPainter *painter, const QStyleOptionViewItem &option,
                       const QPersistentModelIndex &index) const;
 #endif

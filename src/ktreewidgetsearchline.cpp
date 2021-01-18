@@ -84,7 +84,7 @@ void KTreeWidgetSearchLine::Private::_k_rowsInserted(const QModelIndex &parentIn
             bool newHidden = !q->itemMatches(item, q->text());
             if (item->isHidden() != newHidden) {
                 item->setHidden(newHidden);
-                emit q->hiddenChanged(item, newHidden);
+                Q_EMIT q->hiddenChanged(item, newHidden);
             }
         }
     }
@@ -167,7 +167,7 @@ void KTreeWidgetSearchLine::Private::checkItemParentsNotVisible(QTreeWidget *tre
         bool newHidden = !q->itemMatches(item, search);
         if (item->isHidden() != newHidden) {
             item->setHidden(newHidden);
-            emit q->hiddenChanged(item, newHidden);
+            Q_EMIT q->hiddenChanged(item, newHidden);
         }
     }
 }
@@ -190,7 +190,7 @@ bool KTreeWidgetSearchLine::Private::checkItemParentsVisible(QTreeWidgetItem *it
     bool newHidden = !childMatch && !q->itemMatches(item, search);
     if (item->isHidden() != newHidden) {
         item->setHidden(newHidden);
-        emit q->hiddenChanged(item, newHidden);
+        Q_EMIT q->hiddenChanged(item, newHidden);
     }
 
     return !newHidden;
@@ -328,7 +328,7 @@ void KTreeWidgetSearchLine::updateSearch(QTreeWidget *treeWidget)
         treeWidget->scrollToItem(currentItem);
     }
 
-    emit searchUpdated(d->search);
+    Q_EMIT searchUpdated(d->search);
 }
 
 void KTreeWidgetSearchLine::setCaseSensitivity(Qt::CaseSensitivity caseSensitive)
