@@ -9,6 +9,7 @@
 
 #include "ktreewidgetsearchline.h"
 
+#include <QActionGroup>
 #include <QList>
 #include <QTimer>
 #include <QApplication>
