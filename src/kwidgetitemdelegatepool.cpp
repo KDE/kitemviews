@@ -197,8 +197,8 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
                              tabletEvent->z(), tabletEvent->modifiers(), tabletEvent->uniqueId(),
                              tabletEvent->button(), tabletEvent->buttons());
             QApplication::sendEvent(viewport, &evt);
+            break;
         }
-        break;
         default:
             QApplication::sendEvent(viewport, event);
             break;

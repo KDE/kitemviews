@@ -393,15 +393,15 @@ bool KTreeWidgetSearchLine::itemMatches(const QTreeWidgetItem *item, const QStri
     if (!d->searchColumns.isEmpty()) {
         QList<int>::ConstIterator it = d->searchColumns.constBegin();
         for (; it != d->searchColumns.constEnd(); ++it) {
-            if (*it < item->treeWidget()->columnCount() &&
-                    item->text(*it).indexOf(pattern, 0, d->caseSensitive) >= 0) {
+            if (*it < item->treeWidget()->columnCount() //
+                && item->text(*it).indexOf(pattern, 0, d->caseSensitive) >= 0) {
                 return true;
             }
         }
     } else {
         for (int i = 0; i < item->treeWidget()->columnCount(); i++) {
-            if (item->treeWidget()->columnWidth(i) > 0 &&
-                    item->text(i).indexOf(pattern, 0, d->caseSensitive) >= 0) {
+            if (item->treeWidget()->columnWidth(i) > 0 //
+                && item->text(i).indexOf(pattern, 0, d->caseSensitive) >= 0) {
                 return true;
             }
         }

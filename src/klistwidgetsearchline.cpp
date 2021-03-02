@@ -105,12 +105,11 @@ void KListWidgetSearchLine::setListWidget(QListWidget *lw)
     d->listWidget = lw;
 
     if (lw != nullptr) {
-        connect(d->listWidget, SIGNAL(destroyed()),
-                this, SLOT(_k_listWidgetDeleted()));
-        connect(d->listWidget->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
-                this, SLOT(_k_rowsInserted(QModelIndex,int,int)));
-        connect(d->listWidget->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-                this, SLOT(_k_dataChanged(QModelIndex,QModelIndex)));
+        // clang-format off
+        connect(d->listWidget, SIGNAL(destroyed()), this, SLOT(_k_listWidgetDeleted()));
+        connect(d->listWidget->model(), SIGNAL(rowsInserted(QModelIndex,int,int)), this, SLOT(_k_rowsInserted(QModelIndex,int,int)));
+        connect(d->listWidget->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)), this, SLOT(_k_dataChanged(QModelIndex,QModelIndex)));
+        // clang-format on
         setEnabled(true);
     } else {
         setEnabled(false);
@@ -143,12 +142,11 @@ void KListWidgetSearchLinePrivate::init(QListWidget *_listWidget)
                      q, SLOT(_k_queueSearch(QString)));
 
     if (listWidget != nullptr) {
-        QObject::connect(listWidget, SIGNAL(destroyed()),
-                         q, SLOT(_k_listWidgetDeleted()));
-        QObject::connect(listWidget->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
-                         q, SLOT(_k_rowsInserted(QModelIndex,int,int)));
-        QObject::connect(listWidget->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-                         q, SLOT(_k_dataChanged(QModelIndex,QModelIndex)));
+        // clang-format off
+        QObject::connect(listWidget, SIGNAL(destroyed()), q, SLOT(_k_listWidgetDeleted()));
+        QObject::connect(listWidget->model(), SIGNAL(rowsInserted(QModelIndex,int,int)), q, SLOT(_k_rowsInserted(QModelIndex,int,int)));
+        QObject::connect(listWidget->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)), q, SLOT(_k_dataChanged(QModelIndex,QModelIndex)));
+        // clang-format on
         q->setEnabled(true);
     } else {
         q->setEnabled(false);

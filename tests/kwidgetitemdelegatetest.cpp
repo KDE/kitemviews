@@ -84,14 +84,14 @@ protected:
         if (event->type() == QEvent::MouseButtonPress) {
             QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
 
-            if (mouseEvent->pos().x() > 15 &&
-                    mouseEvent->pos().y() < 15) {
+            if (mouseEvent->pos().x() > 15 //
+                && mouseEvent->pos().y() < 15) {
                 qDebug() << "First quarter";
-            } else if (mouseEvent->pos().x() < 15 &&
-                       mouseEvent->pos().y() < 15) {
+            } else if (mouseEvent->pos().x() < 15 //
+                       && mouseEvent->pos().y() < 15) {
                 qDebug() << "Second quarter";
-            } else if (mouseEvent->pos().x() < 15 &&
-                       mouseEvent->pos().y() > 15) {
+            } else if (mouseEvent->pos().x() < 15 //
+                       && mouseEvent->pos().y() > 15) {
                 qDebug() << "Third quarter";
             } else {
                 qDebug() << "Forth quarter";
@@ -185,7 +185,7 @@ public:
         TestWidget *testWidget = static_cast<TestWidget *>(widgets[1]);
 
         testWidget->resize(testWidget->sizeHint());
-        testWidget->move(2 * HARDCODED_BORDER + button->sizeHint().width(),
+        testWidget->move(2 * HARDCODED_BORDER + button->sizeHint().width(), //
                          sizeHint().height() / 2 - testWidget->size().height() / 2);
 
         // Hide the test widget when row can be divided by three
@@ -237,7 +237,7 @@ public:
         size.setWidth(qMax(widthInstall, widthUninstall));
         toolButton->resize(size);
 #endif
-        toolButton->move(option.rect.width() - toolButton->size().width() - HARDCODED_BORDER,
+        toolButton->move(option.rect.width() - toolButton->size().width() - HARDCODED_BORDER, //
                          sizeHint().height() / 2 - toolButton->size().height() / 2);
 
         // Eat more space

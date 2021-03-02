@@ -226,8 +226,9 @@ void KExtendableItemDelegate::paint(QPainter *painter, const QStyleOptionViewIte
     QModelIndex parentIndex = index.parent();
 
     //indexOfExtendedColumnInSameRow() is very expensive, try to avoid calling it.
-    if (row != d->cachedRow || d->cachedStateTick != d->stateTick
-            || d->cachedParentIndex != parentIndex) {
+    if (row != d->cachedRow //
+        || d->cachedStateTick != d->stateTick //
+        || d->cachedParentIndex != parentIndex) {
         d->extender = d->extenders.value(d->indexOfExtendedColumnInSameRow(index));
         d->cachedStateTick = d->stateTick;
         d->cachedRow = row;

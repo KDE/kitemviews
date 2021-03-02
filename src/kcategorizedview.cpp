@@ -550,8 +550,8 @@ QRect KCategorizedView::visualRect(const QModelIndex &index) const
 
     KCategorizedViewPrivate::Item &ritem = block.items[index.row() - firstIndexRow];
 
-    if (ritem.topLeft.isNull() || (block.quarantineStart.isValid() &&
-                                   index.row() >= block.quarantineStart.row())) {
+    if (ritem.topLeft.isNull() //
+        || (block.quarantineStart.isValid() && index.row() >= block.quarantineStart.row())) {
         if (flow() == LeftToRight) {
             d->leftToRightVisualRect(index, ritem, block, blockPos);
         } else {
@@ -731,9 +731,11 @@ QModelIndex KCategorizedView::indexAt(const QPoint &point) const
                         return newIndex;
                     }
                     return QModelIndex();
+                    // clang-format off
                 } else if ((layoutDirection() == Qt::LeftToRight) ?
                            (newRect.topLeft().x() <= point.x()) :
                            (newRect.topRight().x() >= point.x())) {
+                    // clang-format on
                     break;
                 } else if (newRect.bottomRight().y() >= point.y()) {
                     after = false;
@@ -774,10 +776,12 @@ void KCategorizedView::paintEvent(QPaintEvent *event)
         const KCategorizedViewPrivate::Block &block = *it;
         const QModelIndex categoryIndex = d->proxyModel->index(block.firstIndex.row(), d->proxyModel->sortColumn(), rootIndex());
         QStyleOptionViewItem option(viewOptions());
-        option.features |= d->alternatingBlockColors && block.alternate ? QStyleOptionViewItem::Alternate
-                           : QStyleOptionViewItem::None;
-        option.state |= !d->collapsibleBlocks || !block.collapsed ? QStyle::State_Open
-                        : QStyle::State_None;
+        option.features |= d->alternatingBlockColors && block.alternate //
+            ? QStyleOptionViewItem::Alternate
+            : QStyleOptionViewItem::None;
+        option.state |= !d->collapsibleBlocks || !block.collapsed //
+            ? QStyle::State_Open
+            : QStyle::State_None;
         const int height = d->categoryDrawer->categoryHeight(categoryIndex, option);
         QPoint pos = d->blockPosition(it.key());
         pos.ry() -= height;
@@ -920,8 +924,10 @@ void KCategorizedView::mouseMoveEvent(QMouseEvent *event)
     QListView::mouseMoveEvent(event);
     d->hoveredIndex = indexAt(event->pos());
     const SelectionMode itemViewSelectionMode = selectionMode();
-    if (state() == DragSelectingState && isSelectionRectVisible() && itemViewSelectionMode != SingleSelection
-            && itemViewSelectionMode != NoSelection) {
+    if (state() == DragSelectingState //
+        && isSelectionRectVisible() //
+        && itemViewSelectionMode != SingleSelection //
+        && itemViewSelectionMode != NoSelection) {
         QRect rect(d->pressedPosition, event->pos() + QPoint(horizontalOffset(), verticalOffset()));
         rect = rect.normalized();
         update(rect.united(d->rubberBandRect));

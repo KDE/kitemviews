@@ -219,6 +219,7 @@ bool KWidgetItemDelegatePrivate::eventFilter(QObject *watched, QEvent *event)
 
     Q_ASSERT(itemView);
 
+    // clang-format off
     if (model != itemView->model()) {
         if (model) {
             disconnect(model, SIGNAL(rowsInserted(QModelIndex,int,int)), q, SLOT(_k_slotRowsInserted(QModelIndex,int,int)));
@@ -246,6 +247,7 @@ bool KWidgetItemDelegatePrivate::eventFilter(QObject *watched, QEvent *event)
         connect(selectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)), q, SLOT(_k_slotSelectionChanged(QItemSelection,QItemSelection)));
         QTimer::singleShot(0, this, SLOT(initializeModel()));
     }
+    // clang-format on
 
     switch (event->type()) {
     case QEvent::Polish:
