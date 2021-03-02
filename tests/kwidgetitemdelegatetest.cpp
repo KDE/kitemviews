@@ -6,20 +6,20 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <QApplication>
 #include <QAbstractItemView>
-#include <QListView>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QStringListModel>
-#include <QMainWindow>
-#include <QMessageBox>
-#include <QPainter>
-#include <QRadialGradient>
-#include <QPaintEvent>
+#include <QApplication>
 #include <QDebug>
-#include <QToolButton>
+#include <QLineEdit>
+#include <QListView>
+#include <QMainWindow>
 #include <QMenu>
+#include <QMessageBox>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QPushButton>
+#include <QRadialGradient>
+#include <QStringListModel>
+#include <QToolButton>
 
 #include <kwidgetitemdelegate.h>
 
@@ -30,8 +30,7 @@
 #include <QStyleOptionToolButton>
 #endif
 
-class TestWidget
-    : public QWidget
+class TestWidget : public QWidget
 {
     Q_OBJECT
 
@@ -57,10 +56,7 @@ protected:
     {
         QPainter p(this);
 
-        QRadialGradient radialGrad(QPointF(event->rect().width() / 2,
-                                           event->rect().height() / 2),
-                                   qMin(event->rect().width() / 2,
-                                        event->rect().height() / 2));
+        QRadialGradient radialGrad(QPointF(event->rect().width() / 2, event->rect().height() / 2), qMin(event->rect().width() / 2, event->rect().height() / 2));
 
         if (underMouse()) {
             radialGrad.setColorAt(0, Qt::green);
@@ -102,8 +98,7 @@ protected:
     }
 };
 
-class MyDelegate
-    : public KWidgetItemDelegate
+class MyDelegate : public KWidgetItemDelegate
 {
     Q_OBJECT
 
@@ -120,8 +115,7 @@ public:
     {
     }
 
-    QSize sizeHint(const QStyleOptionViewItem &option,
-                   const QModelIndex &index) const override
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override
     {
         Q_UNUSED(option);
         Q_UNUSED(index);
@@ -134,8 +128,7 @@ public:
         return QSize(600, 60);
     }
 
-    void paint(QPainter *painter, const QStyleOptionViewItem &option,
-               const QModelIndex &index) const override
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override
     {
         Q_UNUSED(index);
         painter->save();
@@ -155,26 +148,18 @@ public:
         QPushButton *button = new QPushButton();
         QToolButton *toolButton = new QToolButton();
 
-        setBlockedEventTypes(button, QList<QEvent::Type>() << QEvent::MouseButtonPress
-                             << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
+        setBlockedEventTypes(button, QList<QEvent::Type>() << QEvent::MouseButtonPress << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
 
-        setBlockedEventTypes(toolButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
-                             << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
+        setBlockedEventTypes(toolButton, QList<QEvent::Type>() << QEvent::MouseButtonPress << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick);
 
         connect(button, SIGNAL(clicked(bool)), this, SLOT(mySlot()));
-        connect(toolButton, SIGNAL(triggered(QAction*)), this, SLOT(mySlot2()));
+        connect(toolButton, SIGNAL(triggered(QAction *)), this, SLOT(mySlot2()));
         connect(toolButton, SIGNAL(clicked(bool)), this, SLOT(mySlot3()));
 
-        return QList<QWidget *>()
-               << button
-               << new TestWidget()
-               << new QLineEdit()
-               << toolButton;
+        return QList<QWidget *>() << button << new TestWidget() << new QLineEdit() << toolButton;
     }
 
-    void updateItemWidgets(const QList<QWidget *> widgets,
-                           const QStyleOptionViewItem &option,
-                           const QPersistentModelIndex &index) const override
+    void updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const override
     {
         QPushButton *button = static_cast<QPushButton *>(widgets[0]);
         button->setText(QStringLiteral("Test me"));
@@ -195,9 +180,7 @@ public:
 
         lineEdit->setClearButtonEnabled(true);
         lineEdit->resize(lineEdit->sizeHint());
-        lineEdit->move(3 * HARDCODED_BORDER
-                       + button->sizeHint().width()
-                       + testWidget->sizeHint().width(),
+        lineEdit->move(3 * HARDCODED_BORDER + button->sizeHint().width() + testWidget->sizeHint().width(),
                        sizeHint().height() / 2 - lineEdit->size().height() / 2);
 
         QToolButton *toolButton = static_cast<QToolButton *>(widgets[3]);
@@ -229,9 +212,21 @@ public:
         toolButtonOpt.toolButtonStyle = Qt::ToolButtonTextBesideIcon;
 
         toolButtonOpt.text = "Install";
-        int widthInstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.boundingRect(QStringLiteral("Install")).width() + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
+        int widthInstall = QApplication::style()
+                               ->sizeFromContents(QStyle::CT_ToolButton,
+                                                  &toolButtonOpt,
+                                                  QSize(option.fontMetrics.boundingRect(QStringLiteral("Install")).width() + HARDCODED_BORDER * 3,
+                                                        option.fontMetrics.height()),
+                                                  toolButton)
+                               .width();
         toolButtonOpt.text = "Uninstall";
-        int widthUninstall = QApplication::style()->sizeFromContents(QStyle::CT_ToolButton, &toolButtonOpt, QSize(option.fontMetrics.boundingRect(QStringLiteral("Uninstall")).width() + HARDCODED_BORDER * 3, option.fontMetrics.height()), toolButton).width();
+        int widthUninstall = QApplication::style()
+                                 ->sizeFromContents(QStyle::CT_ToolButton,
+                                                    &toolButtonOpt,
+                                                    QSize(option.fontMetrics.boundingRect(QStringLiteral("Uninstall")).width() + HARDCODED_BORDER * 3,
+                                                          option.fontMetrics.height()),
+                                                    toolButton)
+                                 .width();
 
         QSize size = toolButton->sizeHint();
         size.setWidth(qMax(widthInstall, widthUninstall));
@@ -241,12 +236,7 @@ public:
                          sizeHint().height() / 2 - toolButton->size().height() / 2);
 
         // Eat more space
-        lineEdit->resize(option.rect.width()
-                         - toolButton->width()
-                         - testWidget->width()
-                         - button->width()
-                         - 5 * HARDCODED_BORDER,
-                         lineEdit->height());
+        lineEdit->resize(option.rect.width() - toolButton->width() - testWidget->width() - button->width() - 5 * HARDCODED_BORDER, lineEdit->height());
     }
 
 private Q_SLOTS:
@@ -257,7 +247,9 @@ private Q_SLOTS:
 
     void mySlot2()
     {
-        QMessageBox::information(nullptr, QStringLiteral("Toolbutton menu item clicked"), QStringLiteral("A menu item was triggered in row %1").arg(focusedIndex().row()));
+        QMessageBox::information(nullptr,
+                                 QStringLiteral("Toolbutton menu item clicked"),
+                                 QStringLiteral("A menu item was triggered in row %1").arg(focusedIndex().row()));
     }
 
     void mySlot3()

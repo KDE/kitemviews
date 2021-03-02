@@ -17,32 +17,34 @@
 class QAbstractItemView;
 
 /**
-  * @class KExtendableItemDelegate kextendableitemdelegate.h KExtendableItemDelegate
-  *
-  * This delegate makes it possible to display an arbitrary QWidget ("extender") that spans all columns below a line of items.
-  * The extender will logically belong to a column in the row above it.
-  *
-  * It is your responsibility to devise a way to trigger extension and contraction of items, by calling
-  * extendItem() and contractItem(). You can e.g. reimplement itemActivated() and similar functions.
-  *
-  * @warning extendItem() reparents the provided widget @a extender to the
-  * viewport of the itemview it belongs to. The @a extender is destroyed when
-  * you call contractItem() for the associated index. If you fail to do that
-  * and the associated item gets deleted you're in trouble. It remains as a
-  * visible artefact in your treeview. Additionally when closing your
-  * application you get an assertion failure from KExtendableItemDelegate. Make
-  * sure that you always call contractItem for indices before you delete them.
-  *
-  * @author Andreas Hartmetz <ahartmetz@gmail.com>
-  *
-  * @since 4.1
-  */
+ * @class KExtendableItemDelegate kextendableitemdelegate.h KExtendableItemDelegate
+ *
+ * This delegate makes it possible to display an arbitrary QWidget ("extender") that spans all columns below a line of items.
+ * The extender will logically belong to a column in the row above it.
+ *
+ * It is your responsibility to devise a way to trigger extension and contraction of items, by calling
+ * extendItem() and contractItem(). You can e.g. reimplement itemActivated() and similar functions.
+ *
+ * @warning extendItem() reparents the provided widget @a extender to the
+ * viewport of the itemview it belongs to. The @a extender is destroyed when
+ * you call contractItem() for the associated index. If you fail to do that
+ * and the associated item gets deleted you're in trouble. It remains as a
+ * visible artefact in your treeview. Additionally when closing your
+ * application you get an assertion failure from KExtendableItemDelegate. Make
+ * sure that you always call contractItem for indices before you delete them.
+ *
+ * @author Andreas Hartmetz <ahartmetz@gmail.com>
+ *
+ * @since 4.1
+ */
 class KITEMVIEWS_EXPORT KExtendableItemDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 
 public:
-    enum auxDataRoles {ShowExtensionIndicatorRole = Qt::UserRole + 200,};
+    enum auxDataRoles {
+        ShowExtensionIndicatorRole = Qt::UserRole + 200,
+    };
 
     /**
      * Create a new KExtendableItemDelegate that belongs to @p parent. In contrast to generic

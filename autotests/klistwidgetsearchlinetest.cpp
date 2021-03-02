@@ -17,7 +17,6 @@ class KListWidgetSearchLineTest : public QObject
 private Q_SLOTS:
 
     void testAddItems();
-
 };
 
 /**

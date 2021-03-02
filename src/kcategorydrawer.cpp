@@ -8,12 +8,12 @@
 
 #include "kcategorydrawer.h"
 
+#include <QApplication>
 #include <QPainter>
 #include <QStyleOption>
-#include <QApplication>
 
-#include <kcategorizedview.h>
 #include <kcategorizedsortfilterproxymodel.h>
+#include <kcategorizedview.h>
 
 class KCategoryDrawerPrivate
 {
@@ -38,10 +38,7 @@ KCategoryDrawer::KCategoryDrawer(KCategorizedView *view)
 
 KCategoryDrawer::~KCategoryDrawer() = default;
 
-void KCategoryDrawer::drawCategory(const QModelIndex &index,
-                                   int /*sortRole*/,
-                                   const QStyleOption &option,
-                                   QPainter *painter) const
+void KCategoryDrawer::drawCategory(const QModelIndex &index, int /*sortRole*/, const QStyleOption &option, QPainter *painter) const
 {
     // Keep this in sync with Kirigami.ListSectionHeader
     painter->setRenderHint(QPainter::Antialiasing);
@@ -54,7 +51,7 @@ void KCategoryDrawer::drawCategory(const QModelIndex &index,
 
     QColor backgroundColor = option.palette.window().color();
 
-    //BEGIN: background
+    // BEGIN: background
     {
         QRect backgroundRect(option.rect);
         backgroundRect.setHeight(categoryHeight(index, option));
@@ -64,9 +61,9 @@ void KCategoryDrawer::drawCategory(const QModelIndex &index,
         painter->drawRect(backgroundRect);
         painter->restore();
     }
-    //END: background
+    // END: background
 
-    //BEGIN: text
+    // BEGIN: text
     {
         //  Kirgami.Units.{small/large}Spacing respectively
         constexpr int topPadding = 4;
@@ -84,7 +81,7 @@ void KCategoryDrawer::drawCategory(const QModelIndex &index,
         painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, category);
         painter->restore();
     }
-    //END: text
+    // END: text
 }
 
 int KCategoryDrawer::categoryHeight(const QModelIndex &index, const QStyleOption &option) const
@@ -138,4 +135,3 @@ void KCategoryDrawer::mouseButtonDoubleClicked(const QModelIndex &, const QRect 
 void KCategoryDrawer::mouseLeft(const QModelIndex &, const QRect &)
 {
 }
-

@@ -6,18 +6,17 @@
 */
 
 #include <QApplication>
+#include <QIcon>
 #include <QMainWindow>
 #include <QStringListModel>
-#include <QIcon>
 
+#include <kcategorizedsortfilterproxymodel.h>
 #include <kcategorizedview.h>
 #include <kcategorydrawer.h>
-#include <kcategorizedsortfilterproxymodel.h>
 
 QStringList icons;
 
-class MyModel
-    : public QStringListModel
+class MyModel : public QStringListModel
 {
 public:
     QVariant data(const QModelIndex &index, int role) const override
@@ -71,4 +70,3 @@ int main(int argc, char **argv)
 
     return app.exec();
 }
-

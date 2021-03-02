@@ -34,8 +34,7 @@ class QSortFilterProxyModel;
  * consider not reacting until 3 letters.
  */
 
-class KITEMVIEWS_EXPORT KFilterProxySearchLine
-    : public QWidget
+class KITEMVIEWS_EXPORT KFilterProxySearchLine : public QWidget
 {
     Q_OBJECT
 

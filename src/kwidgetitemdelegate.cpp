@@ -9,12 +9,12 @@
 #include "kwidgetitemdelegate.h"
 #include "kwidgetitemdelegate_p.h"
 
-#include <QCursor>
-#include <QTimer>
-#include <QPainter>
-#include <QApplication>
-#include <QStyleOption>
 #include <QAbstractItemView>
+#include <QApplication>
+#include <QCursor>
+#include <QPainter>
+#include <QStyleOption>
+#include <QTimer>
 #include <QTreeView>
 
 #include "kwidgetitemdelegatepool_p.h"
@@ -105,8 +105,10 @@ void KWidgetItemDelegatePrivate::updateRowRange(const QModelIndex &parent, int s
     while (i <= end) {
         for (int j = 0; j < model->columnCount(parent); ++j) {
             const QModelIndex index = model->index(i, j, parent);
-            const QList<QWidget *> widgetList = widgetPool->findWidgets(index, optionView(index), isRemoving ? KWidgetItemDelegatePool::NotUpdateWidgets
-                                          : KWidgetItemDelegatePool::UpdateWidgets);
+            const QList<QWidget *> widgetList =
+                widgetPool->findWidgets(index,
+                                        optionView(index),
+                                        isRemoving ? KWidgetItemDelegatePool::NotUpdateWidgets : KWidgetItemDelegatePool::UpdateWidgets);
             if (isRemoving) {
                 widgetPool->d->allocatedWidgets.removeAll(widgetList);
                 for (QWidget *widget : widgetList) {
@@ -165,13 +167,11 @@ KWidgetItemDelegate::KWidgetItemDelegate(QAbstractItemView *itemView, QObject *p
     d->itemView = itemView;
 
     itemView->viewport()->installEventFilter(d.get()); // mouse events
-    itemView->installEventFilter(d.get());             // keyboard events
+    itemView->installEventFilter(d.get()); // keyboard events
 
     if (qobject_cast<QTreeView *>(itemView)) {
-        connect(itemView,  SIGNAL(collapsed(QModelIndex)),
-                d.get(), SLOT(initializeModel()));
-        connect(itemView,  SIGNAL(expanded(QModelIndex)),
-                d.get(), SLOT(initializeModel()));
+        connect(itemView, SIGNAL(collapsed(QModelIndex)), d.get(), SLOT(initializeModel()));
+        connect(itemView, SIGNAL(expanded(QModelIndex)), d.get(), SLOT(initializeModel()));
     }
 }
 
@@ -194,8 +194,7 @@ QPersistentModelIndex KWidgetItemDelegate::focusedIndex() const
 }
 
 #if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 2)
-void KWidgetItemDelegate::paintWidgets(QPainter *painter, const QStyleOptionViewItem &option,
-                                       const QPersistentModelIndex &index) const
+void KWidgetItemDelegate::paintWidgets(QPainter *painter, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const
 {
     Q_UNUSED(painter);
     Q_UNUSED(option);
@@ -282,12 +281,12 @@ void KWidgetItemDelegate::setBlockedEventTypes(QWidget *widget, QList<QEvent::Ty
 
 QList<QEvent::Type> KWidgetItemDelegate::blockedEventTypes(QWidget *widget) const
 {
-    return widget->property("goya:blockedEventTypes").value<QList<QEvent::Type> >();
+    return widget->property("goya:blockedEventTypes").value<QList<QEvent::Type>>();
 }
 
 void KWidgetItemDelegate::resetModel()
 {
-   d->_k_slotModelReset();
+    d->_k_slotModelReset();
 }
 
 #include "moc_kwidgetitemdelegate.cpp"

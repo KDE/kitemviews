@@ -11,8 +11,8 @@
 #define KTREEWIDGETSEARCHLINE_H
 
 #include <QLineEdit>
-#include <memory>
 #include <kitemviews_export.h>
+#include <memory>
 
 class QModelIndex;
 class QTreeWidget;
@@ -107,7 +107,10 @@ public:
      * @deprecated since 5.0, use QLineEdit::placeholderText() instead.
      **/
     KITEMVIEWS_DEPRECATED_VERSION(5, 0, "Use QLineEdit::placeholderText()")
-    QString clickMessage() const { return placeholderText(); }
+    QString clickMessage() const
+    {
+        return placeholderText();
+    }
 #endif
 
 #if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(5, 0)
@@ -118,7 +121,10 @@ public:
      * @deprecated since 5.0, use QLineEdit::setPlaceholderText() instead.
      */
     KITEMVIEWS_DEPRECATED_VERSION(5, 0, "Use QLineEdit::setPlaceholderText(const QString&))")
-    void setClickMessage(const QString &msg) { setPlaceholderText(msg); }
+    void setClickMessage(const QString &msg)
+    {
+        setPlaceholderText(msg);
+    }
 #endif
 
 Q_SIGNALS:
@@ -221,8 +227,8 @@ protected:
     virtual bool itemMatches(const QTreeWidgetItem *item, const QString &pattern) const;
 
     /**
-    * Re-implemented for internal reasons.  API not affected.
-    */
+     * Re-implemented for internal reasons.  API not affected.
+     */
     void contextMenuEvent(QContextMenuEvent *) override;
 
     /**

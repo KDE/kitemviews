@@ -9,10 +9,10 @@
 #ifndef KWIDGETITEMDELEGATE_H
 #define KWIDGETITEMDELEGATE_H
 
+#include <QAbstractItemDelegate>
 #include <QEvent>
 #include <QList>
 #include <QPersistentModelIndex>
-#include <QAbstractItemDelegate>
 #include <memory>
 
 #include <kitemviews_export.h>
@@ -103,9 +103,7 @@ protected:
      * @param option the current set of style options for the view.
      * @param index the model index of the item currently manipulated.
      */
-    virtual void updateItemWidgets(const QList<QWidget *> widgets,
-                                   const QStyleOptionViewItem &option,
-                                   const QPersistentModelIndex &index) const = 0;
+    virtual void updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const = 0;
 
 #if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(4, 2)
     /**
@@ -122,8 +120,7 @@ protected:
      *          indexes that want to be updated.
      */
     KITEMVIEWS_DEPRECATED_VERSION(4, 2, "Emit QAbstractItemModel::dataChanged(...) signal instead")
-    void paintWidgets(QPainter *painter, const QStyleOptionViewItem &option,
-                      const QPersistentModelIndex &index) const;
+    void paintWidgets(QPainter *painter, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const;
 #endif
 
     /**

@@ -35,7 +35,6 @@ class KITEMVIEWS_EXPORT KListWidgetSearchLine : public QLineEdit
 #endif
 
 public:
-
     /**
      * Constructs a KListWidgetSearchLine with \a listWidget being the QListWidget to
      * be filtered.
@@ -43,8 +42,7 @@ public:
      * If \a listWidget is null then the widget will be disabled until a listWidget
      * is set with setListWidget().
      */
-    explicit KListWidgetSearchLine(QWidget *parent = nullptr,
-                                   QListWidget *listWidget = nullptr);
+    explicit KListWidgetSearchLine(QWidget *parent = nullptr, QListWidget *listWidget = nullptr);
 
     /**
      * Destroys the KListWidgetSearchLine.
@@ -71,7 +69,10 @@ public:
      * @deprecated since 5.0, use QLineEdit::placeholderText() instead.
      **/
     KITEMVIEWS_DEPRECATED_VERSION(5, 0, "Use QLineEdit::placeholderText()")
-    QString clickMessage() const { return placeholderText(); }
+    QString clickMessage() const
+    {
+        return placeholderText();
+    }
 #endif
 
 #if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(5, 0)
@@ -82,7 +83,10 @@ public:
      * @deprecated since 5.0, use QLineEdit::setPlaceholderText() instead.
      */
     KITEMVIEWS_DEPRECATED_VERSION(5, 0, "Use QLineEdit::setPlaceholderText(const QString&)")
-    void setClickMessage(const QString &msg) { setPlaceholderText(msg); }
+    void setClickMessage(const QString &msg)
+    {
+        setPlaceholderText(msg);
+    }
 #endif
 
 public Q_SLOTS:
@@ -118,8 +122,7 @@ protected:
      * based on the value of caseSensitive().  This can be overridden in
      * subclasses to implement more complicated matching schemes.
      */
-    virtual bool itemMatches(const QListWidgetItem *item,
-                             const QString &s) const;
+    virtual bool itemMatches(const QListWidgetItem *item, const QString &s) const;
     /**
      * Re-implemented for internal reasons.  API not affected.
      */

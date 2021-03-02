@@ -1,12 +1,12 @@
 #include "ktreewidgetsearchlinetest.h"
 
 #include <QApplication>
-#include <QDialogButtonBox>
-#include <QTreeWidget>
 #include <QBoxLayout>
-#include <QPushButton>
+#include <QDialogButtonBox>
 #include <QHeaderView>
+#include <QPushButton>
 #include <QString>
+#include <QTreeWidget>
 
 #include <ktreewidgetsearchline.h>
 #include <ktreewidgetsearchlinewidget.h>
@@ -75,7 +75,7 @@ void KTreeWidgetSearchLineTest::create3rdLevel(QTreeWidgetItem *item)
     new QTreeWidgetItem(item, QStringList() << QStringLiteral("Growing") << QStringLiteral("$2.00") << QString("") << QStringLiteral("Farmer"));
     new QTreeWidgetItem(item, QStringList() << QStringLiteral("Ripe") << QStringLiteral("$8.00") << QString("") << QStringLiteral("Market"));
     new QTreeWidgetItem(item, QStringList() << QStringLiteral("Decaying") << QStringLiteral("$0.50") << QString("") << QStringLiteral("Ground"));
-    new QTreeWidgetItem(item, QStringList() << QStringLiteral("Pickled")  << QStringLiteral("$4.00") << QString("") << QStringLiteral("Shop"));
+    new QTreeWidgetItem(item, QStringList() << QStringLiteral("Pickled") << QStringLiteral("$4.00") << QString("") << QStringLiteral("Shop"));
 }
 
 void KTreeWidgetSearchLineTest::create2ndLevel(QTreeWidgetItem *item)
@@ -122,4 +122,3 @@ int main(int argc, char **argv)
 
     return 0;
 }
-

@@ -11,8 +11,8 @@
 #define KTREEWIDGETSEARCHLINEWIDGET_H
 
 #include <QWidget>
-#include <memory>
 #include <kitemviews_export.h>
+#include <memory>
 
 class QModelIndex;
 class QTreeWidget;

@@ -8,18 +8,19 @@
 
 #include "klistwidgetsearchline.h"
 
-#include <QListWidget>
 #include <QApplication>
-#include <QKeyEvent>
 #include <QEvent>
+#include <QKeyEvent>
+#include <QListWidget>
 #include <QTimer>
 
 class KListWidgetSearchLinePrivate
 {
 public:
-    KListWidgetSearchLinePrivate(KListWidgetSearchLine *parent) :
-        q(parent)
-    {}
+    KListWidgetSearchLinePrivate(KListWidgetSearchLine *parent)
+        : q(parent)
+    {
+    }
 
     void _k_listWidgetDeleted();
     void _k_queueSearch(const QString &);
@@ -41,9 +42,9 @@ public:
 /******************************************************************************
  * Public Methods                                                             *
  *****************************************************************************/
-KListWidgetSearchLine::KListWidgetSearchLine(QWidget *parent, QListWidget *listWidget) :
-    QLineEdit(parent),
-    d(new KListWidgetSearchLinePrivate(this))
+KListWidgetSearchLine::KListWidgetSearchLine(QWidget *parent, QListWidget *listWidget)
+    : QLineEdit(parent)
+    , d(new KListWidgetSearchLinePrivate(this))
 
 {
     d->init(listWidget);
@@ -97,8 +98,7 @@ void KListWidgetSearchLine::setCaseSensitivity(Qt::CaseSensitivity cs)
 void KListWidgetSearchLine::setListWidget(QListWidget *lw)
 {
     if (d->listWidget != nullptr) {
-        disconnect(d->listWidget, SIGNAL(destroyed()),
-                   this, SLOT(_k_listWidgetDeleted()));
+        disconnect(d->listWidget, SIGNAL(destroyed()), this, SLOT(_k_listWidgetDeleted()));
         d->listWidget->model()->disconnect(this);
     }
 
@@ -119,8 +119,7 @@ void KListWidgetSearchLine::setListWidget(QListWidget *lw)
 /******************************************************************************
  * Protected Methods                                                          *
  *****************************************************************************/
-bool KListWidgetSearchLine::itemMatches(const QListWidgetItem *item,
-                                        const QString &s) const
+bool KListWidgetSearchLine::itemMatches(const QListWidgetItem *item, const QString &s) const
 {
     if (s.isEmpty()) {
         return true;
@@ -130,16 +129,14 @@ bool KListWidgetSearchLine::itemMatches(const QListWidgetItem *item,
         return false;
     }
 
-    return (item->text().indexOf(s, 0,
-                                 caseSensitive() ? Qt::CaseSensitive : Qt::CaseInsensitive) >= 0);
+    return (item->text().indexOf(s, 0, caseSensitive() ? Qt::CaseSensitive : Qt::CaseInsensitive) >= 0);
 }
 
 void KListWidgetSearchLinePrivate::init(QListWidget *_listWidget)
 {
     listWidget = _listWidget;
 
-    QObject::connect(q, SIGNAL(textChanged(QString)),
-                     q, SLOT(_k_queueSearch(QString)));
+    QObject::connect(q, SIGNAL(textChanged(QString)), q, SLOT(_k_queueSearch(QString)));
 
     if (listWidget != nullptr) {
         // clang-format off
@@ -165,7 +162,7 @@ void KListWidgetSearchLinePrivate::updateHiddenState(int start, int end)
     // Remove Non-Matching items
     for (int index = start; index <= end; ++index) {
         QListWidgetItem *item = listWidget->item(index);
-        if (! q->itemMatches(item, search)) {
+        if (!q->itemMatches(item, search)) {
             item->setHidden(true);
 
             if (item == currentItem) {
@@ -187,20 +184,17 @@ void KListWidgetSearchLinePrivate::updateHiddenState(int start, int end)
 
 bool KListWidgetSearchLine::event(QEvent *event)
 {
-
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-        if (keyEvent->matches(QKeySequence::MoveToNextLine) || keyEvent->matches(QKeySequence::SelectNextLine) ||
-                keyEvent->matches(QKeySequence::MoveToPreviousLine) || keyEvent->matches(QKeySequence::SelectPreviousLine) ||
-                keyEvent->matches(QKeySequence::MoveToNextPage) ||  keyEvent->matches(QKeySequence::SelectNextPage) ||
-                keyEvent->matches(QKeySequence::MoveToPreviousPage) ||  keyEvent->matches(QKeySequence::SelectPreviousPage)
-           ) {
+        if (keyEvent->matches(QKeySequence::MoveToNextLine) || keyEvent->matches(QKeySequence::SelectNextLine)
+            || keyEvent->matches(QKeySequence::MoveToPreviousLine) || keyEvent->matches(QKeySequence::SelectPreviousLine)
+            || keyEvent->matches(QKeySequence::MoveToNextPage) || keyEvent->matches(QKeySequence::SelectNextPage)
+            || keyEvent->matches(QKeySequence::MoveToPreviousPage) || keyEvent->matches(QKeySequence::SelectPreviousPage)) {
             if (d->listWidget) {
                 QApplication::sendEvent(d->listWidget, event);
                 return true;
             }
         } else if (keyEvent->key() == Qt::Key_Enter || keyEvent->key() == Qt::Key_Return) {
-
             if (d->listWidget) {
                 QApplication::sendEvent(d->listWidget, event);
                 return true;

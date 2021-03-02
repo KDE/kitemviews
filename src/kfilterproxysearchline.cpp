@@ -8,8 +8,8 @@
 
 #include <QHBoxLayout>
 #include <QLineEdit>
-#include <QTimer>
 #include <QSortFilterProxyModel>
+#include <QTimer>
 
 #if KITEMVIEWS_BUILD_DEPRECATED_SINCE(5, 50)
 
@@ -21,8 +21,8 @@
 class KFilterProxySearchLinePrivate
 {
 public:
-    KFilterProxySearchLinePrivate(KFilterProxySearchLine *parent) :
-        q(parent)
+    KFilterProxySearchLinePrivate(KFilterProxySearchLine *parent)
+        : q(parent)
     {
         timer = new QTimer(q);
         timer->setSingleShot(true);
@@ -55,7 +55,8 @@ void KFilterProxySearchLinePrivate::slotSearchLineActivate()
 //@endcond
 
 KFilterProxySearchLine::KFilterProxySearchLine(QWidget *parent)
-    : QWidget(parent), d(new KFilterProxySearchLinePrivate(this))
+    : QWidget(parent)
+    , d(new KFilterProxySearchLinePrivate(this))
 {
     d->searchLine = new QLineEdit(this);
     d->searchLine->setClearButtonEnabled(true);
@@ -65,8 +66,7 @@ KFilterProxySearchLine::KFilterProxySearchLine(QWidget *parent)
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(d->searchLine);
 
-    connect(d->searchLine, SIGNAL(textChanged(QString)),
-            SLOT(slotSearchLineChange(QString)));
+    connect(d->searchLine, SIGNAL(textChanged(QString)), SLOT(slotSearchLineChange(QString)));
 }
 
 KFilterProxySearchLine::~KFilterProxySearchLine() = default;

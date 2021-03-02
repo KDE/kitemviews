@@ -10,12 +10,12 @@
 #include "ktreewidgetsearchline.h"
 
 #include <QActionGroup>
-#include <QList>
-#include <QTimer>
 #include <QApplication>
 #include <QContextMenuEvent>
 #include <QHeaderView>
+#include <QList>
 #include <QMenu>
+#include <QTimer>
 #include <QTreeWidget>
 
 class KTreeWidgetSearchLinePrivate
@@ -205,8 +205,7 @@ KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q, QTreeWidget *treeWidget
     : QLineEdit(q)
     , d(new KTreeWidgetSearchLinePrivate(this))
 {
-    connect(this, SIGNAL(textChanged(QString)),
-            this, SLOT(_k_queueSearch(QString)));
+    connect(this, SIGNAL(textChanged(QString)), this, SLOT(_k_queueSearch(QString)));
 
     setClearButtonEnabled(true);
     setPlaceholderText(tr("Search...", "@info:placeholder"));
@@ -217,13 +216,11 @@ KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q, QTreeWidget *treeWidget
     }
 }
 
-KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q,
-        const QList<QTreeWidget *> &treeWidgets)
+KTreeWidgetSearchLine::KTreeWidgetSearchLine(QWidget *q, const QList<QTreeWidget *> &treeWidgets)
     : QLineEdit(q)
     , d(new KTreeWidgetSearchLinePrivate(this))
 {
-    connect(this, SIGNAL(textChanged(QString)),
-            this, SLOT(_k_queueSearch(QString)));
+    connect(this, SIGNAL(textChanged(QString)), this, SLOT(_k_queueSearch(QString)));
 
     setClearButtonEnabled(true);
     setTreeWidgets(treeWidgets);
@@ -418,8 +415,7 @@ void KTreeWidgetSearchLine::contextMenuEvent(QContextMenuEvent *event)
         popup->addSeparator();
         QMenu *subMenu = popup->addMenu(tr("Search Columns", "@title:menu"));
 
-        QAction *allVisibleColumnsAction = subMenu->addAction(tr("All Visible Columns", "@optipn:check"),
-                                           this, SLOT(_k_slotAllVisibleColumns()));
+        QAction *allVisibleColumnsAction = subMenu->addAction(tr("All Visible Columns", "@optipn:check"), this, SLOT(_k_slotAllVisibleColumns()));
         allVisibleColumnsAction->setCheckable(true);
         allVisibleColumnsAction->setChecked(d->searchColumns.isEmpty());
         subMenu->addSeparator();
@@ -428,7 +424,7 @@ void KTreeWidgetSearchLine::contextMenuEvent(QContextMenuEvent *event)
 
         QActionGroup *group = new QActionGroup(popup);
         group->setExclusive(false);
-        connect(group, SIGNAL(triggered(QAction*)), SLOT(_k_slotColumnActivated(QAction*)));
+        connect(group, SIGNAL(triggered(QAction *)), SLOT(_k_slotColumnActivated(QAction *)));
 
         QHeaderView *const header = d->treeWidgets.first()->header();
         for (int j = 0; j < header->count(); j++) {
@@ -466,20 +462,16 @@ void KTreeWidgetSearchLine::contextMenuEvent(QContextMenuEvent *event)
 
 void KTreeWidgetSearchLine::connectTreeWidget(QTreeWidget *treeWidget)
 {
-    connect(treeWidget, SIGNAL(destroyed(QObject*)),
-            this, SLOT(_k_treeWidgetDeleted(QObject*)));
+    connect(treeWidget, SIGNAL(destroyed(QObject *)), this, SLOT(_k_treeWidgetDeleted(QObject *)));
 
-    connect(treeWidget->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
-            this, SLOT(_k_rowsInserted(QModelIndex,int,int)));
+    connect(treeWidget->model(), SIGNAL(rowsInserted(QModelIndex, int, int)), this, SLOT(_k_rowsInserted(QModelIndex, int, int)));
 }
 
 void KTreeWidgetSearchLine::disconnectTreeWidget(QTreeWidget *treeWidget)
 {
-    disconnect(treeWidget, SIGNAL(destroyed(QObject*)),
-               this, SLOT(_k_treeWidgetDeleted(QObject*)));
+    disconnect(treeWidget, SIGNAL(destroyed(QObject *)), this, SLOT(_k_treeWidgetDeleted(QObject *)));
 
-    disconnect(treeWidget->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),
-               this, SLOT(_k_rowsInserted(QModelIndex,int,int)));
+    disconnect(treeWidget->model(), SIGNAL(rowsInserted(QModelIndex, int, int)), this, SLOT(_k_rowsInserted(QModelIndex, int, int)));
 }
 
 bool KTreeWidgetSearchLine::canChooseColumnsCheck()
@@ -529,14 +521,13 @@ bool KTreeWidgetSearchLine::canChooseColumnsCheck()
 
 bool KTreeWidgetSearchLine::event(QEvent *event)
 {
-
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-        if (keyEvent->matches(QKeySequence::MoveToNextLine) || keyEvent->matches(QKeySequence::SelectNextLine) ||
-                keyEvent->matches(QKeySequence::MoveToPreviousLine) || keyEvent->matches(QKeySequence::SelectPreviousLine) ||
-                keyEvent->matches(QKeySequence::MoveToNextPage) ||  keyEvent->matches(QKeySequence::SelectNextPage) ||
-                keyEvent->matches(QKeySequence::MoveToPreviousPage) ||  keyEvent->matches(QKeySequence::SelectPreviousPage) ||
-                keyEvent->key() == Qt::Key_Enter || keyEvent->key() == Qt::Key_Return) {
+        if (keyEvent->matches(QKeySequence::MoveToNextLine) || keyEvent->matches(QKeySequence::SelectNextLine)
+            || keyEvent->matches(QKeySequence::MoveToPreviousLine) || keyEvent->matches(QKeySequence::SelectPreviousLine)
+            || keyEvent->matches(QKeySequence::MoveToNextPage) || keyEvent->matches(QKeySequence::SelectNextPage)
+            || keyEvent->matches(QKeySequence::MoveToPreviousPage) || keyEvent->matches(QKeySequence::SelectPreviousPage) || keyEvent->key() == Qt::Key_Enter
+            || keyEvent->key() == Qt::Key_Return) {
             QTreeWidget *first = d->treeWidgets.first();
             if (first) {
                 QApplication::sendEvent(first, event);

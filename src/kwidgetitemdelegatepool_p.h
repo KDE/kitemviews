@@ -19,8 +19,8 @@ class KWidgetItemDelegate;
 class KWidgetItemDelegatePoolPrivate;
 
 /**
-  * @internal
-  */
+ * @internal
+ */
 class KWidgetItemDelegatePool
 {
 public:
@@ -30,39 +30,38 @@ public:
     };
 
     /**
-      * Creates a new ItemDelegatePool.
-      *
-      * @param delegate the ItemDelegate for this pool.
-      */
+     * Creates a new ItemDelegatePool.
+     *
+     * @param delegate the ItemDelegate for this pool.
+     */
 
     KWidgetItemDelegatePool(KWidgetItemDelegate *delegate);
 
     /**
-      * Destroys an ItemDelegatePool.
-      */
+     * Destroys an ItemDelegatePool.
+     */
     ~KWidgetItemDelegatePool();
 
     KWidgetItemDelegatePool(const KWidgetItemDelegatePool &) = delete;
     KWidgetItemDelegatePool &operator=(const KWidgetItemDelegatePool &) = delete;
 
     /**
-      * @brief Returns the widget associated to @p index and @p widget
-      * @param index The index to search into.
-      * @param option a QStyleOptionViewItem.
-      * @return A QList of the pointers to the widgets found.
-      * @internal
-      */
-    QList<QWidget *> findWidgets(const QPersistentModelIndex &index, const QStyleOptionViewItem &option,
-                                 UpdateWidgetsEnum updateWidgets = UpdateWidgets) const;
+     * @brief Returns the widget associated to @p index and @p widget
+     * @param index The index to search into.
+     * @param option a QStyleOptionViewItem.
+     * @return A QList of the pointers to the widgets found.
+     * @internal
+     */
+    QList<QWidget *> findWidgets(const QPersistentModelIndex &index, const QStyleOptionViewItem &option, UpdateWidgetsEnum updateWidgets = UpdateWidgets) const;
 
     /**
-      * @internal
-      */
+     * @internal
+     */
     QList<QWidget *> invalidIndexesWidgets() const;
 
     /**
-      * @internal
-      */
+     * @internal
+     */
     void fullClear();
 
 private:
@@ -74,19 +73,18 @@ private:
 class KWidgetItemDelegateEventListener;
 
 /**
-  * @internal
-  */
+ * @internal
+ */
 class KWidgetItemDelegatePoolPrivate
 {
 public:
-
     KWidgetItemDelegatePoolPrivate(KWidgetItemDelegate *d);
 
     KWidgetItemDelegate *delegate;
     KWidgetItemDelegateEventListener *eventListener;
 
-    QList<QList<QWidget *> > allocatedWidgets;
-    QHash<QPersistentModelIndex, QList<QWidget *> > usedWidgets;
+    QList<QList<QWidget *>> allocatedWidgets;
+    QHash<QPersistentModelIndex, QList<QWidget *>> usedWidgets;
     QHash<QWidget *, QPersistentModelIndex> widgetInIndex;
 
     bool clearing = false;

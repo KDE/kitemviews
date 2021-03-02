@@ -8,19 +8,19 @@
 
 #include "kwidgetitemdelegatepool_p.h"
 
-#include <qobjectdefs.h>
-#include <QMetaMethod>
-#include <QHash>
-#include <QList>
-#include <QWidget>
 #include <QAbstractItemView>
-#include <QApplication>
-#include <QInputEvent>
 #include <QAbstractProxyModel>
+#include <QApplication>
+#include <QHash>
+#include <QInputEvent>
+#include <QList>
+#include <QMetaMethod>
+#include <QWidget>
+#include <qobjectdefs.h>
 
-#include <kitemviews_debug.h>
 #include "kwidgetitemdelegate.h"
 #include "kwidgetitemdelegate_p.h"
+#include <kitemviews_debug.h>
 
 #define POOL_USAGE 0
 
@@ -29,8 +29,7 @@
   @internal
 */
 //@cond PRIVATE
-class KWidgetItemDelegateEventListener
-    : public QObject
+class KWidgetItemDelegateEventListener : public QObject
 {
 public:
     KWidgetItemDelegateEventListener(KWidgetItemDelegatePoolPrivate *poolPrivate, QObject *parent = nullptr)
@@ -62,9 +61,8 @@ KWidgetItemDelegatePool::~KWidgetItemDelegatePool()
     delete d;
 }
 
-QList<QWidget *> KWidgetItemDelegatePool::findWidgets(const QPersistentModelIndex &idx,
-        const QStyleOptionViewItem &option,
-        UpdateWidgetsEnum updateWidgets) const
+QList<QWidget *>
+KWidgetItemDelegatePool::findWidgets(const QPersistentModelIndex &idx, const QStyleOptionViewItem &option, UpdateWidgetsEnum updateWidgets) const
 {
     QList<QWidget *> result;
 
@@ -162,40 +160,51 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
         case QEvent::MouseButtonRelease:
         case QEvent::MouseButtonDblClick: {
             QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
-            QMouseEvent evt(event->type(), viewport->mapFromGlobal(mouseEvent->globalPos()),
-                            mouseEvent->button(), mouseEvent->buttons(), mouseEvent->modifiers());
+            QMouseEvent evt(event->type(),
+                            viewport->mapFromGlobal(mouseEvent->globalPos()),
+                            mouseEvent->button(),
+                            mouseEvent->buttons(),
+                            mouseEvent->modifiers());
             QApplication::sendEvent(viewport, &evt);
-        }
-        break;
+        } break;
         case QEvent::Wheel: {
             QWheelEvent *wheelEvent = static_cast<QWheelEvent *>(event);
             QWheelEvent evt(viewport->mapFromGlobal(wheelEvent->position().toPoint()),
                             viewport->mapFromGlobal(wheelEvent->globalPosition().toPoint()),
-                            wheelEvent->pixelDelta(), wheelEvent->angleDelta(),
-                            wheelEvent->buttons(), wheelEvent->modifiers(),
+                            wheelEvent->pixelDelta(),
+                            wheelEvent->angleDelta(),
+                            wheelEvent->buttons(),
+                            wheelEvent->modifiers(),
                             wheelEvent->phase(),
                             wheelEvent->inverted(),
                             wheelEvent->source());
             QApplication::sendEvent(viewport, &evt);
-        }
-        break;
+        } break;
         case QEvent::TabletMove:
         case QEvent::TabletPress:
         case QEvent::TabletRelease:
         case QEvent::TabletEnterProximity:
         case QEvent::TabletLeaveProximity: {
             QTabletEvent *tabletEvent = static_cast<QTabletEvent *>(event);
-            QTabletEvent evt(event->type(), QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
+            QTabletEvent evt(event->type(),
+                             QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
                              tabletEvent->globalPosF(),
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
                              tabletEvent->deviceType(),
 #else
                              tabletEvent->device(),
 #endif
-                             tabletEvent->pointerType(), tabletEvent->pressure(), tabletEvent->xTilt(),
-                             tabletEvent->yTilt(), tabletEvent->tangentialPressure(), tabletEvent->rotation(),
-                             tabletEvent->z(), tabletEvent->modifiers(), tabletEvent->uniqueId(),
-                             tabletEvent->button(), tabletEvent->buttons());
+                             tabletEvent->pointerType(),
+                             tabletEvent->pressure(),
+                             tabletEvent->xTilt(),
+                             tabletEvent->yTilt(),
+                             tabletEvent->tangentialPressure(),
+                             tabletEvent->rotation(),
+                             tabletEvent->z(),
+                             tabletEvent->modifiers(),
+                             tabletEvent->uniqueId(),
+                             tabletEvent->button(),
+                             tabletEvent->buttons());
             QApplication::sendEvent(viewport, &evt);
             break;
         }
