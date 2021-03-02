@@ -26,7 +26,7 @@ class KWidgetItemDelegatePool
 public:
     enum UpdateWidgetsEnum {
         UpdateWidgets = 0,
-        NotUpdateWidgets
+        NotUpdateWidgets,
     };
 
     /**

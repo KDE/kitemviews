@@ -42,7 +42,7 @@ class KITEMVIEWS_EXPORT KExtendableItemDelegate : public QStyledItemDelegate
     Q_OBJECT
 
 public:
-    enum auxDataRoles {ShowExtensionIndicatorRole = Qt::UserRole + 200};
+    enum auxDataRoles {ShowExtensionIndicatorRole = Qt::UserRole + 200,};
 
     /**
      * Create a new KExtendableItemDelegate that belongs to @p parent. In contrast to generic
