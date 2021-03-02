@@ -121,7 +121,7 @@ void KExtendableItemDelegatePrivate::_k_extenderDestructionHandler(QObject *dest
     stateTick++;
 
     QPersistentModelIndex persistentIndex = deletionQueue.take(extender);
-    if (persistentIndex.isValid() && q->receivers(SIGNAL(extenderDestroyed(QWidget *, QModelIndex)))) {
+    if (persistentIndex.isValid() && q->receivers(SIGNAL(extenderDestroyed(QWidget *, QModelIndex))) != 0) {
         QModelIndex index = persistentIndex;
         Q_EMIT q->extenderDestroyed(extender, index);
     }
