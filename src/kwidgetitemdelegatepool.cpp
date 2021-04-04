@@ -187,11 +187,7 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
             QTabletEvent evt(event->type(),
                              QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
                              tabletEvent->globalPosF(),
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
                              tabletEvent->deviceType(),
-#else
-                             tabletEvent->device(),
-#endif
                              tabletEvent->pointerType(),
                              tabletEvent->pressure(),
                              tabletEvent->xTilt(),
