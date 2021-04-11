@@ -39,9 +39,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KITEMVIEWS
                         SOVERSION 5)
 
 
-if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
-    ecm_install_po_files_as_qm(po)
-endif()
+ecm_install_po_files_as_qm(po)
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
 add_definitions(-DQT_NO_FOREACH)
 add_subdirectory(src)
