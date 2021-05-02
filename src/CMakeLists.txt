@@ -39,7 +39,7 @@ target_include_directories(KF5ItemViews INTERFACE "$<INSTALL_INTERFACE:${KDE_INS
 
 target_link_libraries(KF5ItemViews PUBLIC Qt5::Widgets)
 
-set_target_properties(KF5ItemViews PROPERTIES VERSION   ${KITEMVIEWS_VERSION_STRING}
+set_target_properties(KF5ItemViews PROPERTIES VERSION   ${KITEMVIEWS_VERSION}
                                               SOVERSION ${KITEMVIEWS_SOVERSION}
                                               EXPORT_NAME ItemViews
 )
