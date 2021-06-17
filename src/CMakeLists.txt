@@ -1,7 +1,15 @@
+add_library(KF5ItemViews)
+add_library(KF5::ItemViews ALIAS KF5ItemViews)
 
-ecm_create_qm_loader(kitemviews_QM_LOADER kitemviews5_qt)
+set_target_properties(KF5ItemViews PROPERTIES
+    VERSION     ${KITEMVIEWS_VERSION}
+    SOVERSION   ${KITEMVIEWS_SOVERSION}
+    EXPORT_NAME ItemViews
+)
 
-set(kitemviews_SRCS
+ecm_create_qm_loader(KF5ItemViews kitemviews5_qt)
+
+target_sources(KF5ItemViews PRIVATE
   kcategorizedsortfilterproxymodel.cpp
   kcategorizedview.cpp
   kcategorydrawer.cpp
@@ -12,10 +20,9 @@ set(kitemviews_SRCS
   ktreewidgetsearchlinewidget.cpp
   kwidgetitemdelegate.cpp
   kwidgetitemdelegatepool.cpp
-  ${kitemviews_QM_LOADER}
 )
 
-ecm_qt_declare_logging_category(kitemviews_SRCS
+ecm_qt_declare_logging_category(KF5ItemViews
     HEADER kitemviews_debug.h
     IDENTIFIER KITEMVIEWS_LOG
     CATEGORY_NAME kf.itemviews
@@ -23,8 +30,6 @@ ecm_qt_declare_logging_category(kitemviews_SRCS
     EXPORT KITEMVIEWS
 )
 
-add_library(KF5ItemViews ${kitemviews_SRCS})
-add_library(KF5::ItemViews ALIAS KF5ItemViews)
 ecm_generate_export_header(KF5ItemViews
     BASE_NAME KItemViews
     GROUP_BASE_NAME KF
@@ -38,11 +43,6 @@ ecm_generate_export_header(KF5ItemViews
 target_include_directories(KF5ItemViews INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KItemViews>")
 
 target_link_libraries(KF5ItemViews PUBLIC Qt5::Widgets)
-
-set_target_properties(KF5ItemViews PROPERTIES VERSION   ${KITEMVIEWS_VERSION}
-                                              SOVERSION ${KITEMVIEWS_SOVERSION}
-                                              EXPORT_NAME ItemViews
-)
 
 ecm_generate_headers(KItemViews_HEADERS
   HEADER_NAMES
