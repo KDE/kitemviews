@@ -58,7 +58,7 @@ public:
     virtual void drawCategory(const QModelIndex &index, int sortRole, const QStyleOption &option, QPainter *painter) const;
 
     /**
-     * @return The category height for the category representated by index @p index with
+     * @return The category height for the category represented by index @p index with
      *         style options @p option.
      */
     virtual int categoryHeight(const QModelIndex &index, const QStyleOption &option) const;
