@@ -69,11 +69,12 @@ void KTreeWidgetSearchLinePrivate::_k_rowsInserted(const QModelIndex &parentInde
     }
 
     QTreeWidget *widget = nullptr;
-    for (QTreeWidget *tree : qAsConst(treeWidgets))
+    for (QTreeWidget *tree : qAsConst(treeWidgets)) {
         if (tree->model() == model) {
             widget = tree;
             break;
         }
+    }
 
     if (!widget) {
         return;
@@ -313,11 +314,11 @@ void KTreeWidgetSearchLine::updateSearch(QTreeWidget *treeWidget)
 
     QTreeWidgetItem *currentItem = treeWidget->currentItem();
 
-    if (d->keepParentsVisible)
+    if (d->keepParentsVisible) {
         for (int i = 0; i < treeWidget->topLevelItemCount(); ++i) {
             d->checkItemParentsVisible(treeWidget->topLevelItem(i));
         }
-    else {
+    } else {
         d->checkItemParentsNotVisible(treeWidget);
     }
 

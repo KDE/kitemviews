@@ -106,10 +106,11 @@ void KTreeWidgetSearchLineTest::showEvent(QShowEvent *event)
 {
     QDialog::showEvent(event);
 
-    for (int i = 0; i < tw->header()->count(); ++i)
+    for (int i = 0; i < tw->header()->count(); ++i) {
         if (!tw->header()->isSectionHidden(i)) {
             tw->resizeColumnToContents(i);
         }
+    }
 }
 
 int main(int argc, char **argv)

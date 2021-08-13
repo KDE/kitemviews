@@ -1299,7 +1299,8 @@ void KCategorizedView::rowsAboutToBeRemoved(const QModelIndex &parent, int start
 void KCategorizedView::updateGeometries()
 {
     const int oldVerticalOffset = verticalOffset();
-    const Qt::ScrollBarPolicy verticalP = verticalScrollBarPolicy(), horizontalP = horizontalScrollBarPolicy();
+    const Qt::ScrollBarPolicy verticalP = verticalScrollBarPolicy();
+    const Qt::ScrollBarPolicy horizontalP = horizontalScrollBarPolicy();
 
     // BEGIN bugs 213068, 287847 ------------------------------------------------------------
     /*
