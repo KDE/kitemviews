@@ -69,7 +69,7 @@ void KTreeWidgetSearchLinePrivate::_k_rowsInserted(const QModelIndex &parentInde
     }
 
     QTreeWidget *widget = nullptr;
-    for (QTreeWidget *tree : qAsConst(treeWidgets)) {
+    for (QTreeWidget *tree : std::as_const(treeWidgets)) {
         if (tree->model() == model) {
             widget = tree;
             break;
@@ -298,7 +298,7 @@ void KTreeWidgetSearchLine::updateSearch(const QString &pattern)
 {
     d->search = pattern.isNull() ? text() : pattern;
 
-    for (QTreeWidget *treeWidget : qAsConst(d->treeWidgets)) {
+    for (QTreeWidget *treeWidget : std::as_const(d->treeWidgets)) {
         updateSearch(treeWidget);
     }
 }
@@ -360,13 +360,13 @@ void KTreeWidgetSearchLine::setTreeWidget(QTreeWidget *treeWidget)
 
 void KTreeWidgetSearchLine::setTreeWidgets(const QList<QTreeWidget *> &treeWidgets)
 {
-    for (QTreeWidget *treeWidget : qAsConst(d->treeWidgets)) {
+    for (QTreeWidget *treeWidget : std::as_const(d->treeWidgets)) {
         disconnectTreeWidget(treeWidget);
     }
 
     d->treeWidgets = treeWidgets;
 
-    for (QTreeWidget *treeWidget : qAsConst(d->treeWidgets)) {
+    for (QTreeWidget *treeWidget : std::as_const(d->treeWidgets)) {
         connectTreeWidget(treeWidget);
     }
 

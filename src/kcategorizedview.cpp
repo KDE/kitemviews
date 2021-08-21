@@ -288,7 +288,7 @@ void KCategorizedViewPrivate::rowsInserted(const QModelIndex &parent, int start,
         QList<Block> blockList = blocks.values();
         std::sort(blockList.begin(), blockList.end(), Block::lessThan);
         QList<int> firstIndexesRows;
-        for (const Block &block : qAsConst(blockList)) {
+        for (const Block &block : std::as_const(blockList)) {
             firstIndexesRows << block.firstIndex.row();
         }
         // END: order for marking as alternate those blocks that are alternate
@@ -1267,7 +1267,7 @@ void KCategorizedView::rowsAboutToBeRemoved(const QModelIndex &parent, int start
     }
     // END: update the items that are in quarantine in affected categories
 
-    for (const QString &category : qAsConst(listOfCategoriesMarkedForRemoval)) {
+    for (const QString &category : std::as_const(listOfCategoriesMarkedForRemoval)) {
         d->blocks.remove(category);
     }
 
@@ -1277,7 +1277,7 @@ void KCategorizedView::rowsAboutToBeRemoved(const QModelIndex &parent, int start
         QList<KCategorizedViewPrivate::Block> blockList = d->blocks.values();
         std::sort(blockList.begin(), blockList.end(), KCategorizedViewPrivate::Block::lessThan);
         QList<int> firstIndexesRows;
-        for (const KCategorizedViewPrivate::Block &block : qAsConst(blockList)) {
+        for (const KCategorizedViewPrivate::Block &block : std::as_const(blockList)) {
             firstIndexesRows << block.firstIndex.row();
         }
         // END: order for marking as alternate those blocks that are alternate

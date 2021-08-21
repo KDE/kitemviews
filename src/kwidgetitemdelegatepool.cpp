@@ -85,7 +85,7 @@ KWidgetItemDelegatePool::findWidgets(const QPersistentModelIndex &idx, const QSt
         result = d->delegate->createItemWidgets(index);
         d->allocatedWidgets << result;
         d->usedWidgets[index] = result;
-        for (QWidget *widget : qAsConst(result)) {
+        for (QWidget *widget : std::as_const(result)) {
             d->widgetInIndex[widget] = index;
             widget->setParent(d->delegate->d->itemView->viewport());
             widget->installEventFilter(d->eventListener);
@@ -94,13 +94,13 @@ KWidgetItemDelegatePool::findWidgets(const QPersistentModelIndex &idx, const QSt
     }
 
     if (updateWidgets == UpdateWidgets) {
-        for (QWidget *widget : qAsConst(result)) {
+        for (QWidget *widget : std::as_const(result)) {
             widget->setVisible(true);
         }
 
         d->delegate->updateItemWidgets(result, option, idx);
 
-        for (QWidget *widget : qAsConst(result)) {
+        for (QWidget *widget : std::as_const(result)) {
             widget->move(widget->x() + option.rect.left(), widget->y() + option.rect.top());
         }
     }

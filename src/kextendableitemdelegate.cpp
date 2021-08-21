@@ -132,7 +132,7 @@ void KExtendableItemDelegatePrivate::_k_extenderDestructionHandler(QObject *dest
 // slot
 void KExtendableItemDelegatePrivate::_k_verticalScroll()
 {
-    for (QWidget *extender : qAsConst(extenders)) {
+    for (QWidget *extender : std::as_const(extenders)) {
         // Fast scrolling can lead to artifacts where extenders stay in the viewport
         // of the parent's scroll area even though their items are scrolled out.
         // Therefore we hide all extenders when scrolling.
@@ -365,7 +365,7 @@ void KExtendableItemDelegate::updateExtenderGeometry(QWidget *extender, const QS
 
 void KExtendableItemDelegatePrivate::deleteExtenders()
 {
-    for (QWidget *ext : qAsConst(extenders)) {
+    for (QWidget *ext : std::as_const(extenders)) {
         ext->hide();
         ext->deleteLater();
     }
