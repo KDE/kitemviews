@@ -82,8 +82,8 @@ struct KCategorizedViewPrivate::Block {
     bool collapsed = false;
 };
 
-KCategorizedViewPrivate::KCategorizedViewPrivate(KCategorizedView *q)
-    : q(q)
+KCategorizedViewPrivate::KCategorizedViewPrivate(KCategorizedView *qq)
+    : q(qq)
     , hoveredBlock(new Block())
     , hoveredIndex(QModelIndex())
     , pressedPosition(QPoint())

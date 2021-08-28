@@ -24,7 +24,7 @@ public:
     struct Block;
     struct Item;
 
-    explicit KCategorizedViewPrivate(KCategorizedView *q);
+    explicit KCategorizedViewPrivate(KCategorizedView *qq);
     ~KCategorizedViewPrivate();
 
     /**
