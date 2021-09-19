@@ -3,7 +3,7 @@
     SPDX-FileCopyrightText: 2003 Scott Wheeler <wheeler@kde.org>
     SPDX-FileCopyrightText: 2004 Gustavo Sverzut Barbieri <gsbarbieri@users.sourceforge.net>
 
-    SPDX-License-Identifier: LGPL-2.0-only
+    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #ifndef KLISTWIDGETSEARCHLINE_H
