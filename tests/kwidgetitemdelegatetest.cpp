@@ -42,7 +42,7 @@ public:
         setAttribute(Qt::WA_Hover);
     }
 
-    ~TestWidget()
+    ~TestWidget() override
     {
     }
 
@@ -111,7 +111,7 @@ public:
         }
     }
 
-    ~MyDelegate()
+    ~MyDelegate() override
     {
     }
 

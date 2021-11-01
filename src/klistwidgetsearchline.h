@@ -47,7 +47,7 @@ public:
     /**
      * Destroys the KListWidgetSearchLine.
      */
-    virtual ~KListWidgetSearchLine();
+    ~KListWidgetSearchLine() override;
 
     /**
      * Returns if the search is case sensitive.  This defaults to Qt::CaseInsensitive.

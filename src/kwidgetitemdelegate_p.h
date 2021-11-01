@@ -25,7 +25,7 @@ class KWidgetItemDelegatePrivate : public QObject
 
 public:
     explicit KWidgetItemDelegatePrivate(KWidgetItemDelegate *q, QObject *parent = nullptr);
-    ~KWidgetItemDelegatePrivate();
+    ~KWidgetItemDelegatePrivate() override;
 
     void _k_slotRowsInserted(const QModelIndex &parent, int start, int end);
     void _k_slotRowsAboutToBeRemoved(const QModelIndex &parent, int start, int end);

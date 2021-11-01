@@ -48,7 +48,7 @@ public:
     /**
      * Destructor
      */
-    ~KFilterProxySearchLine();
+    ~KFilterProxySearchLine() override;
 
     /**
      * Associate a proxy

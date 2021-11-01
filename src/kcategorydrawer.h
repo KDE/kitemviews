@@ -41,7 +41,7 @@ public:
      * @since 5.0
      */
     KCategoryDrawer(KCategorizedView *view);
-    virtual ~KCategoryDrawer();
+    ~KCategoryDrawer() override;
 
     /**
      * @return The view this category drawer is associated with.

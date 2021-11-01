@@ -52,7 +52,7 @@ public:
     /**
      * Destroys an ItemDelegate.
      */
-    virtual ~KWidgetItemDelegate();
+    ~KWidgetItemDelegate() override;
 
     /**
      * Retrieves the item view this delegate is monitoring.

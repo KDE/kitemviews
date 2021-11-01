@@ -38,7 +38,7 @@ public:
     /**
      * Destroys the KTreeWidgetSearchLineWidget
      */
-    ~KTreeWidgetSearchLineWidget();
+    ~KTreeWidgetSearchLineWidget() override;
 
     /**
      * Returns a pointer to the search line.
