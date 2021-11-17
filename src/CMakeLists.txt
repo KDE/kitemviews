@@ -10,16 +10,30 @@ set_target_properties(KF5ItemViews PROPERTIES
 ecm_create_qm_loader(KF5ItemViews kitemviews5_qt)
 
 target_sources(KF5ItemViews PRIVATE
-  kcategorizedsortfilterproxymodel.cpp
-  kcategorizedview.cpp
-  kcategorydrawer.cpp
-  kextendableitemdelegate.cpp
-  kfilterproxysearchline.cpp
-  klistwidgetsearchline.cpp
-  ktreewidgetsearchline.cpp
-  ktreewidgetsearchlinewidget.cpp
-  kwidgetitemdelegate.cpp
-  kwidgetitemdelegatepool.cpp
+    kcategorizedsortfilterproxymodel.cpp
+    kcategorizedsortfilterproxymodel.h
+    kcategorizedsortfilterproxymodel_p.h
+    kcategorizedview.cpp
+    kcategorizedview.h
+    kcategorizedview_p.h
+    kcategorydrawer.cpp
+    kcategorydrawer.h
+    kextendableitemdelegate.cpp
+    kextendableitemdelegate.h
+    kfilterproxysearchline.cpp
+    kfilterproxysearchline.h
+    klistwidgetsearchline.cpp
+    klistwidgetsearchline.h
+    ktreewidgetsearchline.cpp
+    ktreewidgetsearchline.h
+    ktreewidgetsearchlinewidget.cpp
+    ktreewidgetsearchlinewidget.h
+    kwidgetitemdelegate.cpp
+    kwidgetitemdelegate.h
+    kwidgetitemdelegate_p.h
+    kwidgetitemdelegatepool.cpp
+    kwidgetitemdelegatepool_p.h
+
 )
 
 ecm_qt_declare_logging_category(KF5ItemViews
