@@ -33,6 +33,12 @@ public:
     bool isCategorized() const;
 
     /**
+     * Wrapper that returns the view's QStyleOptionViewItem, in Qt5 using viewOptions(), and
+     * in Qt6 using initViewItemOption().
+     */
+    QStyleOptionViewItem viewOpts();
+
+    /**
      * @return the block rect for the representative @p representative.
      */
     QStyleOptionViewItem blockRect(const QModelIndex &representative);

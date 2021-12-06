@@ -101,9 +101,21 @@ bool KCategorizedViewPrivate::isCategorized() const
     return proxyModel && categoryDrawer && proxyModel->isCategorizedModel();
 }
 
+QStyleOptionViewItem KCategorizedViewPrivate::viewOpts()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QStyleOptionViewItem option;
+    q->initViewItemOption(&option);
+#else
+    QStyleOptionViewItem option(q->viewOptions());
+#endif
+    return option;
+}
+
 QStyleOptionViewItem KCategorizedViewPrivate::blockRect(const QModelIndex &representative)
 {
-    QStyleOptionViewItem option(q->viewOptions());
+    QStyleOptionViewItem option = viewOpts();
+
     const int height = categoryDrawer->categoryHeight(representative, option);
     const QString categoryDisplay = representative.data(KCategorizedSortFilterProxyModel::CategoryDisplayRole).toString();
     QPoint pos = blockPosition(categoryDisplay);
@@ -175,7 +187,8 @@ QPoint KCategorizedViewPrivate::blockPosition(const QString &category)
         if (index.row() < categoryIndex.row()) {
             continue;
         }
-        res.ry() += categoryDrawer->categoryHeight(categoryIndex, q->viewOptions()) + categorySpacing;
+
+        res.ry() += categoryDrawer->categoryHeight(categoryIndex, viewOpts()) + categorySpacing;
         if (index.row() == categoryIndex.row()) {
             continue;
         }
@@ -764,7 +777,8 @@ void KCategorizedView::paintEvent(QPaintEvent *event)
     while (it != d->blocks.constEnd()) {
         const KCategorizedViewPrivate::Block &block = *it;
         const QModelIndex categoryIndex = d->proxyModel->index(block.firstIndex.row(), d->proxyModel->sortColumn(), rootIndex());
-        QStyleOptionViewItem option(viewOptions());
+
+        QStyleOptionViewItem option = d->viewOpts();
         option.features |= d->alternatingBlockColors && block.alternate //
             ? QStyleOptionViewItem::Alternate
             : QStyleOptionViewItem::None;
@@ -814,7 +828,7 @@ void KCategorizedView::paintEvent(QPaintEvent *event)
 
             const QModelIndex index = d->proxyModel->index(i, modelColumn(), rootIndex());
             const Qt::ItemFlags flags = d->proxyModel->flags(index);
-            QStyleOptionViewItem option(viewOptions());
+            QStyleOptionViewItem option(d->viewOpts());
             option.rect = visualRect(index);
             option.widget = this;
             option.features |= wordWrap() ? QStyleOptionViewItem::WrapText : QStyleOptionViewItem::None;
@@ -923,7 +937,7 @@ void KCategorizedView::mouseMoveEvent(QMouseEvent *event)
     while (it != d->blocks.constEnd()) {
         const KCategorizedViewPrivate::Block &block = *it;
         const QModelIndex categoryIndex = d->proxyModel->index(block.firstIndex.row(), d->proxyModel->sortColumn(), rootIndex());
-        QStyleOptionViewItem option(viewOptions());
+        QStyleOptionViewItem option(d->viewOpts());
         const int height = d->categoryDrawer->categoryHeight(categoryIndex, option);
         QPoint pos = d->blockPosition(it.key());
         pos.ry() -= height;
