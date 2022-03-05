@@ -1,0 +1,48 @@
+# translation of kdelibs4.po to Gujarati
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kartik Mistry <kartik.mistry@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2009-11-22 00:01+0530\n"
+"Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
+"Language-Team: Gujarati <team@utkarsh.org>\n"
+"Language: gu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Qt-Contexts: true\n"
+
+#: kfilterproxysearchline.cpp:63
+#, fuzzy
+#| msgid "Search"
+msgctxt "KFilterProxySearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "શોધો"
+
+#: ktreewidgetsearchline.cpp:212
+#, fuzzy
+#| msgid "Search"
+msgctxt "KTreeWidgetSearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "શોધો"
+
+#: ktreewidgetsearchline.cpp:417
+#, fuzzy
+#| msgid "Search Columns"
+msgctxt "KTreeWidgetSearchLine|@title:menu"
+msgid "Search Columns"
+msgstr "શોધ સ્તંભો"
+
+#: ktreewidgetsearchline.cpp:419
+#, fuzzy
+#| msgid "All Visible Columns"
+msgctxt "KTreeWidgetSearchLine|@optipn:check"
+msgid "All Visible Columns"
+msgstr "બધા દૃશ્યમાન સ્તંભો"
