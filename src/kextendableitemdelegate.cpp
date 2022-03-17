@@ -161,7 +161,7 @@ QSize KExtendableItemDelegate::sizeHint(const QStyleOptionViewItem &option, cons
 
     bool showExtensionIndicator = index.model() ? index.model()->data(index, ShowExtensionIndicatorRole).toBool() : false;
     if (showExtensionIndicator) {
-        ret.rwidth() += d->extendPixmap.width();
+        ret.rwidth() += d->extendPixmap.width() / d->extendPixmap.devicePixelRatio();
     }
 
     return ret;
@@ -195,16 +195,17 @@ void KExtendableItemDelegate::paint(QPainter *painter, const QStyleOptionViewIte
     const bool showExtensionIndicator = index.model()->data(index, ShowExtensionIndicatorRole).toBool();
 
     if (showExtensionIndicator) {
+        const QSize extendPixmapSize = d->extendPixmap.size() / d->extendPixmap.devicePixelRatio();
         if (QApplication::isRightToLeft()) {
-            indicatorX = option.rect.right() - d->extendPixmap.width();
-            itemOption.rect.setRight(option.rect.right() - d->extendPixmap.width());
-            indicatorOption.rect.setLeft(option.rect.right() - d->extendPixmap.width());
+            indicatorX = option.rect.right() - extendPixmapSize.width();
+            itemOption.rect.setRight(indicatorX);
+            indicatorOption.rect.setLeft(indicatorX);
         } else {
             indicatorX = option.rect.left();
-            indicatorOption.rect.setRight(option.rect.left() + d->extendPixmap.width());
-            itemOption.rect.setLeft(option.rect.left() + d->extendPixmap.width());
+            indicatorOption.rect.setRight(indicatorX + extendPixmapSize.width());
+            itemOption.rect.setLeft(indicatorX + extendPixmapSize.width());
         }
-        indicatorY = option.rect.top() + ((option.rect.height() - d->extendPixmap.height()) >> 1);
+        indicatorY = option.rect.top() + ((option.rect.height() - extendPixmapSize.height()) >> 1);
     }
 
     // fast path
@@ -265,8 +266,9 @@ void KExtendableItemDelegate::paint(QPainter *painter, const QStyleOptionViewIte
     QStyledItemDelegate::paint(painter, itemOption, index);
 
     if (showExtensionIndicator) {
+        const int extendPixmapHeight = d->extendPixmap.height() / d->extendPixmap.devicePixelRatio();
         // indicatorOption's height changed, change this too
-        indicatorY = indicatorOption.rect.top() + ((indicatorOption.rect.height() - d->extendPixmap.height()) >> 1);
+        indicatorY = indicatorOption.rect.top() + ((indicatorOption.rect.height() - extendPixmapHeight) >> 1);
         painter->save();
         QApplication::style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &indicatorOption, painter);
         painter->restore();
