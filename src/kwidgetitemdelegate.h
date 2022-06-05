@@ -104,6 +104,7 @@ protected:
      * @param index the model index of the item currently manipulated.
      */
     virtual void updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const = 0;
+    // KF6 TODO: add missing reference to widgets parameter
 
 #if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(4, 2)
     /**
@@ -133,6 +134,7 @@ protected:
      * @param types the list of event types the widget must block
      */
     void setBlockedEventTypes(QWidget *widget, QList<QEvent::Type> types) const;
+    // KF6 TODO: pass types by const reference
 
     /**
      * Retrieves the list of blocked event types for the given widget.
