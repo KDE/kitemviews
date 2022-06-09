@@ -1,0 +1,38 @@
+# Kiszel Kristóf <ulysses@kubuntu.org>, 2010.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012, 2014, 2020.
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-03-23 01:50+0000\n"
+"PO-Revision-Date: 2020-11-28 14:31+0100\n"
+"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.03.70\n"
+"X-Qt-Contexts: true\n"
+
+#: kfilterproxysearchline.cpp:63
+msgctxt "KFilterProxySearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "Keresés…"
+
+#: ktreewidgetsearchline.cpp:212
+msgctxt "KTreeWidgetSearchLine|@info:placeholder"
+msgid "Search..."
+msgstr "Keresés…"
+
+#: ktreewidgetsearchline.cpp:417
+msgctxt "KTreeWidgetSearchLine|@title:menu"
+msgid "Search Columns"
+msgstr "Oszlop keresése"
+
+#: ktreewidgetsearchline.cpp:419
+msgctxt "KTreeWidgetSearchLine|@optipn:check"
+msgid "All Visible Columns"
+msgstr "Minden látható oszlop"
