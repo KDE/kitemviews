@@ -51,7 +51,7 @@ public:
      *
      * Complexity: O(log(n)) where n is model()->rowCount().
      */
-    QPair<QModelIndex, QModelIndex> intersectingIndexesWithRect(const QRect &rect) const;
+    std::pair<QModelIndex, QModelIndex> intersectingIndexesWithRect(const QRect &rect) const;
 
     /**
      * Returns the position of the block of @p category.
