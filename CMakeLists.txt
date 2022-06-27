@@ -19,6 +19,7 @@ include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(ECMQtDeclareLoggingCategory)
+include(ECMDeprecationSettings)
 include(ECMAddQch)
 include(ECMPoQmTools)
 include(CMakeDependentOption)
@@ -42,7 +43,11 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KITEMVIEWS
 
 
 ecm_install_po_files_as_qm(po)
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f02)
+
+ecm_set_disabled_deprecation_versions(
+    QT 5.15.2
+)
+
 add_subdirectory(src)
 if (BUILD_TESTING)
     add_subdirectory(autotests)
