@@ -73,7 +73,7 @@ ecm_generate_headers(KItemViews_HEADERS
   REQUIRED_HEADERS KItemViews_HEADERS
 )
 
-install(TARGETS KF5ItemViews EXPORT KF5ItemViewsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5ItemViews EXPORT KF5ItemViewsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kitemviews_export.h
