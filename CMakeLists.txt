@@ -42,7 +42,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KITEMVIEWS
                         SOVERSION 5)
 
 
-ecm_install_po_files_as_qm(po)
+ecm_install_po_files_as_qm(poqm)
 
 ecm_set_disabled_deprecation_versions(
     QT 5.15.2
