@@ -15,6 +15,8 @@
 #include <kcategorizedsortfilterproxymodel.h>
 #include <kcategorizedview.h>
 
+#include <cmath>
+
 class KCategoryDrawerPrivate
 {
 public:
@@ -45,43 +47,46 @@ void KCategoryDrawer::drawCategory(const QModelIndex &index, int /*sortRole*/, c
 
     const QString category = index.model()->data(index, KCategorizedSortFilterProxyModel::CategoryDisplayRole).toString();
     QFont font(QApplication::font());
-    // Match Heading with level 3
-    font.setPointSizeF(font.pointSize() * 1.20);
+    font.setBold(true);
     const QFontMetrics fontMetrics = QFontMetrics(font);
 
-    QColor backgroundColor = option.palette.window().color();
+    const int topPadding = 8 + 4; // Kirigami.Units.largeSpacing + smallSpacing
+    const int sidePadding = 8; // Kirigami.Units.largeSpacing
 
-    // BEGIN: background
+    // BEGIN: text
     {
+        QRect textRect(option.rect);
+        textRect.setTop(textRect.top() + topPadding);
+        textRect.setLeft(textRect.left() + sidePadding);
+        textRect.setRight(textRect.right() - sidePadding);
+        textRect.setHeight(fontMetrics.height());
+
+        painter->save();
+        painter->setFont(font);
+        QColor penColor(option.palette.text().color());
+        penColor.setAlphaF(0.7);
+        painter->setPen(penColor);
+        painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, category);
+        painter->restore();
+    }
+    // END: text
+
+    // BEGIN: horizontal line
+    {
+        QColor backgroundColor = option.palette.text().color();
+        backgroundColor.setAlphaF(0.7 * 0.15); // replicate Kirigami.Separator color
         QRect backgroundRect(option.rect);
-        backgroundRect.setHeight(categoryHeight(index, option));
+        backgroundRect.setLeft(fontMetrics.horizontalAdvance(category) + sidePadding * 2);
+        backgroundRect.setRight(backgroundRect.right() - sidePadding);
+        backgroundRect.setTop(backgroundRect.top() + topPadding + ceil(fontMetrics.height() / 2));
+        backgroundRect.setHeight(1);
         painter->save();
         painter->setBrush(backgroundColor);
         painter->setPen(Qt::NoPen);
         painter->drawRect(backgroundRect);
         painter->restore();
     }
-    // END: background
-
-    // BEGIN: text
-    {
-        //  Kirgami.Units.{small/large}Spacing respectively
-        constexpr int topPadding = 4;
-        constexpr int sidePadding = 8;
-        QRect textRect(option.rect);
-        textRect.setTop(textRect.top() + topPadding);
-        textRect.setLeft(textRect.left() + sidePadding);
-        textRect.setHeight(fontMetrics.height());
-        textRect.setRight(textRect.right() - sidePadding);
-
-        painter->save();
-        painter->setFont(font);
-        QColor penColor(option.palette.text().color());
-        painter->setPen(penColor);
-        painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, category);
-        painter->restore();
-    }
-    // END: text
+    // END: horizontal line
 }
 
 int KCategoryDrawer::categoryHeight(const QModelIndex &index, const QStyleOption &option) const
@@ -90,10 +95,9 @@ int KCategoryDrawer::categoryHeight(const QModelIndex &index, const QStyleOption
     Q_UNUSED(option)
 
     QFont font(QApplication::font());
-    font.setPointSizeF(font.pointSize() * 1.20);
     QFontMetrics fontMetrics(font);
 
-    const int height = fontMetrics.height() + 8;
+    const int height = fontMetrics.height() + 8 + 8; // Kirigami.Units.largeSpacing + smallSpacing * 2
     return height;
 }
 
