@@ -13,8 +13,8 @@ deprecated: false
 release: true
 libraries:
  - qmake: KItemViews
-   cmake: "KF5::ItemViews"
-cmakename: KF5ItemViews
+   cmake: "KF6::ItemViews"
+cmakename: KF6ItemViews
 
 public_lib: true
 group: Frameworks

@@ -1,15 +1,15 @@
-add_library(KF5ItemViews)
-add_library(KF5::ItemViews ALIAS KF5ItemViews)
+add_library(KF6ItemViews)
+add_library(KF6::ItemViews ALIAS KF6ItemViews)
 
-set_target_properties(KF5ItemViews PROPERTIES
+set_target_properties(KF6ItemViews PROPERTIES
     VERSION     ${KITEMVIEWS_VERSION}
     SOVERSION   ${KITEMVIEWS_SOVERSION}
     EXPORT_NAME ItemViews
 )
 
-ecm_create_qm_loader(KF5ItemViews kitemviews5_qt)
+ecm_create_qm_loader(KF6ItemViews kitemviews5_qt)
 
-target_sources(KF5ItemViews PRIVATE
+target_sources(KF6ItemViews PRIVATE
     kcategorizedsortfilterproxymodel.cpp
     kcategorizedsortfilterproxymodel.h
     kcategorizedsortfilterproxymodel_p.h
@@ -36,7 +36,7 @@ target_sources(KF5ItemViews PRIVATE
 
 )
 
-ecm_qt_declare_logging_category(KF5ItemViews
+ecm_qt_declare_logging_category(KF6ItemViews
     HEADER kitemviews_debug.h
     IDENTIFIER KITEMVIEWS_LOG
     CATEGORY_NAME kf.itemviews
@@ -44,7 +44,7 @@ ecm_qt_declare_logging_category(KF5ItemViews
     EXPORT KITEMVIEWS
 )
 
-ecm_generate_export_header(KF5ItemViews
+ecm_generate_export_header(KF6ItemViews
     BASE_NAME KItemViews
     GROUP_BASE_NAME KF
     VERSION ${KF_VERSION}
@@ -54,9 +54,9 @@ ecm_generate_export_header(KF5ItemViews
 )
 
 
-target_include_directories(KF5ItemViews INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KItemViews>")
+target_include_directories(KF6ItemViews INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KItemViews>")
 
-target_link_libraries(KF5ItemViews PUBLIC Qt${QT_MAJOR_VERSION}::Widgets)
+target_link_libraries(KF6ItemViews PUBLIC Qt${QT_MAJOR_VERSION}::Widgets)
 
 ecm_generate_headers(KItemViews_HEADERS
   HEADER_NAMES
@@ -73,7 +73,7 @@ ecm_generate_headers(KItemViews_HEADERS
   REQUIRED_HEADERS KItemViews_HEADERS
 )
 
-install(TARGETS KF5ItemViews EXPORT KF5ItemViewsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6ItemViews EXPORT KF6ItemViewsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kitemviews_export.h
@@ -87,9 +87,9 @@ endif()
 
 if(BUILD_QCH)
     ecm_add_qch(
-        KF5ItemViews_QCH
+        KF6ItemViews_QCH
         NAME KItemViews
-        BASE_NAME KF5ItemViews
+        BASE_NAME KF6ItemViews
         VERSION ${KF_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -113,7 +113,7 @@ if(BUILD_QCH)
 endif()
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KItemViews LIB_NAME KF5ItemViews DEPS "widgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KItemViews)
+ecm_generate_pri_file(BASE_NAME KItemViews LIB_NAME KF6ItemViews DEPS "widgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KItemViews)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 ecm_qt_install_logging_categories(

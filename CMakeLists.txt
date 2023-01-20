@@ -38,8 +38,8 @@ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Des
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX KITEMVIEWS
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kitemviews_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5ItemViewsConfigVersion.cmake"
-                        SOVERSION 5)
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6ItemViewsConfigVersion.cmake"
+                        SOVERSION 6)
 
 
 ecm_install_po_files_as_qm(poqm)
@@ -55,31 +55,31 @@ if (BUILD_TESTING)
 endif()
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5ItemViews")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6ItemViews")
 
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KF5ItemViews_QCH
-        FILE KF5ItemViewsQCHTargets.cmake
+        TARGETS KF6ItemViews_QCH
+        FILE KF6ItemViewsQCHTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5ItemViewsQCHTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6ItemViewsQCHTargets.cmake\")")
 endif()
 
 configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/KF5ItemViewsConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KF5ItemViewsConfig.cmake"
+  "${CMAKE_CURRENT_SOURCE_DIR}/KF6ItemViewsConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/KF6ItemViewsConfig.cmake"
   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KF5ItemViewsConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KF5ItemViewsConfigVersion.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KF6ItemViewsConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KF6ItemViewsConfigVersion.cmake"
   DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
   COMPONENT Devel
 )
 
-install(EXPORT KF5ItemViewsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5ItemViewsTargets.cmake NAMESPACE KF5:: )
+install(EXPORT KF6ItemViewsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6ItemViewsTargets.cmake NAMESPACE KF6:: )
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/kitemviews_version.h
