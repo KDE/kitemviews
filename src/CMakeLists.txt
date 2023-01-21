@@ -20,8 +20,6 @@ target_sources(KF6ItemViews PRIVATE
     kcategorydrawer.h
     kextendableitemdelegate.cpp
     kextendableitemdelegate.h
-    kfilterproxysearchline.cpp
-    kfilterproxysearchline.h
     klistwidgetsearchline.cpp
     klistwidgetsearchline.h
     ktreewidgetsearchline.cpp
@@ -49,7 +47,7 @@ ecm_generate_export_header(KF6ItemViews
     GROUP_BASE_NAME KF
     VERSION ${KF_VERSION}
     DEPRECATED_BASE_VERSION 0
-    DEPRECATION_VERSIONS 4.2 4.4 5.0 5.50
+    DEPRECATION_VERSIONS
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
 
@@ -64,7 +62,6 @@ ecm_generate_headers(KItemViews_HEADERS
   KCategorizedView
   KCategoryDrawer
   KExtendableItemDelegate
-  KFilterProxySearchLine
   KListWidgetSearchLine
   KTreeWidgetSearchLine
   KTreeWidgetSearchLineWidget

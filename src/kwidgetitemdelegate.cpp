@@ -193,15 +193,6 @@ QPersistentModelIndex KWidgetItemDelegate::focusedIndex() const
     return d->itemView->indexAt(pos);
 }
 
-#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 2)
-void KWidgetItemDelegate::paintWidgets(QPainter *painter, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const
-{
-    Q_UNUSED(painter);
-    Q_UNUSED(option);
-    Q_UNUSED(index);
-}
-#endif
-
 //@cond PRIVATE
 bool KWidgetItemDelegatePrivate::eventFilter(QObject *watched, QEvent *event)
 {

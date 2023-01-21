@@ -106,24 +106,6 @@ protected:
     virtual void updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const = 0;
     // KF6 TODO: add missing reference to widgets parameter
 
-#if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(4, 2)
-    /**
-     * Paint the widgets of the item. This method is meant to be used in the paint()
-     * method of your item delegate implementation.
-     *
-     * @param painter the painter the widgets will be painted on.
-     * @param option the current set of style options for the view.
-     * @param index the model index of the item currently painted.
-     *
-     * @deprecated Since 4.2 this method is not longer needed to be called. All widgets will kept
-     *          updated without the need of calling paintWidgets() in your paint() event. For the
-     *          widgets of a certain index to be updated your model has to emit dataChanged() on the
-     *          indexes that want to be updated.
-     */
-    KITEMVIEWS_DEPRECATED_VERSION(4, 2, "Emit QAbstractItemModel::dataChanged(...) signal instead")
-    void paintWidgets(QPainter *painter, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const;
-#endif
-
     /**
      * Sets the list of event @p types that a @p widget will block.
      *

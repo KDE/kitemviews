@@ -1457,24 +1457,6 @@ void KCategorizedView::rowsInserted(const QModelIndex &parent, int start, int en
     d->rowsInserted(parent, start, end);
 }
 
-#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 4)
-void KCategorizedView::rowsInsertedArtifficial(const QModelIndex &parent, int start, int end)
-{
-    Q_UNUSED(parent);
-    Q_UNUSED(start);
-    Q_UNUSED(end);
-}
-#endif
-
-#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 4)
-void KCategorizedView::rowsRemoved(const QModelIndex &parent, int start, int end)
-{
-    Q_UNUSED(parent);
-    Q_UNUSED(start);
-    Q_UNUSED(end);
-}
-#endif
-
 void KCategorizedView::slotLayoutChanged()
 {
     if (!d->isCategorized()) {

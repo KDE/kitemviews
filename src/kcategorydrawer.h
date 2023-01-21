@@ -153,22 +153,4 @@ private:
     std::unique_ptr<KCategoryDrawerPrivate> const d;
 };
 
-#if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(5, 0)
-/**
- * @class KCategoryDrawerV3 kcategorydrawer.h KCategoryDrawer
- *
- * @deprecated Since 5.0, use KCategoryDrawer instead
- */
-
-class KCategoryDrawerV3 : public KCategoryDrawer
-{
-public:
-    KITEMVIEWS_DEPRECATED_VERSION(5, 0, "Use KCategoryDrawer")
-    KCategoryDrawerV3(KCategorizedView *view)
-        : KCategoryDrawer(view)
-    {
-    }
-};
-#endif
-
 #endif // KCATEGORYDRAWER_H

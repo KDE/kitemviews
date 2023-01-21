@@ -93,17 +93,6 @@ public:
      */
     bool sortCategoriesByNaturalComparison() const;
 
-#if KITEMVIEWS_ENABLE_DEPRECATED_SINCE(4, 4)
-    /**
-     * Does a natural comparing of the strings. A negative value is returned if \a a
-     * is smaller than \a b. A positive value is returned if \a a is greater than \a b. 0
-     * is returned if both values are equal.
-     * @deprecated Since 4.4. Use QCollator instead.
-     */
-    KITEMVIEWS_DEPRECATED_VERSION(4, 4, "Use QCollator")
-    static int naturalCompare(const QString &a, const QString &b);
-#endif
-
 protected:
     /**
      * Overridden from QSortFilterProxyModel. If you are subclassing

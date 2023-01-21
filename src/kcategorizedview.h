@@ -288,24 +288,6 @@ protected:
     virtual void rowsInserted(const QModelIndex &parent, int start, int end) override;
 
 protected Q_SLOTS:
-#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 4)
-    /**
-     * @internal
-     * @deprecated Since 4.4.
-     */
-    KITEMVIEWS_DEPRECATED_VERSION(4, 4, "No longer use")
-    virtual void rowsInsertedArtifficial(const QModelIndex &parent, int start, int end);
-#endif
-
-#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 4)
-    /**
-     * @internal
-     * @deprecated Since 4.4.
-     */
-    KITEMVIEWS_DEPRECATED_VERSION(4, 4, "No longer use")
-    virtual void rowsRemoved(const QModelIndex &parent, int start, int end);
-#endif
-
     /**
      * @internal
      * Reposition items as needed.

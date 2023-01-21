@@ -70,16 +70,6 @@ bool KCategorizedSortFilterProxyModel::sortCategoriesByNaturalComparison() const
     return d->sortCategoriesByNaturalComparison;
 }
 
-#if KITEMVIEWS_BUILD_DEPRECATED_SINCE(4, 4)
-int KCategorizedSortFilterProxyModel::naturalCompare(const QString &a, const QString &b)
-{
-    QCollator c;
-    c.setNumericMode(true);
-    c.setCaseSensitivity(Qt::CaseSensitive);
-    return c.compare(a, b);
-}
-#endif
-
 bool KCategorizedSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
     if (d->categorizedModel) {
