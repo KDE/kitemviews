@@ -20,7 +20,7 @@ ecm_qtdesignerplugin_widget(KTreeWidgetSearchLineWidget
 
 ecm_add_qtdesignerplugin(kitemviewswidgets
     NAME KItemViewsWidgets
-    OUTPUT_NAME kitemviews5widgets
+    OUTPUT_NAME kitemviews6widgets
     WIDGETS
         KCategorizedView
         KListWidgetSearchLine
