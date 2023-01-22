@@ -841,7 +841,7 @@ void KCategorizedView::paintEvent(QPaintEvent *event)
                 option.state |= (index == d->hoveredIndex) ? QStyle::State_MouseOver : QStyle::State_None;
             }
 
-            itemDelegate(index)->paint(&p, option, index);
+            itemDelegateForIndex(index)->paint(&p, option, index);
             ++i;
         }
         // END: draw items
@@ -1053,7 +1053,7 @@ void KCategorizedView::startDrag(Qt::DropActions supportedActions)
 void KCategorizedView::dragMoveEvent(QDragMoveEvent *event)
 {
     QListView::dragMoveEvent(event);
-    d->hoveredIndex = indexAt(event->pos());
+    d->hoveredIndex = indexAt(event->position().toPoint());
 }
 
 void KCategorizedView::dragEnterEvent(QDragEnterEvent *event)

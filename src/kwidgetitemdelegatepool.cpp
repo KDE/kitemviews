@@ -159,7 +159,8 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
         case QEvent::MouseButtonDblClick: {
             QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
             QMouseEvent evt(event->type(),
-                            viewport->mapFromGlobal(mouseEvent->globalPos()),
+                            mouseEvent->position(),
+                            viewport->mapFromGlobal(mouseEvent->globalPosition()),
                             mouseEvent->button(),
                             mouseEvent->buttons(),
                             mouseEvent->modifiers());
