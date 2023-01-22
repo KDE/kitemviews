@@ -103,12 +103,8 @@ bool KCategorizedViewPrivate::isCategorized() const
 
 QStyleOptionViewItem KCategorizedViewPrivate::viewOpts()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     QStyleOptionViewItem option;
     q->initViewItemOption(&option);
-#else
-    QStyleOptionViewItem option(q->viewOptions());
-#endif
     return option;
 }
 

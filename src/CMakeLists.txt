@@ -54,7 +54,7 @@ ecm_generate_export_header(KF6ItemViews
 
 target_include_directories(KF6ItemViews INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KItemViews>")
 
-target_link_libraries(KF6ItemViews PUBLIC Qt${QT_MAJOR_VERSION}::Widgets)
+target_link_libraries(KF6ItemViews PUBLIC Qt6::Widgets)
 
 ecm_generate_headers(KItemViews_HEADERS
   HEADER_NAMES
@@ -93,9 +93,9 @@ if(BUILD_QCH)
             ${KItemViews_HEADERS}
         MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         LINK_QCHS
-            Qt5Widgets_QCH
-            Qt5Gui_QCH
-            Qt5Core_QCH
+            Qt6Widgets_QCH
+            Qt6Gui_QCH
+            Qt6Core_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
