@@ -121,8 +121,7 @@ protected:
      * @param widget the widget which must block events
      * @param types the list of event types the widget must block
      */
-    void setBlockedEventTypes(QWidget *widget, QList<QEvent::Type> types) const;
-    // KF6 TODO: pass types by const reference
+    void setBlockedEventTypes(QWidget *widget, const QList<QEvent::Type> &types) const;
 
     /**
      * Retrieves the list of blocked event types for the given widget.
