@@ -34,6 +34,13 @@ class KWidgetItemDelegatePool;
  * with items. For instance you can add push buttons, line edits, etc. to your delegate
  * and use them to modify the state of your model.
  *
+ * Porting from KF5 to KF6:
+ *
+ * The signature of the virtual method
+ * KWidgetItemDelegate::updateItemWidgets(const QList<QWidget *>, const QStyleOptionViewItem &, const QPersistentModelIndex &) const
+ * was changed to ;
+ * KWidgetItemDelegate::updateItemWidgets(const QList<QWidget *> &, const QStyleOptionViewItem &, const QPersistentModelIndex &) const.
+ *
  * @since 4.1
  */
 class KITEMVIEWS_EXPORT KWidgetItemDelegate : public QAbstractItemDelegate
@@ -103,8 +110,7 @@ protected:
      * @param option the current set of style options for the view.
      * @param index the model index of the item currently manipulated.
      */
-    virtual void updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const = 0;
-    // KF6 TODO: add missing reference to widgets parameter
+    virtual void updateItemWidgets(const QList<QWidget *> &widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const = 0;
 
     /**
      * Sets the list of event @p types that a @p widget will block.

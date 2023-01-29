@@ -159,7 +159,7 @@ public:
         return QList<QWidget *>() << button << new TestWidget() << new QLineEdit() << toolButton;
     }
 
-    void updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const override
+    void updateItemWidgets(const QList<QWidget *> &widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const override
     {
         QPushButton *button = static_cast<QPushButton *>(widgets[0]);
         button->setText(QStringLiteral("Test me"));
