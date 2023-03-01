@@ -23,11 +23,6 @@ msgstr ""
 "X-Text-Markup: qtrich\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Søk …"
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -42,3 +37,7 @@ msgstr "Søk i kolonnar"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Alle synlege kolonnar"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Søk …"

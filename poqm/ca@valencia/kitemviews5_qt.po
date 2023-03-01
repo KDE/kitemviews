@@ -27,11 +27,6 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Busca..."
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -46,3 +41,7 @@ msgstr "Busca en les columnes"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Totes les columnes visibles"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Busca..."

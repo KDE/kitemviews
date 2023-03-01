@@ -107,11 +107,6 @@ msgstr ""
 "X-POFile-IgnoreConsistency: Update\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Procurar..."
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -126,3 +121,7 @@ msgstr "Procurar nas Colunas"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Todas as Colunas Visíveis"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Procurar..."

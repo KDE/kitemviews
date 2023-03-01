@@ -35,11 +35,6 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Введите текст для поиска..."
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -54,6 +49,10 @@ msgstr "Столбцы для поиска"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Все видимые столбцы"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Введите текст для поиска..."
 
 #~ msgctxt "KFilterProxySearchLine|"
 #~ msgid "Search"

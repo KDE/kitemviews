@@ -38,11 +38,6 @@ msgstr ""
 "X-POT-Import-Date: 2013-01-13 20:43:21+0000\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Etsi…"
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -57,6 +52,10 @@ msgstr "Hakusarakkeet"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Kaikki näkyvät sarakkeet"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Etsi…"
 
 #~ msgctxt "KFilterProxySearchLine|"
 #~ msgid "Search"

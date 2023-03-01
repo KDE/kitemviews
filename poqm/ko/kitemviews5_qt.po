@@ -19,11 +19,6 @@ msgstr ""
 "X-Generator: Lokalize 19.12.3\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "찾기..."
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -38,6 +33,10 @@ msgstr "열에서 찾기"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "모든 보이는 열"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "찾기..."
 
 #~ msgctxt "KFilterProxySearchLine|"
 #~ msgid "Search"

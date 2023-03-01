@@ -22,15 +22,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:62
-#, fuzzy
-#| msgctxt "KFilterProxySearchLine|"
-#| msgid "Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Traži"
-
-#: ktreewidgetsearchline.cpp:215
+#: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgctxt "KFilterProxySearchLine|"
 #| msgid "Search"
@@ -38,7 +30,7 @@ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
 msgstr "Traži"
 
-#: ktreewidgetsearchline.cpp:424
+#: ktreewidgetsearchline.cpp:417
 #, fuzzy
 #| msgctxt "KTreeWidgetSearchLine|"
 #| msgid "Search Columns"
@@ -46,10 +38,17 @@ msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Kolone za pretragu"
 
-#: ktreewidgetsearchline.cpp:426
+#: ktreewidgetsearchline.cpp:419
 #, fuzzy
 #| msgctxt "KTreeWidgetSearchLine|"
 #| msgid "All Visible Columns"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Sve vidljive kolone"
+
+#, fuzzy
+#~| msgctxt "KFilterProxySearchLine|"
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Traži"

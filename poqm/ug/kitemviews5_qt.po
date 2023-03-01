@@ -19,13 +19,6 @@ msgstr ""
 "X-Generator: Poedit 1.5.5\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "ئىزدە"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "Search"
@@ -46,6 +39,12 @@ msgstr "ئىزدەش ئىستونى"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "كۆرۈنگەن بارلىق ئىستونلار"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "ئىزدە"
 
 #, fuzzy
 #~| msgid "Search"

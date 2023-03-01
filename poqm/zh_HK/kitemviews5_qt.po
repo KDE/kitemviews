@@ -36,14 +36,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgctxt "QAccel"
-#| msgid "Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "搜尋"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgctxt "QAccel"
@@ -65,6 +57,13 @@ msgstr "搜尋欄"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "所有可見的欄"
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "搜尋"
 
 #, fuzzy
 #~| msgctxt "QAccel"

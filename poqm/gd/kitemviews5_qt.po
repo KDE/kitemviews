@@ -15,14 +15,6 @@ msgstr ""
 "X-Generator: Poedit 1.8.4\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgctxt "KFilterProxySearchLine|"
-#| msgid "Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Lorg"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgctxt "KFilterProxySearchLine|"
@@ -46,6 +38,13 @@ msgstr "Lorg sna colbhan"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "A h-uile colbhan ri am faicinn"
+
+#, fuzzy
+#~| msgctxt "KFilterProxySearchLine|"
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Lorg"
 
 #~ msgctxt "KFilterProxySearchLine|"
 #~ msgid "Search"

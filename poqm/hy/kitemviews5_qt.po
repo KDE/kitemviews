@@ -22,13 +22,6 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Որոնում"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "Search"
@@ -49,6 +42,12 @@ msgstr "Սյուներ որոնման համար"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Բոլոր նորկայացված սյուները"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Որոնում"
 
 #, fuzzy
 #~| msgid "Search"

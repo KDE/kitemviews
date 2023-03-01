@@ -20,11 +20,6 @@ msgstr ""
 "X-Generator: Lokalize 20.04.2\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Søg..."
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -39,6 +34,10 @@ msgstr "Søg i kolonner"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Alle synlige kolonner"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Søg..."
 
 #~ msgctxt "KFilterProxySearchLine|"
 #~ msgid "Search"

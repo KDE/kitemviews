@@ -19,13 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Klask"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "Search"
@@ -46,6 +39,12 @@ msgstr "Bann klask"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "An holl vannoù hewel"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Klask"
 
 #, fuzzy
 #~| msgid "Search"

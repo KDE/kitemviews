@@ -17,13 +17,6 @@ msgstr ""
 "X-Language: km-KH\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "ស្វែង​រក"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "Search"
@@ -44,6 +37,12 @@ msgstr "ស្វែងរក​ជួរឈរ"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "ជួរឈរ​ដែល​មើល​ឃើញ​ទាំងអស់"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "ស្វែង​រក"
 
 #, fuzzy
 #~| msgid "Search"

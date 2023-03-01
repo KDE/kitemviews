@@ -21,11 +21,6 @@ msgstr ""
 "X-Generator: Lokalize 21.12.2\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "தேடு..."
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -40,6 +35,10 @@ msgstr "தெடலில் உட்பட வேண்டிய நெடு
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "காட்டப்படும் அனைத்து நெடுவரிசைகளும்"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "தேடு..."
 
 #, fuzzy
 #~| msgid "Search"

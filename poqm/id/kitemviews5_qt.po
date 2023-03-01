@@ -19,14 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|"
-#| msgid "Search..."
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Cari..."
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgctxt "KTreeWidgetSearchLine|"
@@ -50,6 +42,13 @@ msgstr "Cari Kolom"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Semua Kolom Terlihat"
+
+#, fuzzy
+#~| msgctxt "KTreeWidgetSearchLine|"
+#~| msgid "Search..."
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Cari..."
 
 #~ msgctxt "KFilterProxySearchLine|"
 #~ msgid "Search"

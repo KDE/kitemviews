@@ -20,13 +20,6 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2)\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "&Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "&Szëkba"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "&Search"
@@ -47,6 +40,12 @@ msgstr "Przeszëkiwanié kòlumnów"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Wszëtczé widzawné kòlumnë"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "&Szëkba"
 
 #, fuzzy
 #~| msgid "&Search"

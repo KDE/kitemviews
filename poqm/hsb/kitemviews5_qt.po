@@ -22,13 +22,6 @@ msgstr ""
 "%100==4 ? 2 : 3;\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "&Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "&Pytać"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "&Search"
@@ -49,6 +42,12 @@ msgstr "W špaltach pytać"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Wšitke widźomne špalty"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "&Pytać"
 
 #, fuzzy
 #~| msgid "&Search"

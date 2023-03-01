@@ -16,13 +16,6 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "&Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "&Kërko"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "&Search"
@@ -43,6 +36,12 @@ msgstr "Kërko Shtyllat"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Të Gjitha Shtyllat e Dukshme"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "&Kërko"
 
 #, fuzzy
 #~| msgid "&Search"

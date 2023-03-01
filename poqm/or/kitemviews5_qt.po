@@ -20,13 +20,6 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "&Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "ଖୋଜନ୍ତୁ (&S)"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "&Search"
@@ -47,6 +40,12 @@ msgstr "ସ୍ତମ୍ଭଗୁଡିକୁ ଖୋଜନ୍ତୁ"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "ସମସ୍ତ ଦୃଶ୍ୟମାନ ସ୍ତମ୍ଭଗୁଡିକ"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "ଖୋଜନ୍ତୁ (&S)"
 
 #, fuzzy
 #~| msgid "&Search"

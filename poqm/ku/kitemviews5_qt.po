@@ -27,13 +27,6 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Lêgerîn"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "Search"
@@ -54,6 +47,12 @@ msgstr "Di Stûnan De Lê Bigere"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Hemû Stûnên ku Dixuye"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Lêgerîn"
 
 #, fuzzy
 #~| msgid "Search"

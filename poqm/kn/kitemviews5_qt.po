@@ -21,13 +21,6 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "ಹುಡುಕು"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "Search"
@@ -48,6 +41,12 @@ msgstr "ಲಂಬಸಾಲುಗಳಲ್ಲಿ (columns) ಹುಡುಕು"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "ಎಲ್ಲಾ ಗೋಚರ ಸ್ತಂಭಗಳು (columns)"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "ಹುಡುಕು"
 
 #, fuzzy
 #~| msgid "Search"

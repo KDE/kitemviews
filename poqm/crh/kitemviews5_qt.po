@@ -19,13 +19,6 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "&Search"
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "&Qıdır"
-
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 #| msgid "&Search"
@@ -46,6 +39,12 @@ msgstr "Sutunlarnı Qıdır"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Körüngen Sutunlarnıñ Episi"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "&Qıdır"
 
 #, fuzzy
 #~| msgid "&Search"

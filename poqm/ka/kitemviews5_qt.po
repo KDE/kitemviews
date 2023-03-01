@@ -13,11 +13,6 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "ძებნა..."
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -32,3 +27,7 @@ msgstr "სვეტების ძებნა"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "ყველა ხილული სვეტი"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "ძებნა..."

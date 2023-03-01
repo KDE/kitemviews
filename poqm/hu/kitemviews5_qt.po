@@ -17,11 +17,6 @@ msgstr ""
 "X-Generator: Lokalize 21.03.70\n"
 "X-Qt-Contexts: true\n"
 
-#: kfilterproxysearchline.cpp:63
-msgctxt "KFilterProxySearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Keresés…"
-
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
@@ -36,6 +31,10 @@ msgstr "Oszlop keresése"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Minden látható oszlop"
+
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Keresés…"
 
 #~ msgctxt "KFilterProxySearchLine|"
 #~ msgid "Search"
