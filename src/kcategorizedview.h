@@ -280,7 +280,7 @@ protected:
     /**
      * Reimplemented from QAbstractItemView.
      */
-    virtual void dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles = QVector<int>()) override;
+    virtual void dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles = QList<int>()) override;
 
     /**
      * Reimplemented from QAbstractItemView.
