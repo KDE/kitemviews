@@ -41,7 +41,3 @@ msgstr "Busca en les columnes"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Totes les columnes visibles"
-
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
-#~ msgid "Search..."
-#~ msgstr "Busca..."
