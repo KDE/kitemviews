@@ -36,7 +36,3 @@ msgstr "Prohledávat sloupce"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Všechny viditelné sloupce"
-
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
-#~ msgid "Search..."
-#~ msgstr "Hledat..."
