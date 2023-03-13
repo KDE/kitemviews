@@ -7,7 +7,7 @@ set_target_properties(KF6ItemViews PROPERTIES
     EXPORT_NAME ItemViews
 )
 
-ecm_create_qm_loader(KF6ItemViews kitemviews5_qt)
+ecm_create_qm_loader(KF6ItemViews kitemviews6_qt)
 
 target_sources(KF6ItemViews PRIVATE
     kcategorizedsortfilterproxymodel.cpp
