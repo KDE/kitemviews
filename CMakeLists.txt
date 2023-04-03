@@ -36,8 +36,9 @@ add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt 
 cmake_dependent_option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON "NOT CMAKE_CROSSCOMPILING" OFF)
 add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
 
+set(kitemviews_version_header "${CMAKE_CURRENT_BINARY_DIR}/src/kitemviews_version.h")
 ecm_setup_version(PROJECT VARIABLE_PREFIX KITEMVIEWS
-                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kitemviews_version.h"
+                        VERSION_HEADER "${kitemviews_version_header}"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6ItemViewsConfigVersion.cmake"
                         SOVERSION 6)
 
@@ -82,7 +83,7 @@ install(FILES
 install(EXPORT KF6ItemViewsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6ItemViewsTargets.cmake NAMESPACE KF6:: )
 
 install(FILES
-   ${CMAKE_CURRENT_BINARY_DIR}/kitemviews_version.h
+   ${kitemviews_version_header}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KItemViews COMPONENT Devel
 )
 
