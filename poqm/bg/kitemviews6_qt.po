@@ -33,7 +33,3 @@ msgstr "Търсене в колоните"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Всички видими колони"
-
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
-#~ msgid "Search..."
-#~ msgstr "Търсене..."
