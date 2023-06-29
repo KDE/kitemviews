@@ -56,3 +56,5 @@ KTreeWidgetSearchLine *KTreeWidgetSearchLineWidget::searchLine() const
 
     return d->searchLine;
 }
+
+#include "moc_ktreewidgetsearchlinewidget.cpp"
