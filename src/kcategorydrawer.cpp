@@ -139,3 +139,5 @@ void KCategoryDrawer::mouseButtonDoubleClicked(const QModelIndex &, const QRect 
 void KCategoryDrawer::mouseLeft(const QModelIndex &, const QRect &)
 {
 }
+
+#include "moc_kcategorydrawer.cpp"
