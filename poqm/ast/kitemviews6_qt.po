@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2023-10-24 23:40+0200\n"
+"PO-Revision-Date: 2023-11-02 00:18+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -16,7 +16,7 @@ msgstr ""
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
-msgstr ""
+msgstr "Buscar…"
 
 #: ktreewidgetsearchline.cpp:417
 msgctxt "KTreeWidgetSearchLine|@title:menu"
@@ -26,4 +26,4 @@ msgstr ""
 #: ktreewidgetsearchline.cpp:419
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
-msgstr ""
+msgstr "Toles columnes visibles"
