@@ -18,50 +18,40 @@
 # tahmar1900 <tahmar1900@gmail.com>, 2008, 2009.
 # Elkana Bardugo <ttv200@gmail.com>, 2016.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2023 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-05-16 06:50-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"Project-Id-Version: \n"
+"PO-Revision-Date: 2023-11-17 08:46+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Qt-Contexts: true\n"
 
 #: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgctxt "KFilterProxySearchLine|"
-#| msgid "Search"
 msgctxt "KFilterProxySearchLine|@info:placeholder"
 msgid "Search..."
-msgstr "חפש"
+msgstr "חיפוש…"
 
 #: ktreewidgetsearchline.cpp:212
-#, fuzzy
-#| msgctxt "KFilterProxySearchLine|"
-#| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
-msgstr "חפש"
+msgstr "חיפוש…"
 
 #: ktreewidgetsearchline.cpp:417
-#, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|"
-#| msgid "Search Columns"
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
-msgstr "חיפוש עמודות"
+msgstr "חיפוש בעמודות"
 
 #: ktreewidgetsearchline.cpp:419
-#, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|"
-#| msgid "All Visible Columns"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
-msgstr "כל העמודות הנראות"
+msgstr "כל העמודות הגלויות"
 
 #~ msgctxt "KFilterProxySearchLine|"
 #~ msgid "Search"
