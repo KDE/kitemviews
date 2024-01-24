@@ -23,6 +23,8 @@
 #include <QPainter>
 #include <QScrollBar>
 
+#include <kitemviews_debug.h>
+
 #include "kcategorizedsortfilterproxymodel.h"
 #include "kcategorydrawer.h"
 
@@ -361,7 +363,13 @@ bool KCategorizedViewPrivate::hasGrid() const
 
 QString KCategorizedViewPrivate::categoryForIndex(const QModelIndex &index) const
 {
-    const QModelIndex categoryIndex = index.model()->index(index.row(), proxyModel->sortColumn(), index.parent());
+    const auto indexModel = index.model();
+    if (!indexModel || !proxyModel) {
+        qCWarning(KITEMVIEWS_LOG) << "Index or view doesn't contain model";
+        return QString();
+    }
+
+    const QModelIndex categoryIndex = indexModel->index(index.row(), proxyModel->sortColumn(), index.parent());
     return categoryIndex.data(KCategorizedSortFilterProxyModel::CategoryDisplayRole).toString();
 }
 
@@ -507,7 +515,7 @@ void KCategorizedView::setModel(QAbstractItemModel *model)
     QListView::setModel(model);
 
     // if the model already had information inserted, update our data structures to it
-    if (model->rowCount()) {
+    if (model && model->rowCount()) {
         slotLayoutChanged();
     }
 }
