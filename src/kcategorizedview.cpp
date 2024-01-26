@@ -644,6 +644,7 @@ void KCategorizedView::setCategorySpacing(int categorySpacing)
         KCategorizedViewPrivate::Block &block = *it;
         block.outOfQuarantine = false;
     }
+    Q_EMIT categorySpacingChanged(d->categorySpacing);
 }
 
 bool KCategorizedView::alternatingBlockColors() const
@@ -653,7 +654,12 @@ bool KCategorizedView::alternatingBlockColors() const
 
 void KCategorizedView::setAlternatingBlockColors(bool enable)
 {
+    if (d->alternatingBlockColors == enable) {
+        return;
+    }
+
     d->alternatingBlockColors = enable;
+    Q_EMIT alternatingBlockColorsChanged(d->alternatingBlockColors);
 }
 
 bool KCategorizedView::collapsibleBlocks() const
@@ -663,7 +669,12 @@ bool KCategorizedView::collapsibleBlocks() const
 
 void KCategorizedView::setCollapsibleBlocks(bool enable)
 {
+    if (d->collapsibleBlocks == enable) {
+        return;
+    }
+
     d->collapsibleBlocks = enable;
+    Q_EMIT collapsibleBlocksChanged(d->collapsibleBlocks);
 }
 
 QModelIndexList KCategorizedView::block(const QString &category)

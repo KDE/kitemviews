@@ -68,9 +68,9 @@ class KCategoryDrawer;
 class KITEMVIEWS_EXPORT KCategorizedView : public QListView
 {
     Q_OBJECT
-    Q_PROPERTY(int categorySpacing READ categorySpacing WRITE setCategorySpacing)
-    Q_PROPERTY(bool alternatingBlockColors READ alternatingBlockColors WRITE setAlternatingBlockColors)
-    Q_PROPERTY(bool collapsibleBlocks READ collapsibleBlocks WRITE setCollapsibleBlocks)
+    Q_PROPERTY(int categorySpacing READ categorySpacing WRITE setCategorySpacing NOTIFY categorySpacingChanged)
+    Q_PROPERTY(bool alternatingBlockColors READ alternatingBlockColors WRITE setAlternatingBlockColors NOTIFY alternatingBlockColorsChanged)
+    Q_PROPERTY(bool collapsibleBlocks READ collapsibleBlocks WRITE setCollapsibleBlocks NOTIFY collapsibleBlocksChanged)
 
 public:
     KCategorizedView(QWidget *parent = nullptr);
@@ -195,6 +195,11 @@ public:
      * Reimplemented from QAbstractItemView.
      */
     void reset() override;
+
+Q_SIGNALS:
+    void categorySpacingChanged(int spacing);
+    void alternatingBlockColorsChanged(bool enable);
+    void collapsibleBlocksChanged(bool enable);
 
 protected:
     /**

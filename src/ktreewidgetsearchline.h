@@ -32,8 +32,8 @@ class KITEMVIEWS_EXPORT KTreeWidgetSearchLine : public QLineEdit
 {
     Q_OBJECT
 
-    Q_PROPERTY(Qt::CaseSensitivity caseSensitity READ caseSensitivity WRITE setCaseSensitivity)
-    Q_PROPERTY(bool keepParentsVisible READ keepParentsVisible WRITE setKeepParentsVisible)
+    Q_PROPERTY(Qt::CaseSensitivity caseSensitity READ caseSensitivity WRITE setCaseSensitivity NOTIFY caseSensitivityChanged)
+    Q_PROPERTY(bool keepParentsVisible READ keepParentsVisible WRITE setKeepParentsVisible NOTIFY keepParentsVisibleChanged)
 
 public:
     /**
@@ -112,6 +112,9 @@ Q_SIGNALS:
      * @since 5.0
      */
     void searchUpdated(const QString &searchString);
+
+    void caseSensitivityChanged(Qt::CaseSensitivity caseSensitivity);
+    void keepParentsVisibleChanged(bool keepParentsVisible);
 
 public Q_SLOTS:
     /**

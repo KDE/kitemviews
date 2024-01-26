@@ -333,6 +333,7 @@ void KTreeWidgetSearchLine::setCaseSensitivity(Qt::CaseSensitivity caseSensitive
 {
     if (d->caseSensitive != caseSensitive) {
         d->caseSensitive = caseSensitive;
+        Q_EMIT caseSensitivityChanged(d->caseSensitive);
         updateSearch();
     }
 }
@@ -341,6 +342,7 @@ void KTreeWidgetSearchLine::setKeepParentsVisible(bool visible)
 {
     if (d->keepParentsVisible != visible) {
         d->keepParentsVisible = visible;
+        Q_EMIT keepParentsVisibleChanged(d->keepParentsVisible);
         updateSearch();
     }
 }
