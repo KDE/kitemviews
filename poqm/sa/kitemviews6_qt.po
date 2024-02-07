@@ -19,12 +19,12 @@ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
 msgstr "अन्वेषण..."
 
-#: ktreewidgetsearchline.cpp:417
+#: ktreewidgetsearchline.cpp:419
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "स्तम्भे अन्वेषणं कुर्वन्तु"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:421
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "सर्वे दृश्यमानाः स्तम्भाः"

@@ -34,12 +34,12 @@ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
 msgstr "Pesquisar..."
 
-#: ktreewidgetsearchline.cpp:417
+#: ktreewidgetsearchline.cpp:419
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Pesquisar nas colunas"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:421
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Todas as colunas visíveis"

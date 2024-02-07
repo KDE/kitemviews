@@ -33,7 +33,7 @@ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
 msgstr "ਖੋਜ"
 
-#: ktreewidgetsearchline.cpp:417
+#: ktreewidgetsearchline.cpp:419
 #, fuzzy
 #| msgctxt "KTreeWidgetSearchLine|"
 #| msgid "Search Columns"
@@ -41,7 +41,7 @@ msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "ਕਾਲਮ ਖੋਜ"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:421
 #, fuzzy
 #| msgctxt "KTreeWidgetSearchLine|"
 #| msgid "All Visible Columns"

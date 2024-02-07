@@ -32,13 +32,13 @@ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
 msgstr "Phendla"
 
-#: ktreewidgetsearchline.cpp:417
+#: ktreewidgetsearchline.cpp:419
 #, fuzzy
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Im&ihlathi"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:421
 #, fuzzy
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"

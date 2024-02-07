@@ -28,13 +28,13 @@ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
 msgstr "തെരയുക"
 
-#: ktreewidgetsearchline.cpp:417
+#: ktreewidgetsearchline.cpp:419
 #, fuzzy
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "നിരകള്‍ തെരയുക"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:421
 #, fuzzy
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
