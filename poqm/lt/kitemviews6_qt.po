@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2019-07-14 14:27+0300\n"
+"PO-Revision-Date: 2024-02-20 01:19+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -21,29 +21,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Qt-Contexts: true\n"
 
 #: ktreewidgetsearchline.cpp:212
-#, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|"
-#| msgid "Search..."
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
 msgstr "Ieškoti..."
 
 #: ktreewidgetsearchline.cpp:419
-#, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|"
-#| msgid "Search Columns"
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Ieškoti stulpeliuose"
 
 #: ktreewidgetsearchline.cpp:421
-#, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|"
-#| msgid "All Visible Columns"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Visi matomi stulpeliai"
