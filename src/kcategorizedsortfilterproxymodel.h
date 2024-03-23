@@ -34,6 +34,7 @@ class QItemSelection;
  */
 class KITEMVIEWS_EXPORT KCategorizedSortFilterProxyModel : public QSortFilterProxyModel
 {
+    Q_OBJECT
 public:
     enum AdditionalRoles {
         // Note: use printf "0x%08X\n" $(($RANDOM*$RANDOM))
