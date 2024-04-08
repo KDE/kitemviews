@@ -131,3 +131,5 @@ int KCategorizedSortFilterProxyModel::compareCategories(const QModelIndex &left,
 
     return 0;
 }
+
+#include "moc_kcategorizedsortfilterproxymodel.cpp"
