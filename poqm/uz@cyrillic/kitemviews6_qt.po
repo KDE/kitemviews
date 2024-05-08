@@ -22,7 +22,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "Қидириш"
 
 #: ktreewidgetsearchline.cpp:419
@@ -41,14 +41,14 @@ msgstr "Ҳамма кўрсатилган устунлар"
 
 #, fuzzy
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "Қидириш"
 
 #, fuzzy
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "Қидириш"
 
 #, fuzzy

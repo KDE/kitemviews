@@ -25,7 +25,7 @@ msgstr ""
 #| msgctxt "KFilterProxySearchLine|"
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "Söken"
 
 #: ktreewidgetsearchline.cpp:419
@@ -47,12 +47,15 @@ msgstr "All sichtbor Striepen"
 #, fuzzy
 #~| msgctxt "KFilterProxySearchLine|"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "Söken"
 
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#, fuzzy
+#~| msgctxt "KFilterProxySearchLine|"
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "Söken"
 
 #~ msgctxt "KTreeWidgetSearchLineWidget|"

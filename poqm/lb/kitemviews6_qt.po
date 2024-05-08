@@ -22,7 +22,7 @@ msgstr ""
 #| msgctxt "QAccel"
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "Sichen"
 
 #: ktreewidgetsearchline.cpp:419
@@ -42,15 +42,15 @@ msgstr "All siichtbar Kolonnen"
 #, fuzzy
 #~| msgctxt "QAccel"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "Sichen"
 
 #, fuzzy
 #~| msgctxt "QAccel"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "Sichen"
 
 #, fuzzy

@@ -41,7 +41,7 @@ msgstr ""
 #| msgctxt "QAccel"
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "搜尋"
 
 #: ktreewidgetsearchline.cpp:419
@@ -61,15 +61,15 @@ msgstr "所有可見的欄"
 #, fuzzy
 #~| msgctxt "QAccel"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "搜尋"
 
 #, fuzzy
 #~| msgctxt "QAccel"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "搜尋"
 
 #, fuzzy

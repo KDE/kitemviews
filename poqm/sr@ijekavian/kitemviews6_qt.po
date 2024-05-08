@@ -27,7 +27,7 @@ msgstr ""
 #| msgctxt "KFilterProxySearchLine|"
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "Тражи"
 
 #: ktreewidgetsearchline.cpp:419

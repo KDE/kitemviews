@@ -20,9 +20,12 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 
 #: ktreewidgetsearchline.cpp:212
+#, fuzzy
+#| msgctxt "KFilterProxySearchLine|"
+#| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "찾기..."
+msgid "Search…"
+msgstr "찾기"
 
 #: ktreewidgetsearchline.cpp:419
 msgctxt "KTreeWidgetSearchLine|@title:menu"
@@ -34,13 +37,13 @@ msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "모든 보이는 열"
 
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "찾기..."
 
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
-#~ msgstr "찾기"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "찾기..."
 
 #~ msgctxt "KTreeWidgetSearchLineWidget|"
 #~ msgid "S&earch:"

@@ -108,8 +108,11 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 
 #: ktreewidgetsearchline.cpp:212
+#, fuzzy
+#| msgctxt "KTreeWidgetSearchLine|@info:placeholder"
+#| msgid "Search..."
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "Procurar..."
 
 #: ktreewidgetsearchline.cpp:419

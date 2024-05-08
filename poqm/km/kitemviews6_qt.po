@@ -21,7 +21,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "ស្វែង​រក"
 
 #: ktreewidgetsearchline.cpp:419
@@ -40,14 +40,14 @@ msgstr "ជួរឈរ​ដែល​មើល​ឃើញ​ទាំងអស
 
 #, fuzzy
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "ស្វែង​រក"
 
 #, fuzzy
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "ស្វែង​រក"
 
 #, fuzzy

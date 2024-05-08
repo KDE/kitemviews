@@ -27,7 +27,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "खोजी गर्नुहोस्"
 
 #: ktreewidgetsearchline.cpp:419
@@ -46,14 +46,14 @@ msgstr "सबै दृश्यात्मक स्तम्भ"
 
 #, fuzzy
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "खोजी गर्नुहोस्"
 
 #, fuzzy
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "खोजी गर्नुहोस्"
 
 #, fuzzy

@@ -14,8 +14,11 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: ktreewidgetsearchline.cpp:212
+#, fuzzy
+#| msgctxt "KTreeWidgetSearchLine|@info:placeholder"
+#| msgid "Search..."
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "ძებნა..."
 
 #: ktreewidgetsearchline.cpp:419

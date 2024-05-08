@@ -20,9 +20,12 @@ msgstr ""
 "X-Generator: Lokalize 20.04.1\n"
 
 #: ktreewidgetsearchline.cpp:212
+#, fuzzy
+#| msgctxt "KFilterProxySearchLine|"
+#| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Search..."
+msgid "Search…"
+msgstr "Search"
 
 #: ktreewidgetsearchline.cpp:419
 msgctxt "KTreeWidgetSearchLine|@title:menu"
@@ -34,13 +37,13 @@ msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "All Visible Columns"
 
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "Search..."
 
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
-#~ msgstr "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Search..."
 
 #~ msgctxt "KTreeWidgetSearchLineWidget|"
 #~ msgid "S&earch:"

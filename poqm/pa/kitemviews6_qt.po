@@ -30,7 +30,7 @@ msgstr ""
 #| msgctxt "KFilterProxySearchLine|"
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "ਖੋਜ"
 
 #: ktreewidgetsearchline.cpp:419
@@ -52,12 +52,15 @@ msgstr "ਸਭ ਉਪਲੱਬਧ ਕਾਲਮ"
 #, fuzzy
 #~| msgctxt "KFilterProxySearchLine|"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "ਖੋਜ"
 
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#, fuzzy
+#~| msgctxt "KFilterProxySearchLine|"
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "ਖੋਜ"
 
 #~ msgctxt "KTreeWidgetSearchLineWidget|"

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr ""
 
 #: ktreewidgetsearchline.cpp:419

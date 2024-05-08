@@ -28,7 +28,7 @@ msgstr ""
 #| msgctxt "KFilterProxySearchLine|"
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "جستجو"
 
 #: ktreewidgetsearchline.cpp:419
@@ -50,12 +50,15 @@ msgstr "همه ستونهای مرئی"
 #, fuzzy
 #~| msgctxt "KFilterProxySearchLine|"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "جستجو"
 
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#, fuzzy
+#~| msgctxt "KFilterProxySearchLine|"
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "جستجو"
 
 #~ msgctxt "KTreeWidgetSearchLineWidget|"

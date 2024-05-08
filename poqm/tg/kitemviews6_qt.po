@@ -24,11 +24,11 @@ msgstr ""
 
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|"
-#| msgid "Search..."
+#| msgctxt "KFilterProxySearchLine|"
+#| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Ҷустуҷӯ..."
+msgid "Search…"
+msgstr "Ҷустуҷӯ"
 
 #: ktreewidgetsearchline.cpp:419
 #, fuzzy
@@ -49,13 +49,16 @@ msgstr "Ҳамаи сутунҳои намоён"
 #, fuzzy
 #~| msgctxt "KTreeWidgetSearchLine|"
 #~| msgid "Search..."
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "Ҷустуҷӯ..."
 
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
-#~ msgstr "Ҷустуҷӯ"
+#, fuzzy
+#~| msgctxt "KTreeWidgetSearchLine|"
+#~| msgid "Search..."
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Ҷустуҷӯ..."
 
 #, fuzzy
 #~| msgid "S&earch:"

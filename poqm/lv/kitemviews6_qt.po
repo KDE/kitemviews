@@ -27,9 +27,11 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 
 #: ktreewidgetsearchline.cpp:212
+#, fuzzy
+#| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
-msgstr "Meklēt..."
+msgid "Search…"
+msgstr "Meklēt"
 
 #: ktreewidgetsearchline.cpp:419
 msgctxt "KTreeWidgetSearchLine|@title:menu"
@@ -41,16 +43,14 @@ msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Visās redzamajās kolonnās"
 
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
+#~ msgid "Search..."
+#~ msgstr "Meklēt..."
+
 #, fuzzy
 #~| msgid "Search"
 #~ msgctxt "KFilterProxySearchLine|@info:placeholder"
 #~ msgid "Search..."
-#~ msgstr "Meklēt"
-
-#, fuzzy
-#~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
 #~ msgstr "Meklēt"
 
 #, fuzzy

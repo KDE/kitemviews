@@ -20,7 +20,7 @@ msgstr ""
 #| msgctxt "KFilterProxySearchLine|"
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "Lorg"
 
 #: ktreewidgetsearchline.cpp:419
@@ -42,12 +42,15 @@ msgstr "A h-uile colbhan ri am faicinn"
 #, fuzzy
 #~| msgctxt "KFilterProxySearchLine|"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "Lorg"
 
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#, fuzzy
+#~| msgctxt "KFilterProxySearchLine|"
+#~| msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "Lorg"
 
 #~ msgctxt "KTreeWidgetSearchLineWidget|"

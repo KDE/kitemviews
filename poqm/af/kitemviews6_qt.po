@@ -19,7 +19,7 @@ msgstr ""
 #| msgctxt "QAccel"
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "Soek"
 
 #: ktreewidgetsearchline.cpp:419
@@ -39,15 +39,15 @@ msgstr "Alle Sigbare Kolomme"
 #, fuzzy
 #~| msgctxt "QAccel"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "Soek"
 
 #, fuzzy
 #~| msgctxt "QAccel"
 #~| msgid "Search"
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "Soek"
 
 #, fuzzy

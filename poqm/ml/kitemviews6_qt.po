@@ -25,7 +25,7 @@ msgstr ""
 #: ktreewidgetsearchline.cpp:212
 #, fuzzy
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-msgid "Search..."
+msgid "Search…"
 msgstr "തെരയുക"
 
 #: ktreewidgetsearchline.cpp:419
@@ -41,13 +41,13 @@ msgid "All Visible Columns"
 msgstr "കാണാവുന്ന എല്ലാ നിരകള്‍"
 
 #, fuzzy
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 #~ msgid "Search..."
 #~ msgstr "തെരയുക"
 
 #, fuzzy
-#~ msgctxt "KFilterProxySearchLine|"
-#~ msgid "Search"
+#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
+#~ msgid "Search..."
 #~ msgstr "തെരയുക"
 
 #, fuzzy
