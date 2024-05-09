@@ -16,12 +16,9 @@ msgstr ""
 "X-Crowdin-File-ID: 43111\n"
 
 #: ktreewidgetsearchline.cpp:212
-#, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-#| msgid "Search..."
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
-msgstr "搜索..."
+msgstr ""
 
 #: ktreewidgetsearchline.cpp:419
 msgctxt "KTreeWidgetSearchLine|@title:menu"

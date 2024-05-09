@@ -11,15 +11,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: ktreewidgetsearchline.cpp:212
-#, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-#| msgid "Search..."
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
-msgstr "ძებნა..."
+msgstr "ძებნა…"
 
 #: ktreewidgetsearchline.cpp:419
 msgctxt "KTreeWidgetSearchLine|@title:menu"
