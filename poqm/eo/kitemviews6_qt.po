@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2023-01-05 10:00+0100\n"
+"PO-Revision-Date: 2024-05-09 22:01+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -27,12 +27,9 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 
 #: ktreewidgetsearchline.cpp:212
-#, fuzzy
-#| msgctxt "KTreeWidgetSearchLine|@info:placeholder"
-#| msgid "Search..."
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
-msgstr "Serĉi..."
+msgstr "Serĉi…"
 
 #: ktreewidgetsearchline.cpp:419
 msgctxt "KTreeWidgetSearchLine|@title:menu"
@@ -43,7 +40,3 @@ msgstr "Serĉi Kolumnojn"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Ĉiuj videblaj kolumnoj"
-
-#~ msgctxt "KFilterProxySearchLine|@info:placeholder"
-#~ msgid "Search..."
-#~ msgstr "Serĉi..."
