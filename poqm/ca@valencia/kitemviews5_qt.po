@@ -30,12 +30,12 @@ msgstr ""
 #: kfilterproxysearchline.cpp:63
 msgctxt "KFilterProxySearchLine|@info:placeholder"
 msgid "Search..."
-msgstr "Busca..."
+msgstr "Busca…"
 
 #: ktreewidgetsearchline.cpp:212
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
-msgstr "Busca..."
+msgstr "Busca…"
 
 #: ktreewidgetsearchline.cpp:417
 msgctxt "KTreeWidgetSearchLine|@title:menu"
