@@ -145,8 +145,6 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
         // assume the application has kept a list of widgets and tries to delete them manually
         // they have been reparented to the view in any case, so no leaking occurs
         poolPrivate->widgetInIndex.remove(widget);
-        QWidget *viewport = poolPrivate->delegate->d->itemView->viewport();
-        QApplication::sendEvent(viewport, event);
     }
     if (dynamic_cast<QInputEvent *>(event) && !poolPrivate->delegate->blockedEventTypes(widget).contains(event->type())) {
         QWidget *viewport = poolPrivate->delegate->d->itemView->viewport();
