@@ -83,7 +83,6 @@ public:
     KWidgetItemDelegate *delegate;
     KWidgetItemDelegateEventListener *eventListener;
 
-    QList<QList<QWidget *>> allocatedWidgets;
     QHash<QPersistentModelIndex, QList<QWidget *>> usedWidgets;
     QHash<QWidget *, QPersistentModelIndex> widgetInIndex;
 

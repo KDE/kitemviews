@@ -110,7 +110,6 @@ void KWidgetItemDelegatePrivate::updateRowRange(const QModelIndex &parent, int s
                                         optionView(index),
                                         isRemoving ? KWidgetItemDelegatePool::NotUpdateWidgets : KWidgetItemDelegatePool::UpdateWidgets);
             if (isRemoving) {
-                widgetPool->d->allocatedWidgets.removeAll(widgetList);
                 for (QWidget *widget : widgetList) {
                     const QModelIndex idx = widgetPool->d->widgetInIndex[widget];
                     widgetPool->d->usedWidgets.remove(idx);

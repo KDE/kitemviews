@@ -83,7 +83,6 @@ KWidgetItemDelegatePool::findWidgets(const QPersistentModelIndex &idx, const QSt
         result = d->usedWidgets[index];
     } else {
         result = d->delegate->createItemWidgets(index);
-        d->allocatedWidgets << result;
         d->usedWidgets[index] = result;
         for (QWidget *widget : std::as_const(result)) {
             d->widgetInIndex[widget] = index;
@@ -133,7 +132,6 @@ void KWidgetItemDelegatePool::fullClear()
     d->clearing = true;
     qDeleteAll(d->widgetInIndex.keys());
     d->clearing = false;
-    d->allocatedWidgets.clear();
     d->usedWidgets.clear();
     d->widgetInIndex.clear();
 }
