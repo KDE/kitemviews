@@ -68,11 +68,9 @@ KWidgetItemDelegatePool::findWidgets(const QPersistentModelIndex &idx, const QSt
         return result;
     }
 
-    QModelIndex index;
-    if (const QAbstractProxyModel *proxyModel = qobject_cast<const QAbstractProxyModel *>(idx.model())) {
-        index = proxyModel->mapToSource(idx);
-    } else {
-        index = idx;
+    QModelIndex index = idx;
+    while (const QAbstractProxyModel *proxyModel = qobject_cast<const QAbstractProxyModel *>(index.model())) {
+        index = proxyModel->mapToSource(index);
     }
 
     if (!index.isValid()) {
@@ -114,11 +112,9 @@ QList<QWidget *> KWidgetItemDelegatePool::invalidIndexesWidgets() const
     while (i.hasNext()) {
         i.next();
         const QAbstractProxyModel *proxyModel = qobject_cast<const QAbstractProxyModel *>(d->delegate->d->model);
-        QModelIndex index;
-        if (proxyModel) {
-            index = proxyModel->mapFromSource(i.value());
-        } else {
-            index = i.value();
+        QModelIndex index = i.value();
+        while (const auto proxyModel = qobject_cast<const QAbstractProxyModel *>(index.model())) {
+            index = proxyModel->mapToSource(index);
         }
         if (!index.isValid()) {
             result << i.key();
