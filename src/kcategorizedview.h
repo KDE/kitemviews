@@ -215,7 +215,7 @@ protected:
     /**
      * Reimplemented from QAbstractItemView.
      */
-    virtual void setSelection(const QRect &rect, QItemSelectionModel::SelectionFlags flags) override;
+    void setSelection(const QRect &rect, QItemSelectionModel::SelectionFlags flags) override;
 
     /**
      * Reimplemented from QWidget.
@@ -265,12 +265,12 @@ protected:
     /**
      * Reimplemented from QAbstractItemView.
      */
-    virtual QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
+    QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
 
     /**
      * Reimplemented from QAbstractItemView.
      */
-    virtual void rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end) override;
+    void rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end) override;
 
     /**
      * Reimplemented from QAbstractItemView.
@@ -280,17 +280,17 @@ protected:
     /**
      * Reimplemented from QAbstractItemView.
      */
-    virtual void currentChanged(const QModelIndex &current, const QModelIndex &previous) override;
+    void currentChanged(const QModelIndex &current, const QModelIndex &previous) override;
 
     /**
      * Reimplemented from QAbstractItemView.
      */
-    virtual void dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles = QList<int>()) override;
+    void dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles = QList<int>()) override;
 
     /**
      * Reimplemented from QAbstractItemView.
      */
-    virtual void rowsInserted(const QModelIndex &parent, int start, int end) override;
+    void rowsInserted(const QModelIndex &parent, int start, int end) override;
 
 protected Q_SLOTS:
     /**
