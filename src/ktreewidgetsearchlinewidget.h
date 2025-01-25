@@ -19,9 +19,10 @@ class QTreeWidget;
 class KTreeWidgetSearchLine;
 
 /*!
- * @class KTreeWidgetSearchLineWidget ktreewidgetsearchlinewidget.h KTreeWidgetSearchLineWidget
+ * \class KTreeWidgetSearchLineWidget
+ * \inmodule KItemViews
  *
- * Creates a widget featuring a KTreeWidgetSearchLine, a label with the text
+ * \brief Creates a widget featuring a KTreeWidgetSearchLine, a label with the text
  * "Search" and a button to clear the search.
  */
 class KITEMVIEWS_EXPORT KTreeWidgetSearchLineWidget : public QWidget
@@ -35,9 +36,6 @@ public:
      */
     explicit KTreeWidgetSearchLineWidget(QWidget *parent = nullptr, QTreeWidget *treeWidget = nullptr);
 
-    /*!
-     * Destroys the KTreeWidgetSearchLineWidget
-     */
     ~KTreeWidgetSearchLineWidget() override;
 
     /*!

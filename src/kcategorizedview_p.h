@@ -16,7 +16,7 @@ class KCategoryDrawerV2;
 class KCategoryDrawerV3;
 
 /*!
- * @internal
+ * \internal
  */
 class KCategorizedViewPrivate
 {
@@ -28,7 +28,7 @@ public:
     ~KCategorizedViewPrivate();
 
     /*!
-     * @return whether this view has all required elements to be categorized.
+     * Returns whether this view has all required elements to be categorized.
      */
     bool isCategorized() const;
 
@@ -39,14 +39,14 @@ public:
     QStyleOptionViewItem viewOpts();
 
     /*!
-     * @return the block rect for the representative @p representative.
+     * Returns the block rect for the representative \a representative.
      */
     QStyleOptionViewItem blockRect(const QModelIndex &representative);
 
     /*!
      * Returns the first and last element that intersects with rect.
      *
-     * @note see that here we cannot take out items between first and last (as we could
+     * \note see that here we cannot take out items between first and last (as we could
      *       do with the rubberband).
      *
      * Complexity: O(log(n)) where n is model()->rowCount().
@@ -54,7 +54,7 @@ public:
     std::pair<QModelIndex, QModelIndex> intersectingIndexesWithRect(const QRect &rect) const;
 
     /*!
-     * Returns the position of the block of @p category.
+     * Returns the position of the block of \a category.
      *
      * Complexity: O(n) where n is the number of different categories when the block has been
      *             marked as in quarantine. O(1) the rest of the times (the vast majority).
@@ -62,7 +62,7 @@ public:
     QPoint blockPosition(const QString &category);
 
     /*!
-     * Returns the height of the block determined by @p category.
+     * Returns the height of the block determined by \a category.
      */
     int blockHeight(const QString &category);
 
@@ -76,7 +76,7 @@ public:
      *
      * Complexity: O(n) where n is model()->rowCount().
      *
-     * @warning this is an expensive operation
+     * \warning this is an expensive operation
      */
     void regenerateAllElements();
 
@@ -86,12 +86,12 @@ public:
     void rowsInserted(const QModelIndex &parent, int start, int end);
 
     /*!
-     * Returns @p rect in viewport terms, taking in count horizontal and vertical offsets.
+     * Returns \a rect in viewport terms, taking in count horizontal and vertical offsets.
      */
     QRect mapToViewport(const QRect &rect) const;
 
     /*!
-     * Returns @p rect in absolute terms, converted from viewport position.
+     * Returns \a rect in absolute terms, converted from viewport position.
      */
     QRect mapFromViewport(const QRect &rect) const;
 
@@ -99,7 +99,7 @@ public:
      * Returns the height of the highest element in last row. This is only applicable if there is
      * no grid set and uniformItemSizes is false.
      *
-     * @param block in which block are we searching. Necessary to stop the search if we hit the
+     * \a block in which block are we searching. Necessary to stop the search if we hit the
      *              first item in this block.
      */
     int highestElementInLastRow(const Block &block) const;
@@ -121,7 +121,7 @@ public:
 
     /*!
      * Updates the visual rect for item when flow is TopToBottom.
-     * @note we only support viewMode == ListMode in this case.
+     * \note we only support viewMode == ListMode in this case.
      */
     void topToBottomVisualRect(const QModelIndex &index, Item &item, const Block &block, const QPoint &blockPos) const;
 

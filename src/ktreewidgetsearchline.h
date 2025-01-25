@@ -19,20 +19,27 @@ class QTreeWidget;
 class QTreeWidgetItem;
 
 /*!
- * @class KTreeWidgetSearchLine ktreewidgetsearchline.h KTreeWidgetSearchLine
+ * \class KTreeWidgetSearchLine
+ * \inmodule KItemViews
  *
- * This class makes it easy to add a search line for filtering the items in
+ * \brief This class makes it easy to add a search line for filtering the items in
  * listviews based on a simple text search.
  *
  * No changes to the application other than instantiating this class with
  * appropriate QTreeWidgets should be needed.
  */
-
 class KITEMVIEWS_EXPORT KTreeWidgetSearchLine : public QLineEdit
 {
     Q_OBJECT
 
+    /*!
+     * \property KTreeWidgetSearchLine::caseSensitity
+     */
     Q_PROPERTY(Qt::CaseSensitivity caseSensitity READ caseSensitivity WRITE setCaseSensitivity NOTIFY caseSensitivityChanged)
+
+    /*!
+     * \property KTreeWidgetSearchLine::keepParentsVisible
+     */
     Q_PROPERTY(bool keepParentsVisible READ keepParentsVisible WRITE setKeepParentsVisible NOTIFY keepParentsVisibleChanged)
 
 public:
@@ -54,15 +61,12 @@ public:
      */
     KTreeWidgetSearchLine(QWidget *parent, const QList<QTreeWidget *> &treeWidgets);
 
-    /*!
-     * Destroys the KTreeWidgetSearchLine.
-     */
     ~KTreeWidgetSearchLine() override;
 
     /*!
      * Returns true if the search is case sensitive.  This defaults to false.
      *
-     * @see setCaseSensitive()
+     * \sa setCaseSensitive()
      */
     Qt::CaseSensitivity caseSensitivity() const;
 
@@ -70,7 +74,7 @@ public:
      * Returns the current list of columns that will be searched.  If the
      * returned list is empty all visible columns will be searched.
      *
-     * @see setSearchColumns
+     * \sa setSearchColumns
      */
     QList<int> searchColumns() const;
 
@@ -78,7 +82,7 @@ public:
      * If this is true (the default) then the parents of matched items will also
      * be shown.
      *
-     * @see setKeepParentsVisible()
+     * \sa setKeepParentsVisible()
      */
     bool keepParentsVisible() const;
 
@@ -86,7 +90,7 @@ public:
      * Returns the listview that is currently filtered by the search.
      * If there are multiple listviews filtered, it returns 0.
      *
-     * @see setTreeWidget(), treeWidgets()
+     * \sa setTreeWidget(), treeWidgets()
      */
     QTreeWidget *treeWidget() const;
 
@@ -94,7 +98,7 @@ public:
      * Returns the list of pointers to listviews that are currently filtered by
      * the search.
      *
-     * @see setTreeWidgets(), addTreeWidget(), treeWidget()
+     * \sa setTreeWidgets(), addTreeWidget(), treeWidget()
      */
     QList<QTreeWidget *> treeWidgets() const;
 
@@ -108,12 +112,20 @@ Q_SIGNALS:
     /*!
      * This signal is emitted when user finished entering filter text or
      * when he made a pause long enough, after the QTreeWidget items got filtered
-     * @param searchString is the text currently entered by the user
-     * @since 5.0
+     *
+     * \a searchString is the text currently entered by the user
+     * \since 5.0
      */
     void searchUpdated(const QString &searchString);
 
+    /*!
+     *
+     */
     void caseSensitivityChanged(Qt::CaseSensitivity caseSensitivity);
+
+    /*!
+     *
+     */
     void keepParentsVisibleChanged(bool keepParentsVisible);
 
 public Q_SLOTS:
@@ -121,7 +133,7 @@ public Q_SLOTS:
      * Adds a QTreeWidget to the list of listviews filtered by this search line.
      * If \a treeWidget is null then the widget will be disabled.
      *
-     * @see treeWidget(), setTreeWidgets(), removeTreeWidget()
+     * \sa treeWidget(), setTreeWidgets(), removeTreeWidget()
      */
     void addTreeWidget(QTreeWidget *treeWidget);
 
@@ -130,7 +142,7 @@ public Q_SLOTS:
      * line. Does nothing if \a treeWidget is 0 or is not filtered by the quick search
      * line.
      *
-     * @see listVew(), setTreeWidgets(), addTreeWidget()
+     * \sa listVew(), setTreeWidgets(), addTreeWidget()
      */
     void removeTreeWidget(QTreeWidget *treeWidget);
 
@@ -143,7 +155,7 @@ public Q_SLOTS:
     /*!
      * Make the search case sensitive or case insensitive.
      *
-     * @see caseSenstivity()
+     * \sa caseSenstivity()
      */
     void setCaseSensitivity(Qt::CaseSensitivity caseSensitivity);
 
@@ -159,7 +171,7 @@ public Q_SLOTS:
      * on items being added to or removed from the view while a search is active.
      * When a new search starts afterwards the behavior will be normal.
      *
-     * @see keepParentsVisible
+     * \sa keepParentsVisible
      */
     void setKeepParentsVisible(bool value);
 
@@ -170,7 +182,7 @@ public Q_SLOTS:
      * If listviews to be filtered have different numbers or labels of columns
      * this method has no effect.
      *
-     * @see searchColumns
+     * \sa searchColumns
      */
     void setSearchColumns(const QList<int> &columns);
 
@@ -179,7 +191,7 @@ public Q_SLOTS:
      * previously filtered listviews.  If \a treeWidget is null then the widget will be
      * disabled.
      *
-     * @see treeWidget(), setTreeWidgets()
+     * \sa treeWidget(), setTreeWidgets()
      */
     void setTreeWidget(QTreeWidget *treeWidget);
 
@@ -188,7 +200,7 @@ public Q_SLOTS:
      * previously filtered listviews.  If \a treeWidgets is empty then the widget will
      * be disabled.
      *
-     * @see treeWidgets(), addTreeWidget(), setTreeWidget()
+     * \sa treeWidgets(), addTreeWidget(), setTreeWidget()
      */
     void setTreeWidgets(const QList<QTreeWidget *> &treeWidgets);
 
@@ -200,14 +212,12 @@ protected:
      */
     virtual bool itemMatches(const QTreeWidgetItem *item, const QString &pattern) const;
 
-    /*!
-     * Re-implemented for internal reasons.  API not affected.
-     */
     void contextMenuEvent(QContextMenuEvent *) override;
 
     /*!
-     * Updates search to only make visible appropriate items in \a treeWidget.  If
-     * \a treeWidget is null then nothing is done.
+     * Updates search to only make visible appropriate items in \a treeWidget.
+     *
+     * If \a treeWidget is null then nothing is done.
      */
     virtual void updateSearch(QTreeWidget *treeWidget);
 
@@ -234,13 +244,10 @@ protected:
      *
      * Otherwise it returns true.
      *
-     * @see setSearchColumns()
+     * \sa setSearchColumns()
      */
     virtual bool canChooseColumnsCheck();
 
-    /*!
-     * Re-implemented for internal reasons.  API not affected.
-     */
     bool event(QEvent *event) override;
 
 private:

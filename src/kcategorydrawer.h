@@ -23,11 +23,12 @@ class QStyleOption;
 class KCategorizedView;
 
 /*!
- * @class KCategoryDrawer kcategorydrawer.h KCategoryDrawer
+ * \class KCategoryDrawer
+ * \inmodule KItemViews
  *
- * The category drawing is performed by this class. It also gives information about the category
- * height and margins.
+ * \brief The category drawing is performed by this class.
  *
+ * It also gives information about the category height and margins.
  */
 class KITEMVIEWS_EXPORT KCategoryDrawer : public QObject
 {
@@ -35,45 +36,45 @@ class KITEMVIEWS_EXPORT KCategoryDrawer : public QObject
     friend class KCategorizedView;
 
 public:
-    /*
+    /*!
      * Construct a category drawer for a given view
      *
-     * @since 5.0
+     * \since 5.0
      */
     KCategoryDrawer(KCategorizedView *view);
     ~KCategoryDrawer() override;
 
     /*!
-     * @return The view this category drawer is associated with.
+     * Returns the view this category drawer is associated with.
      */
     KCategorizedView *view() const;
 
     /*!
      * This method purpose is to draw a category represented by the given
-     * @param index with the given @param sortRole sorting role
+     * \a index with the given \a sortRole sorting role
      *
-     * @note This method will be called one time per category, always with the
+     * \note This method will be called one time per category, always with the
      *       first element in that category
      */
     virtual void drawCategory(const QModelIndex &index, int sortRole, const QStyleOption &option, QPainter *painter) const;
 
     /*!
-     * @return The category height for the category represented by index @p index with
-     *         style options @p option.
+     * Returns the category height for the category represented by index \a index with
+     *         style options \a option.
      */
     virtual int categoryHeight(const QModelIndex &index, const QStyleOption &option) const;
 
     /*!
-     * @note 0 by default
+     * \note 0 by default
      *
-     * @since 4.4
+     * \since 4.4
      */
     virtual int leftMargin() const;
 
     /*!
-     * @note 0 by default
+     * \note 0 by default
      *
-     * @since 4.4
+     * \since 4.4
      */
     virtual int rightMargin() const;
 
@@ -96,11 +97,13 @@ protected:
     /*!
      * Method called when the mouse button has been pressed.
      *
-     * @param index The representative index of the block of items.
-     * @param blockRect The rect occupied by the block of items.
-     * @param event The mouse event.
+     * \a index The representative index of the block of items.
      *
-     * @warning You explicitly have to determine whether the event has been accepted or not. You
+     * \a blockRect The rect occupied by the block of items.
+     *
+     * \a event The mouse event.
+     *
+     * \warning You explicitly have to determine whether the event has been accepted or not. You
      *          have to call event->accept() or event->ignore() at all possible case branches in
      *          your code.
      */
@@ -109,11 +112,13 @@ protected:
     /*!
      * Method called when the mouse button has been released.
      *
-     * @param index The representative index of the block of items.
-     * @param blockRect The rect occupied by the block of items.
-     * @param event The mouse event.
+     * \a index The representative index of the block of items.
      *
-     * @warning You explicitly have to determine whether the event has been accepted or not. You
+     * \a blockRect The rect occupied by the block of items.
+     *
+     * \a event The mouse event.
+     *
+     * \warning You explicitly have to determine whether the event has been accepted or not. You
      *          have to call event->accept() or event->ignore() at all possible case branches in
      *          your code.
      */
@@ -122,20 +127,24 @@ protected:
     /*!
      * Method called when the mouse has been moved.
      *
-     * @param index The representative index of the block of items.
-     * @param blockRect The rect occupied by the block of items.
-     * @param event The mouse event.
+     * \a index The representative index of the block of items.
+     *
+     * \a blockRect The rect occupied by the block of items.
+     *
+     * \a event The mouse event.
      */
     virtual void mouseMoved(const QModelIndex &index, const QRect &blockRect, QMouseEvent *event);
 
     /*!
      * Method called when the mouse button has been double clicked.
      *
-     * @param index The representative index of the block of items.
-     * @param blockRect The rect occupied by the block of items.
-     * @param event The mouse event.
+     * \a index The representative index of the block of items.
      *
-     * @warning You explicitly have to determine whether the event has been accepted or not. You
+     * \a blockRect The rect occupied by the block of items.
+     *
+     * \a event The mouse event.
+     *
+     * \warning You explicitly have to determine whether the event has been accepted or not. You
      *          have to call event->accept() or event->ignore() at all possible case branches in
      *          your code.
      */
@@ -144,8 +153,9 @@ protected:
     /*!
      * Method called when the mouse button has left this block.
      *
-     * @param index The representative index of the block of items.
-     * @param blockRect The rect occupied by the block of items.
+     * \a index The representative index of the block of items.
+     *
+     * \a blockRect The rect occupied by the block of items.
      */
     virtual void mouseLeft(const QModelIndex &index, const QRect &blockRect);
 
