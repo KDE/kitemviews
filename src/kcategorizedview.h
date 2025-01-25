@@ -15,7 +15,7 @@
 
 class KCategoryDrawer;
 
-/**
+/*!
  * @class KCategorizedView kcategorizedview.h KCategorizedView
  *
  * @short Item view for listing items in a categorized fashion optionally
@@ -77,17 +77,17 @@ public:
 
     ~KCategorizedView() override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void setModel(QAbstractItemModel *model) override;
 
-    /**
+    /*!
      * Calls to setGridSizeOwn().
      */
     void setGridSize(const QSize &size);
 
-    /**
+    /*!
      * @warning note that setGridSize is not virtual in the base class (QListView), so if you are
      *          calling to this method, make sure you have a KCategorizedView pointer around. This
      *          means that something like:
@@ -115,83 +115,83 @@ public:
      */
     void setGridSizeOwn(const QSize &size);
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     QRect visualRect(const QModelIndex &index) const override;
 
-    /**
+    /*!
      * Returns the current category drawer.
      */
     KCategoryDrawer *categoryDrawer() const;
 
-    /**
+    /*!
      * The category drawer that will be used for drawing categories.
      */
     void setCategoryDrawer(KCategoryDrawer *categoryDrawer);
 
-    /**
+    /*!
      * @return Category spacing. The spacing between categories.
      *
      * @since 4.4
      */
     int categorySpacing() const;
 
-    /**
+    /*!
      * Stablishes the category spacing. This is the spacing between categories.
      *
      * @since 4.4
      */
     void setCategorySpacing(int categorySpacing);
 
-    /**
+    /*!
      * @return Whether blocks should be drawn with alternating colors.
      *
      * @since 4.4
      */
     bool alternatingBlockColors() const;
 
-    /**
+    /*!
      * Sets whether blocks should be drawn with alternating colors.
      *
      * @since 4.4
      */
     void setAlternatingBlockColors(bool enable);
 
-    /**
+    /*!
      * @return Whether blocks can be collapsed or not.
      *
      * @since 4.4
      */
     bool collapsibleBlocks() const;
 
-    /**
+    /*!
      * Sets whether blocks can be collapsed or not.
      *
      * @since 4.4
      */
     void setCollapsibleBlocks(bool enable);
 
-    /**
+    /*!
      * @return Block of indexes that are into @p category.
      *
      * @since 4.5
      */
     QModelIndexList block(const QString &category);
 
-    /**
+    /*!
      * @return Block of indexes that are represented by @p representative.
      *
      * @since 4.5
      */
     QModelIndexList block(const QModelIndex &representative);
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     QModelIndex indexAt(const QPoint &point) const override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void reset() override;
@@ -202,98 +202,98 @@ Q_SIGNALS:
     void collapsibleBlocksChanged(bool enable);
 
 protected:
-    /**
+    /*!
      * Reimplemented from QWidget.
      */
     void paintEvent(QPaintEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QWidget.
      */
     void resizeEvent(QResizeEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void setSelection(const QRect &rect, QItemSelectionModel::SelectionFlags flags) override;
 
-    /**
+    /*!
      * Reimplemented from QWidget.
      */
     void mouseMoveEvent(QMouseEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QWidget.
      */
     void mousePressEvent(QMouseEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QWidget.
      */
     void mouseReleaseEvent(QMouseEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QWidget.
      */
     void leaveEvent(QEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void startDrag(Qt::DropActions supportedActions) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void dragMoveEvent(QDragMoveEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void dragEnterEvent(QDragEnterEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void dragLeaveEvent(QDragLeaveEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void dropEvent(QDropEvent *event) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void updateGeometries() override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void currentChanged(const QModelIndex &current, const QModelIndex &previous) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles = QList<int>()) override;
 
-    /**
+    /*!
      * Reimplemented from QAbstractItemView.
      */
     void rowsInserted(const QModelIndex &parent, int start, int end) override;
 
 protected Q_SLOTS:
-    /**
+    /*!
      * @internal
      * Reposition items as needed.
      */

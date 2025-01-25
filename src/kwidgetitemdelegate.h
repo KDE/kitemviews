@@ -27,7 +27,7 @@ class QItemSelection;
 class KWidgetItemDelegatePrivate;
 class KWidgetItemDelegatePool;
 
-/**
+/*!
  * @class KWidgetItemDelegate kwidgetitemdelegate.h KWidgetItemDelegate
  *
  * This class allows to create item delegates embedding simple widgets to interact
@@ -48,7 +48,7 @@ class KITEMVIEWS_EXPORT KWidgetItemDelegate : public QAbstractItemDelegate
     Q_OBJECT
 
 public:
-    /**
+    /*!
      * Creates a new ItemDelegate to be used with a given itemview.
      *
      * @param itemView the item view the new delegate will monitor
@@ -56,32 +56,32 @@ public:
      */
     explicit KWidgetItemDelegate(QAbstractItemView *itemView, QObject *parent = nullptr);
 
-    /**
+    /*!
      * Destroys an ItemDelegate.
      */
     ~KWidgetItemDelegate() override;
 
-    /**
+    /*!
      * Retrieves the item view this delegate is monitoring.
      *
      * @return the item view this delegate is monitoring
      */
     QAbstractItemView *itemView() const;
 
-    /**
+    /*!
      * Retrieves the currently focused index. An invalid index if none is focused.
      *
      * @return the current focused index, or QPersistentModelIndex() if none is focused.
      */
     QPersistentModelIndex focusedIndex() const;
 
-    /**
+    /*!
      * trigger a modelReset
      */
     void resetModel();
 
 protected:
-    /**
+    /*!
      * Creates the list of widgets needed for an item.
      *
      * @note No initialization of the widgets is supposed to happen here.
@@ -97,7 +97,7 @@ protected:
      */
     virtual QList<QWidget *> createItemWidgets(const QModelIndex &index) const = 0;
 
-    /**
+    /*!
      * Updates a list of widgets for its use inside of the delegate (painting or
      * event handling).
      *
@@ -112,7 +112,7 @@ protected:
      */
     virtual void updateItemWidgets(const QList<QWidget *> &widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const = 0;
 
-    /**
+    /*!
      * Sets the list of event @p types that a @p widget will block.
      *
      * Blocked events are not passed to the view. This way you can prevent an item
@@ -123,7 +123,7 @@ protected:
      */
     void setBlockedEventTypes(QWidget *widget, const QList<QEvent::Type> &types) const;
 
-    /**
+    /*!
      * Retrieves the list of blocked event types for the given widget.
      *
      * @param widget the specified widget.

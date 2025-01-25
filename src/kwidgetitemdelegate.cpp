@@ -21,7 +21,7 @@
 
 Q_DECLARE_METATYPE(QList<QEvent::Type>)
 
-/**
+/*!
   KWidgetItemDelegatePrivate class that helps to provide binary compatibility between releases.
   @internal
 */

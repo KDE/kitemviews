@@ -17,7 +17,7 @@ class KCategorizedSortFilterProxyModelPrivate;
 
 class QItemSelection;
 
-/**
+/*!
  * @class KCategorizedSortFilterProxyModel kcategorizedsortfilterproxymodel.h KCategorizedSortFilterProxyModel
  *
  * This class lets you categorize a view. It is meant to be used along with
@@ -52,35 +52,35 @@ public:
     KCategorizedSortFilterProxyModel(QObject *parent = nullptr);
     ~KCategorizedSortFilterProxyModel() override;
 
-    /**
+    /*!
      * Overridden from QSortFilterProxyModel. Sorts the source model using
      * @p column for the given @p order.
      */
     void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
 
-    /**
+    /*!
      * @return whether the model is categorized or not. Disabled by default.
      */
     bool isCategorizedModel() const;
 
-    /**
+    /*!
      * Enables or disables the categorization feature.
      *
      * @param categorizedModel whether to enable or disable the categorization feature.
      */
     void setCategorizedModel(bool categorizedModel);
 
-    /**
+    /*!
      * @return the column being used for sorting.
      */
     int sortColumn() const;
 
-    /**
+    /*!
      * @return the sort order being used for sorting.
      */
     Qt::SortOrder sortOrder() const;
 
-    /**
+    /*!
      * Set if the sorting using CategorySortRole will use a natural comparison
      * in the case that strings were returned. If enabled, QCollator
      * will be used for sorting.
@@ -89,13 +89,13 @@ public:
      */
     void setSortCategoriesByNaturalComparison(bool sortCategoriesByNaturalComparison);
 
-    /**
+    /*!
      * @return whether it is being used a natural comparison for sorting. Enabled by default.
      */
     bool sortCategoriesByNaturalComparison() const;
 
 protected:
-    /**
+    /*!
      * Overridden from QSortFilterProxyModel. If you are subclassing
      * KCategorizedSortFilterProxyModel, you will probably not need to reimplement this
      * method.
@@ -110,7 +110,7 @@ protected:
      */
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
-    /**
+    /*!
      * This method has a similar purpose as lessThan() has on QSortFilterProxyModel.
      * It is used for sorting items that are in the same category.
      *
@@ -118,7 +118,7 @@ protected:
      */
     virtual bool subSortLessThan(const QModelIndex &left, const QModelIndex &right) const;
 
-    /**
+    /*!
      * This method compares the category of the @p left index with the category
      * of the @p right index.
      *
