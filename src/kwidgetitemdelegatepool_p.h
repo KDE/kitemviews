@@ -18,9 +18,6 @@ class QStyleOptionViewItem;
 class KWidgetItemDelegate;
 class KWidgetItemDelegatePoolPrivate;
 
-/**
- * @internal
- */
 class KWidgetItemDelegatePool
 {
 public:
@@ -29,39 +26,23 @@ public:
         NotUpdateWidgets,
     };
 
-    /**
-     * Creates a new ItemDelegatePool.
-     *
-     * @param delegate the ItemDelegate for this pool.
-     */
-
     KWidgetItemDelegatePool(KWidgetItemDelegate *delegate);
 
-    /**
-     * Destroys an ItemDelegatePool.
-     */
     ~KWidgetItemDelegatePool();
 
     KWidgetItemDelegatePool(const KWidgetItemDelegatePool &) = delete;
     KWidgetItemDelegatePool &operator=(const KWidgetItemDelegatePool &) = delete;
 
-    /**
-     * @brief Returns the widget associated to @p index and @p widget
-     * @param index The index to search into.
-     * @param option a QStyleOptionViewItem.
-     * @return A QList of the pointers to the widgets found.
-     * @internal
+    /*
+     * Returns the widget associated to index and widget
+     * index The index to search into.
+     * option a QStyleOptionViewItem.
+     * Returns a QList of the pointers to the widgets found.
      */
     QList<QWidget *> findWidgets(const QPersistentModelIndex &index, const QStyleOptionViewItem &option, UpdateWidgetsEnum updateWidgets = UpdateWidgets) const;
 
-    /**
-     * @internal
-     */
     QList<QWidget *> invalidIndexesWidgets() const;
 
-    /**
-     * @internal
-     */
     void fullClear();
 
 private:
@@ -72,9 +53,6 @@ private:
 
 class KWidgetItemDelegateEventListener;
 
-/**
- * @internal
- */
 class KWidgetItemDelegatePoolPrivate
 {
 public:

@@ -37,7 +37,7 @@ public:
 
     KExtendableItemDelegate *const q;
 
-    /**
+    /*
      * Delete all active extenders
      */
     void deleteExtenders();

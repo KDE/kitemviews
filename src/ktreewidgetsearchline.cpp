@@ -174,12 +174,13 @@ void KTreeWidgetSearchLinePrivate::checkItemParentsNotVisible(QTreeWidget *treeW
     }
 }
 
-/** Check whether \p item, its siblings and their descendants should be shown. Show or hide the items as necessary.
+/*
+ * Check whether item, its siblings and their descendants should be shown. Show or hide the items as necessary.
  *
- *  \p item  The list view item to start showing / hiding items at. Typically, this is the first child of another item, or
+ *  item  The list view item to start showing / hiding items at. Typically, this is the first child of another item, or
  *              the first child of the list view.
- *  \return \c true if an item which should be visible is found, \c false if all items found should be hidden. If this function
- *             returns true and \p highestHiddenParent was not 0, highestHiddenParent will have been shown.
+ *  Returns true if an item which should be visible is found, false if all items found should be hidden. If this function
+ *             returns true and highestHiddenParent was not 0, highestHiddenParent will have been shown.
  */
 bool KTreeWidgetSearchLinePrivate::checkItemParentsVisible(QTreeWidgetItem *item)
 {

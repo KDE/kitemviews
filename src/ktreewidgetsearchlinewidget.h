@@ -18,10 +18,11 @@ class QModelIndex;
 class QTreeWidget;
 class KTreeWidgetSearchLine;
 
-/**
- * @class KTreeWidgetSearchLineWidget ktreewidgetsearchlinewidget.h KTreeWidgetSearchLineWidget
+/*!
+ * \class KTreeWidgetSearchLineWidget
+ * \inmodule KItemViews
  *
- * Creates a widget featuring a KTreeWidgetSearchLine, a label with the text
+ * \brief Creates a widget featuring a KTreeWidgetSearchLine, a label with the text
  * "Search" and a button to clear the search.
  */
 class KITEMVIEWS_EXPORT KTreeWidgetSearchLineWidget : public QWidget
@@ -29,24 +30,21 @@ class KITEMVIEWS_EXPORT KTreeWidgetSearchLineWidget : public QWidget
     Q_OBJECT
 
 public:
-    /**
+    /*!
      * Creates a KTreeWidgetSearchLineWidget for \a treeWidget with \a parent as the
      * parent.
      */
     explicit KTreeWidgetSearchLineWidget(QWidget *parent = nullptr, QTreeWidget *treeWidget = nullptr);
 
-    /**
-     * Destroys the KTreeWidgetSearchLineWidget
-     */
     ~KTreeWidgetSearchLineWidget() override;
 
-    /**
+    /*!
      * Returns a pointer to the search line.
      */
     KTreeWidgetSearchLine *searchLine() const;
 
 protected Q_SLOTS:
-    /**
+    /*!
      * Creates the widgets inside of the widget.  This is called from the
      * constructor via a single shot timer so that it it guaranteed to run
      * after construction is complete.  This makes it suitable for overriding in
@@ -55,7 +53,7 @@ protected Q_SLOTS:
     virtual void createWidgets();
 
 protected:
-    /**
+    /*!
      * Creates the search line.  This can be useful to reimplement in cases where
      * a KTreeWidgetSearchLine subclass is used.
      *

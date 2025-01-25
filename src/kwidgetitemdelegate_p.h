@@ -6,7 +6,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-/**
+/*
  * This class is necessary to be installed because of the templated method.
  * It is private in the sense of having clean the public header.
  * Do not forget that this file _has_ to be installed.
