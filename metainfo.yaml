@@ -11,7 +11,7 @@ portingAid: false
 deprecated: false
 release: true
 libraries:
- - cmake: "KF6::ItemViews"
+    - cmake: "KF6::ItemViews"
 cmakename: KF6ItemViews
 
 public_lib: true
