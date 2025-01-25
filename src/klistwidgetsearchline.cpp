@@ -39,7 +39,7 @@ public:
     int queuedSearches = 0;
 };
 
-/******************************************************************************
+/*!****************************************************************************
  * Public Methods                                                             *
  *****************************************************************************/
 KListWidgetSearchLine::KListWidgetSearchLine(QWidget *parent, QListWidget *listWidget)
@@ -65,7 +65,7 @@ QListWidget *KListWidgetSearchLine::listWidget() const
     return d->listWidget;
 }
 
-/******************************************************************************
+/*!****************************************************************************
  * Public Slots                                                               *
  *****************************************************************************/
 void KListWidgetSearchLine::updateSearch(const QString &s)
@@ -116,7 +116,7 @@ void KListWidgetSearchLine::setListWidget(QListWidget *lw)
     }
 }
 
-/******************************************************************************
+/*!****************************************************************************
  * Protected Methods                                                          *
  *****************************************************************************/
 bool KListWidgetSearchLine::itemMatches(const QListWidgetItem *item, const QString &s) const

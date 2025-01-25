@@ -22,11 +22,6 @@
 #include "kwidgetitemdelegate_p.h"
 #include <kitemviews_debug.h>
 
-/**
-  Private class that helps to provide binary compatibility between releases.
-  @internal
-*/
-//@cond PRIVATE
 class KWidgetItemDelegateEventListener : public QObject
 {
 public:
@@ -205,4 +200,3 @@ bool KWidgetItemDelegateEventListener::eventFilter(QObject *watched, QEvent *eve
 
     return QObject::eventFilter(watched, event);
 }
-//@endcond

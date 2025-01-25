@@ -52,6 +52,7 @@ ecm_generate_export_header(KF6ItemViews
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
 
+ecm_generate_qdoc(KF6ItemViews kitemviews.qdocconf)
 
 target_include_directories(KF6ItemViews INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KItemViews>")
 
@@ -81,33 +82,6 @@ install(FILES
 
 if(BUILD_DESIGNERPLUGIN)
     add_subdirectory(designer)
-endif()
-
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6ItemViews_QCH
-        NAME KItemViews
-        BASE_NAME KF6ItemViews
-        VERSION ${KF_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-            ${KItemViews_HEADERS}
-        MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
-        LINK_QCHS
-            Qt6Widgets_QCH
-            Qt6Gui_QCH
-            Qt6Core_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            KITEMVIEWS_EXPORT
-            KITEMVIEWS_DEPRECATED
-            KITEMVIEWS_DEPRECATED_EXPORT
-            "KITEMVIEWS_DEPRECATED_VERSION(x, y, t)"
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
 endif()
 
 ecm_qt_install_logging_categories(

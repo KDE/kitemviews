@@ -5,7 +5,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-/**
+/*
  * IMPLEMENTATION NOTES:
  *
  * QListView::setRowHidden() and QListView::isRowHidden() are not taken into

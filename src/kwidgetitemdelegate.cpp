@@ -21,11 +21,6 @@
 
 Q_DECLARE_METATYPE(QList<QEvent::Type>)
 
-/**
-  KWidgetItemDelegatePrivate class that helps to provide binary compatibility between releases.
-  @internal
-*/
-//@cond PRIVATE
 KWidgetItemDelegatePrivate::KWidgetItemDelegatePrivate(KWidgetItemDelegate *q, QObject *parent)
     : QObject(parent)
     , widgetPool(new KWidgetItemDelegatePool(q))
@@ -152,7 +147,6 @@ void KWidgetItemDelegatePrivate::initializeModel(const QModelIndex &parent)
         }
     }
 }
-//@endcond
 
 KWidgetItemDelegate::KWidgetItemDelegate(QAbstractItemView *itemView, QObject *parent)
     : QAbstractItemDelegate(parent)
