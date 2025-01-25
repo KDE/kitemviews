@@ -52,7 +52,7 @@ ecm_generate_export_header(KF6ItemViews
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
 
-ecm_generate_qdoc(KF6ItemViews kitemview.qdocconf)
+ecm_generate_qdoc(KF6ItemViews kitemviews.qdocconf)
 
 target_include_directories(KF6ItemViews INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KItemViews>")
 

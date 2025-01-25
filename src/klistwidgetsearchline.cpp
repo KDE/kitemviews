@@ -203,7 +203,7 @@ bool KListWidgetSearchLine::event(QEvent *event)
     }
     return QLineEdit::event(event);
 }
-/*!****************************************************************************
+/******************************************************************************
  * Protected Slots                                                            *
  *****************************************************************************/
 void KListWidgetSearchLinePrivate::_k_queueSearch(const QString &s)
@@ -223,7 +223,7 @@ void KListWidgetSearchLinePrivate::_k_activateSearch()
     }
 }
 
-/*!****************************************************************************
+/******************************************************************************
  * KListWidgetSearchLinePrivate Slots                                                              *
  *****************************************************************************/
 void KListWidgetSearchLinePrivate::_k_listWidgetDeleted()

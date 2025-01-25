@@ -32,7 +32,9 @@ class KWidgetItemDelegatePool;
  * \inmodule KItemViews
  *
  * \brief This class allows to create item delegates embedding simple widgets to interact
- * with items. For instance you can add push buttons, line edits, etc. to your delegate
+ * with items.
+ *
+ * For instance you can add push buttons, line edits, etc. to your delegate
  * and use them to modify the state of your model.
  *
  * Porting from KF5 to KF6:
