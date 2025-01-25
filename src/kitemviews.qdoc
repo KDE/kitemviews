@@ -1,0 +1,11 @@
+/*!
+    \module KItemViews
+    \title KItemViews C++ Classes
+    \ingroup modules
+    \cmakepackage KF6
+    \cmakecomponent ItemViews
+
+    \brief IO.
+
+    Stuff
+*/
