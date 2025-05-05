@@ -31,17 +31,17 @@ msgstr ""
 "X-Generator: Poedit 3.4.2\n"
 "X-Qt-Contexts: true\n"
 
-#: ktreewidgetsearchline.cpp:212
+#: ktreewidgetsearchline.cpp:213
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
 msgstr "Išči…"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:420
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Išči po stolpcih"
 
-#: ktreewidgetsearchline.cpp:421
+#: ktreewidgetsearchline.cpp:422
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Vsi vidni stolpci"

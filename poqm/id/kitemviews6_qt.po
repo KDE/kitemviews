@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Lokalize 23.04.0\n"
 "X-Qt-Contexts: true\n"
 
-#: ktreewidgetsearchline.cpp:212
+#: ktreewidgetsearchline.cpp:213
 #, fuzzy
 #| msgctxt "KFilterProxySearchLine|"
 #| msgid "Search"
@@ -28,12 +28,12 @@ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
 msgstr "Cari"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:420
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Kolom Pencarian"
 
-#: ktreewidgetsearchline.cpp:421
+#: ktreewidgetsearchline.cpp:422
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Semua Kolom Terlihat"

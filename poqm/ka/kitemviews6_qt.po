@@ -13,17 +13,17 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: ktreewidgetsearchline.cpp:212
+#: ktreewidgetsearchline.cpp:213
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
 msgstr "ძებნა…"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:420
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "სვეტების ძებნა"
 
-#: ktreewidgetsearchline.cpp:421
+#: ktreewidgetsearchline.cpp:422
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "ყველა ხილული სვეტი"

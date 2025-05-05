@@ -31,17 +31,17 @@ msgstr ""
 "kitemviews6_qt.po\n"
 "X-Crowdin-File-ID: 10148\n"
 
-#: ktreewidgetsearchline.cpp:212
+#: ktreewidgetsearchline.cpp:213
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
 msgstr "Пошук…"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:420
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Слупкі пошуку"
 
-#: ktreewidgetsearchline.cpp:421
+#: ktreewidgetsearchline.cpp:422
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Усе бачныя слупкі"

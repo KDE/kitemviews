@@ -32,17 +32,17 @@ msgstr ""
 "X-Generator: Lokalize 20.04.2\n"
 "X-Qt-Contexts: true\n"
 
-#: ktreewidgetsearchline.cpp:212
+#: ktreewidgetsearchline.cpp:213
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
 msgstr "Αναζήτηση…"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:420
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Στήλες αναζήτησης"
 
-#: ktreewidgetsearchline.cpp:421
+#: ktreewidgetsearchline.cpp:422
 msgctxt "KTreeWidgetSearchLine|@optipn:check"
 msgid "All Visible Columns"
 msgstr "Όλες οι ορατές στήλες"

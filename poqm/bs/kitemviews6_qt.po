@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: ktreewidgetsearchline.cpp:212
+#: ktreewidgetsearchline.cpp:213
 #, fuzzy
 #| msgctxt "KFilterProxySearchLine|"
 #| msgid "Search"
@@ -21,7 +21,7 @@ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
 msgstr "Traži"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:420
 #, fuzzy
 #| msgctxt "KTreeWidgetSearchLine|"
 #| msgid "Search Columns"
@@ -29,7 +29,7 @@ msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Kolone za pretragu"
 
-#: ktreewidgetsearchline.cpp:421
+#: ktreewidgetsearchline.cpp:422
 #, fuzzy
 #| msgctxt "KTreeWidgetSearchLine|"
 #| msgid "All Visible Columns"

@@ -21,21 +21,21 @@ msgstr ""
 "3 : 4\n"
 "X-Qt-Contexts: true\n"
 
-#: ktreewidgetsearchline.cpp:212
+#: ktreewidgetsearchline.cpp:213
 #, fuzzy
 #| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
 msgstr "Cuardaigh"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:420
 #, fuzzy
 #| msgid "Search Columns"
 msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Cuardaigh Colúin"
 
-#: ktreewidgetsearchline.cpp:421
+#: ktreewidgetsearchline.cpp:422
 #, fuzzy
 #| msgid "All Visible Columns"
 msgctxt "KTreeWidgetSearchLine|@optipn:check"

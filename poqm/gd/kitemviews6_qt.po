@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.4\n"
 "X-Qt-Contexts: true\n"
 
-#: ktreewidgetsearchline.cpp:212
+#: ktreewidgetsearchline.cpp:213
 #, fuzzy
 #| msgctxt "KFilterProxySearchLine|"
 #| msgid "Search"
@@ -23,7 +23,7 @@ msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search…"
 msgstr "Lorg"
 
-#: ktreewidgetsearchline.cpp:419
+#: ktreewidgetsearchline.cpp:420
 #, fuzzy
 #| msgctxt "KTreeWidgetSearchLine|"
 #| msgid "Search Columns"
@@ -31,7 +31,7 @@ msgctxt "KTreeWidgetSearchLine|@title:menu"
 msgid "Search Columns"
 msgstr "Lorg sna colbhan"
 
-#: ktreewidgetsearchline.cpp:421
+#: ktreewidgetsearchline.cpp:422
 #, fuzzy
 #| msgctxt "KTreeWidgetSearchLine|"
 #| msgid "All Visible Columns"
