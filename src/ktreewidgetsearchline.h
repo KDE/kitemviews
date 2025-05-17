@@ -66,7 +66,7 @@ public:
     /*!
      * Returns true if the search is case sensitive.  This defaults to false.
      *
-     * \sa setCaseSensitive()
+     * \sa setCaseSensitivity()
      */
     Qt::CaseSensitivity caseSensitivity() const;
 
