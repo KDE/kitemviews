@@ -29,3 +29,5 @@ qhp.KItemViews.subprojects.classes.title = C++ Classes
 qhp.KItemViews.subprojects.classes.indexTitle = KItemViews C++ Classes
 qhp.KItemViews.subprojects.classes.selectors = class fake:headerfile
 qhp.KItemViews.subprojects.classes.sortPages = true
+
+tagfile = kitemviews.tags
