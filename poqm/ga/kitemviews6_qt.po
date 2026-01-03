@@ -2,9 +2,9 @@
 # Translation of kdelibs4.po to Irish
 # Copyright (C) 1999,2003,2004 Free Software Foundation, Inc.
 # Sean V. Kelley <s_oceallaigh@yahoo.com>, 1999
-# Séamus Ó Ciardhuáin <seoc at iolfree.ie>, 2003,2004
 # Kevin Scannell <kscanne@gmail.com>, 2004-2009
-# SPDX-FileCopyrightText: 2025 Charlotte <altronic25@protonmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Charlotte <altronic25@protonmail.com>
+# Séamus Ó Ciardhuáin <seoc at iolfree.ie>, 2003,2004
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
