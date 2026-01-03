@@ -3,14 +3,14 @@
 # Copyright (C) 1999,2003,2004 Free Software Foundation, Inc.
 # Sean V. Kelley <s_oceallaigh@yahoo.com>, 1999
 # Kevin Scannell <kscanne@gmail.com>, 2004-2009
-# SPDX-FileCopyrightText: 2025 Charlotte <altronic25@protonmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Charlotte <altronic25@protonmail.com>
 # Séamus Ó Ciardhuáin <seoc at iolfree.ie>, 2003,2004
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-03-23 01:50+0000\n"
-"PO-Revision-Date: 2025-12-18 21:42+0000\n"
+"PO-Revision-Date: 2026-01-01 19:37+0000\n"
 "Last-Translator: Charlotte <altronic25@protonmail.com>\n"
 "Language-Team: Irish\n"
 "Language: ga\n"
@@ -22,18 +22,14 @@ msgstr ""
 "X-Qt-Contexts: true\n"
 
 #: kfilterproxysearchline.cpp:63
-#, fuzzy
-#| msgid "Search"
 msgctxt "KFilterProxySearchLine|@info:placeholder"
 msgid "Search..."
-msgstr "Cuardaigh"
+msgstr "Cuardaigh..."
 
 #: ktreewidgetsearchline.cpp:212
-#, fuzzy
-#| msgid "Search"
 msgctxt "KTreeWidgetSearchLine|@info:placeholder"
 msgid "Search..."
-msgstr "Cuardaigh"
+msgstr "Cuardaigh..."
 
 #: ktreewidgetsearchline.cpp:417
 msgctxt "KTreeWidgetSearchLine|@title:menu"
