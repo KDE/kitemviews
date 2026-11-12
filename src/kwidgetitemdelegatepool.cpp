@@ -105,18 +105,14 @@ KWidgetItemDelegatePool::findWidgets(const QPersistentModelIndex &idx, const QSt
 QList<QWidget *> KWidgetItemDelegatePool::invalidIndexesWidgets() const
 {
     QList<QWidget *> result;
-    QHashIterator<QWidget *, QPersistentModelIndex> i(d->widgetInIndex);
-    while (i.hasNext()) {
-        i.next();
+    for (const auto &[widget, persistentIndex] : std::as_const(d->widgetInIndex).asKeyValueRange()) {
         const QAbstractProxyModel *proxyModel = qobject_cast<const QAbstractProxyModel *>(d->delegate->d->model);
-        QModelIndex index;
+        QModelIndex index = persistentIndex;
         if (proxyModel) {
-            index = proxyModel->mapFromSource(i.value());
-        } else {
-            index = i.value();
+            index = proxyModel->mapFromSource(index);
         }
         if (!index.isValid()) {
-            result << i.key();
+            result << widget;
         }
     }
     return result;
